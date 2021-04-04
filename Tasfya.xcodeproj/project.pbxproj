@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10272619FD600031C7F9 /* AppDelegate.swift */; };
 		5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10292619FD600031C7F9 /* SceneDelegate.swift */; };
-		5B4F102C2619FD600031C7F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F102B2619FD600031C7F9 /* ViewController.swift */; };
-		5B4F102F2619FD600031C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F102D2619FD600031C7F9 /* Main.storyboard */; };
 		5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10302619FD610031C7F9 /* Assets.xcassets */; };
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
+		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.release.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.release.xcconfig"; sourceTree = "<group>"; };
 		5B4F10242619FD600031C7F9 /* Tasfya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasfya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4F10272619FD600031C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B4F10292619FD600031C7F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B4F102B2619FD600031C7F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B4F102E2619FD600031C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B4F10302619FD610031C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4F10332619FD610031C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4F10352619FD610031C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
+		F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasfya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025354C188C701FD8908A729 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B4F101B2619FD600031C7F9 = {
 			isa = PBXGroup;
 			children = (
 				5B4F10262619FD600031C7F9 /* Tasfya */,
 				5B4F10252619FD600031C7F9 /* Products */,
+				6F05DB0DB28B498228E21654 /* Pods */,
+				025354C188C701FD8908A729 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +67,46 @@
 		5B4F10262619FD600031C7F9 /* Tasfya */ = {
 			isa = PBXGroup;
 			children = (
+				5B4F10422619FDCF0031C7F9 /* Extensions */,
+				5B4F10412619FDC80031C7F9 /* Scenes */,
+				5B4F103F2619FDBE0031C7F9 /* SupportFiles */,
+			);
+			path = Tasfya;
+			sourceTree = "<group>";
+		};
+		5B4F103F2619FDBE0031C7F9 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				5B4F10272619FD600031C7F9 /* AppDelegate.swift */,
 				5B4F10292619FD600031C7F9 /* SceneDelegate.swift */,
-				5B4F102B2619FD600031C7F9 /* ViewController.swift */,
-				5B4F102D2619FD600031C7F9 /* Main.storyboard */,
 				5B4F10302619FD610031C7F9 /* Assets.xcassets */,
 				5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */,
 				5B4F10352619FD610031C7F9 /* Info.plist */,
 			);
-			path = Tasfya;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		5B4F10412619FDC80031C7F9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5B4F10422619FDCF0031C7F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6F05DB0DB28B498228E21654 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */,
+				5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +116,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B4F10382619FD610031C7F9 /* Build configuration list for PBXNativeTarget "Tasfya" */;
 			buildPhases = (
+				9CD75B6F2C43BFCAF373664A /* [CP] Check Pods Manifest.lock */,
 				5B4F10202619FD600031C7F9 /* Sources */,
 				5B4F10212619FD600031C7F9 /* Frameworks */,
 				5B4F10222619FD600031C7F9 /* Resources */,
@@ -126,18 +169,41 @@
 			files = (
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
 				5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */,
-				5B4F102F2619FD600031C7F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9CD75B6F2C43BFCAF373664A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tasfya-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B4F10202619FD600031C7F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4F102C2619FD600031C7F9 /* ViewController.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +212,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B4F102D2619FD600031C7F9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B4F102E2619FD600031C7F9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,12 +341,13 @@
 		};
 		5B4F10392619FD610031C7F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W7KRDUDN4;
-				INFOPLIST_FILE = Tasfya/Info.plist;
+				INFOPLIST_FILE = Tasfya/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +361,13 @@
 		};
 		5B4F103A2619FD610031C7F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W7KRDUDN4;
-				INFOPLIST_FILE = Tasfya/Info.plist;
+				INFOPLIST_FILE = Tasfya/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
