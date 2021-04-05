@@ -11,8 +11,10 @@
 		5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10292619FD600031C7F9 /* SceneDelegate.swift */; };
 		5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10302619FD610031C7F9 /* Assets.xcassets */; };
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
-		5B4F1047261A0E7E0031C7F9 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1045261A0E7E0031C7F9 /* CreateAccount.swift */; };
-		5B4F1048261A0E7E0031C7F9 /* CreateAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccount.xib */; };
+		5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */; };
+		5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */; };
+		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
+		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +26,10 @@
 		5B4F10302619FD610031C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4F10332619FD610031C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4F10352619FD610031C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B4F1045261A0E7E0031C7F9 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
-		5B4F1046261A0E7E0031C7F9 /* CreateAccount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccount.xib; sourceTree = "<group>"; };
+		5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
+		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasfya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +78,7 @@
 				5B4F10422619FDCF0031C7F9 /* Extensions */,
 				5B4F10412619FDC80031C7F9 /* Scenes */,
 				5B4F103F2619FDBE0031C7F9 /* SupportFiles */,
+				5B7BD929261B201800AF1253 /* Constants.swift */,
 			);
 			path = Tasfya;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		5B4F10422619FDCF0031C7F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -108,8 +114,8 @@
 		5B4F1044261A0E400031C7F9 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
-				5B4F1045261A0E7E0031C7F9 /* CreateAccount.swift */,
-				5B4F1046261A0E7E0031C7F9 /* CreateAccount.xib */,
+				5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */,
+				5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -183,7 +189,7 @@
 			files = (
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
 				5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */,
-				5B4F1048261A0E7E0031C7F9 /* CreateAccount.xib in Resources */,
+				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7BD92A261B201800AF1253 /* Constants.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
-				5B4F1047261A0E7E0031C7F9 /* CreateAccount.swift in Sources */,
+				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
+				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,9 +1,0 @@
-<svg id="Light_Selection_Controls_2._Radio_A._Selected_" data-name="Light 🌕/ Selection Controls/2. Radio/A. Selected/" xmlns="http://www.w3.org/2000/svg" width="73" height="73" viewBox="0 0 73 73">
-  <g id="Light_Selection_Controls_2._Radio_2_States_" data-name="Light 🌕/ Selection Controls/2. Radio/ (2 States)" transform="translate(10 10)">
-    <g id="icon_toggle_radio_button_checked_24px" data-name="icon/toggle/radio_button_checked_24px">
-      <rect id="Boundary" width="53" height="53" fill="none"/>
-      <path id="_Color" data-name=" ↳Color" d="M24,48A24,24,0,1,1,48,24,24.027,24.027,0,0,1,24,48ZM24,4.8A19.2,19.2,0,1,0,43.2,24,19.222,19.222,0,0,0,24,4.8ZM24,36A12,12,0,1,1,36,24,12.014,12.014,0,0,1,24,36Z" transform="translate(3 3)" fill="#e2e0f2"/>
-    </g>
-  </g>
-  <circle id="_States" data-name="💡States" cx="36.5" cy="36.5" r="36.5" fill="rgba(255,255,255,0.13)"/>
-</svg>
