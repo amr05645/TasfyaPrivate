@@ -16,6 +16,8 @@
 		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
+		C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */; };
+		C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
+		C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
+		C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsVC.xib; sourceTree = "<group>"; };
 		F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasfya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4F1044261A0E400031C7F9 /* CreateAccount */,
+				C5CFFC80261A02B30094AA9A /* Account Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -127,6 +132,15 @@
 				5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C5CFFC80261A02B30094AA9A /* Account Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */,
+				C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */,
+			);
+			path = "Account Settings";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
+				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
 			);
@@ -226,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7BD92A261B201800AF1253 /* Constants.swift in Sources */,
+				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
@@ -372,6 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W7KRDUDN4;
 				INFOPLIST_FILE = Tasfya/SupportFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,6 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W7KRDUDN4;
 				INFOPLIST_FILE = Tasfya/SupportFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
