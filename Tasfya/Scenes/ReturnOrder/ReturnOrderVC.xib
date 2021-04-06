@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReturnOrderVC" customModule="Tasfya" customModuleProvider="target">
             <connections>
+                <outlet property="policyTV" destination="WPG-qt-fuX" id="YHY-OU-NOK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,9 +48,12 @@
                         <constraint firstAttribute="height" constant="70" id="4uq-En-Jw1"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                    <state key="normal" title="Send">
+                    <state key="normal" title="Return Order">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="returnTapped:" destination="-1" eventType="touchUpInside" id="8Cc-G3-1GC"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

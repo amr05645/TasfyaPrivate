@@ -8,10 +8,17 @@
 import UIKit
 
 class ReturnOrderVC: UIViewController {
-
+    
+    
+    @IBOutlet weak var policyTV: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func returnTapped(_ sender: Any) {
+    }
+    
 
 }
