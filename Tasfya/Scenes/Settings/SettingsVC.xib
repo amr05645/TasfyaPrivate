@@ -34,8 +34,8 @@
                     <color key="textColor" name="darkBlue121A50"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UmC-Gm-8kR">
-                    <rect key="frame" x="20" y="339.5" width="374" height="180"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="UmC-Gm-8kR">
+                    <rect key="frame" x="20" y="359.5" width="374" height="210"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pos-FK-pv2" userLabel="Privacy">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -67,7 +67,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCk-Ml-a1l" userLabel="Language">
-                            <rect key="frame" x="0.0" y="50" width="374" height="30"/>
+                            <rect key="frame" x="0.0" y="60" width="374" height="30"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fJ1-Aa-Bxy">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -106,7 +106,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLV-Uq-3Bm" userLabel="About Us">
-                            <rect key="frame" x="0.0" y="100" width="374" height="30"/>
+                            <rect key="frame" x="0.0" y="120" width="374" height="30"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7p-vf-Jvd">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -135,7 +135,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxK-8b-mEh" userLabel="Language">
-                            <rect key="frame" x="0.0" y="150" width="374" height="30"/>
+                            <rect key="frame" x="0.0" y="180" width="374" height="30"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Dfz-xj-XHX">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -177,7 +177,7 @@
                 <constraint firstItem="UmC-Gm-8kR" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Sd2-Pm-4pB"/>
                 <constraint firstItem="g4c-hF-RZl" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="WNt-01-dWa"/>
                 <constraint firstItem="NYz-N7-OYe" firstAttribute="leading" secondItem="g4c-hF-RZl" secondAttribute="leading" id="cWz-yG-34x"/>
-                <constraint firstItem="UmC-Gm-8kR" firstAttribute="top" secondItem="NYz-N7-OYe" secondAttribute="bottom" constant="30" id="t7H-vg-9vL"/>
+                <constraint firstItem="UmC-Gm-8kR" firstAttribute="top" secondItem="NYz-N7-OYe" secondAttribute="bottom" constant="50" id="t7H-vg-9vL"/>
             </constraints>
             <point key="canvasLocation" x="13" y="80"/>
         </view>
