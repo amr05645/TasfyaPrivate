@@ -9,9 +9,15 @@ import UIKit
 
 struct Constants {
     static let images = Images()
+    static let titles = Titles()
 }
 
 struct Images {
     let radioOn = #imageLiteral(resourceName: "radioOn")
     let radioOff = #imageLiteral(resourceName: "radioOff")
+}
+
+struct Titles {
+    var done: String {"Done"}
+    var cancel: String {"Cancel"}
 }
