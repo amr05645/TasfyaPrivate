@@ -6,5 +6,5 @@ target 'Tasfya' do
   use_frameworks!
 
   # Pods for Tasfya
-
+  pod 'IQKeyboardManagerSwift'
 end

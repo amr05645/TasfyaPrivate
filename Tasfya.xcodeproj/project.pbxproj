@@ -15,6 +15,9 @@
 		5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */; };
 		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
+		5B83D628261C503F00A50228 /* PickerTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D627261C503F00A50228 /* PickerTF.swift */; };
+		5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD201B9261B5BCD00E9935D /* SettingsVC.swift */; };
+		5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD201BA261B5BCD00E9935D /* SettingsVC.xib */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */; };
 		C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */; };
@@ -32,6 +35,9 @@
 		5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
 		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B83D627261C503F00A50228 /* PickerTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTF.swift; sourceTree = "<group>"; };
+		5BD201B9261B5BCD00E9935D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		5BD201BA261B5BCD00E9935D /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
 		C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsVC.xib; sourceTree = "<group>"; };
@@ -79,10 +85,10 @@
 		5B4F10262619FD600031C7F9 /* Tasfya */ = {
 			isa = PBXGroup;
 			children = (
+				5B83D626261C501700A50228 /* Helpers */,
 				5B4F10422619FDCF0031C7F9 /* Extensions */,
 				5B4F10412619FDC80031C7F9 /* Scenes */,
 				5B4F103F2619FDBE0031C7F9 /* SupportFiles */,
-				5B7BD929261B201800AF1253 /* Constants.swift */,
 			);
 			path = Tasfya;
 			sourceTree = "<group>";
@@ -104,6 +110,7 @@
 			children = (
 				5B4F1044261A0E400031C7F9 /* CreateAccount */,
 				C5CFFC80261A02B30094AA9A /* Account Settings */,
+				5BD201BE261B5BD700E9935D /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -123,6 +130,24 @@
 				5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */,
 			);
 			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		5B83D626261C501700A50228 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B7BD929261B201800AF1253 /* Constants.swift */,
+				5B83D627261C503F00A50228 /* PickerTF.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5BD201BE261B5BD700E9935D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5BD201B9261B5BCD00E9935D /* SettingsVC.swift */,
+				5BD201BA261B5BCD00E9935D /* SettingsVC.xib */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		6F05DB0DB28B498228E21654 /* Pods */ = {
@@ -205,6 +230,7 @@
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
+				5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +267,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7BD92A261B201800AF1253 /* Constants.swift in Sources */,
+				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
+				5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
