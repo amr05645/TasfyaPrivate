@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsVC" customModule="Tasfya" customModuleProvider="target">
             <connections>
                 <outlet property="languageTF" destination="I62-DC-dpz" id="mzt-cW-J5v"/>
+                <outlet property="versionLabel" destination="LND-jm-KeP" id="ig8-kS-Lty"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

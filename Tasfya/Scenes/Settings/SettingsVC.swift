@@ -9,12 +9,25 @@ import UIKit
 
 class SettingsVC: UIViewController {
     
-    @IBOutlet weak var languageTF: UITextField!
+    @IBOutlet weak var languageTF: PickerTF!
     
-
+    @IBOutlet weak var versionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getVersion()
+        setLanguageOptions()
+    }
+    
+    private func setLanguageOptions() {
+        let languages = ["Eng", "العربية"]
+        languageTF.setInputPickerData(to: languages)
+    }
+    
+    private func getVersion() {
+        let dict = Bundle.main.infoDictionary!
+        let version = dict["CFBundleShortVersionString"] as! String
+        versionLabel.text = version
     }
     
     @IBAction func privacyTapped(_ sender: Any) {
