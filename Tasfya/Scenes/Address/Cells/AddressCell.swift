@@ -9,8 +9,7 @@ import UIKit
 
 class AddressCell: UICollectionViewCell, ReusableView {
     
-    var remove: ((Int) -> ())?
-    var index: Int?
+    var remove: (() -> ())?
     
     override var isSelected: Bool {
         didSet {
@@ -29,7 +28,6 @@ class AddressCell: UICollectionViewCell, ReusableView {
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        guard let index = index else { return }
-        remove?(index)
+        remove?()
     }
 }

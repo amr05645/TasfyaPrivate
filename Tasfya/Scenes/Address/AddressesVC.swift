@@ -23,6 +23,10 @@ class AddressesVC: UIViewController {
         register()
     }
     
+    @IBAction func addAddressTapped(_ sender: Any) {
+    }
+    
+    
     func register() {
         collectionView.register(UINib(nibName: AddressCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: AddressCell.reuseIdentifier)
     }
@@ -37,11 +41,10 @@ extension AddressesVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddressCell.reuseIdentifier, for: indexPath) as! AddressCell
         cell.addressNameLabel.text = "\(addresses[indexPath.row])"
-        cell.index = indexPath.row
         
-        cell.remove = { index in
-            self.addresses.remove(at: index)
+        cell.remove = {
             collectionView.deleteItems(at: [indexPath])
+            self.addresses.remove(at: indexPath.row)
         }
         
         return cell
