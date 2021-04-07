@@ -13,6 +13,8 @@
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
 		5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */; };
 		5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */; };
+		5B64FF3C261DE1C2007D350A /* FillInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */; };
+		5B64FF3D261DE1C2007D350A /* FillInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B64FF3B261DE1C2007D350A /* FillInfoVC.xib */; };
 		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
 		5B83D628261C503F00A50228 /* PickerTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D627261C503F00A50228 /* PickerTF.swift */; };
@@ -48,6 +50,8 @@
 		5B4F10352619FD610031C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
+		5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
+		5B64FF3B261DE1C2007D350A /* FillInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInfoVC.xib; sourceTree = "<group>"; };
 		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B83D627261C503F00A50228 /* PickerTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTF.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B64FF39261DE190007D350A /* FillInfo */,
 				5B83D65D261C9EBE00A50228 /* Address */,
 				5B83D649261C929600A50228 /* Orders */,
 				C5CFFC80261A02B30094AA9A /* Account Settings */,
@@ -165,6 +170,15 @@
 				5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */,
 			);
 			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		5B64FF39261DE190007D350A /* FillInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */,
+				5B64FF3B261DE1C2007D350A /* FillInfoVC.xib */,
+			);
+			path = FillInfo;
 			sourceTree = "<group>";
 		};
 		5B83D626261C501700A50228 /* Helpers */ = {
@@ -333,6 +347,7 @@
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				5B83D668261C9F7600A50228 /* AddressesVC.xib in Resources */,
 				5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */,
+				5B64FF3D261DE1C2007D350A /* FillInfoVC.xib in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
 				5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */,
 				5B83D64D261C92A800A50228 /* OrdersVC.xib in Resources */,
@@ -404,6 +419,7 @@
 				5B83D651261C939400A50228 /* OrderCell.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5B83D637261C7B3000A50228 /* ComplainVC.swift in Sources */,
+				5B64FF3C261DE1C2007D350A /* FillInfoVC.swift in Sources */,
 				5B83D62F261C6BA600A50228 /* ContactUsVC.swift in Sources */,
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
