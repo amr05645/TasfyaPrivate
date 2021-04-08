@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 19506b5f2c3aff30cb88f1772f93e922e8bbc268
+PODS:
+  - IQKeyboardManagerSwift (6.5.6)
+  - KWVerificationCodeView (0.4.0)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - KWVerificationCodeView
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - KWVerificationCodeView
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
+
+PODFILE CHECKSUM: 73e03b8e4132a58878f54cbaa32ee586b8ecd3fd
 
 COCOAPODS: 1.10.0

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10272619FD600031C7F9 /* AppDelegate.swift */; };
 		5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10292619FD600031C7F9 /* SceneDelegate.swift */; };
-		5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10302619FD610031C7F9 /* Assets.xcassets */; };
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
 		5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */; };
 		5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */; };
@@ -21,6 +20,11 @@
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500DF2D261B526A00CF576E /* NotLoggedVC.swift */; };
 		C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C500DF2E261B526A00CF576E /* NotLoggedVC.xib */; };
+		C5B66787261C7490000997D8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B66785261C7490000997D8 /* LoginVC.swift */; };
+		C5B66788261C7490000997D8 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B66786261C7490000997D8 /* LoginVC.xib */; };
+		C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B6678B261C8AAF000997D8 /* Assets.xcassets */; };
+		C5B66791261C9D53000997D8 /* VerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6678F261C9D53000997D8 /* VerifyVC.swift */; };
+		C5B66792261C9D53000997D8 /* VerifyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B66790261C9D53000997D8 /* VerifyVC.xib */; };
 		C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */; };
 		C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */; };
 /* End PBXBuildFile section */
@@ -30,7 +34,6 @@
 		5B4F10242619FD600031C7F9 /* Tasfya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasfya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4F10272619FD600031C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B4F10292619FD600031C7F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B4F10302619FD610031C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4F10332619FD610031C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4F10352619FD610031C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
@@ -43,6 +46,11 @@
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C500DF2D261B526A00CF576E /* NotLoggedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedVC.swift; sourceTree = "<group>"; };
 		C500DF2E261B526A00CF576E /* NotLoggedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotLoggedVC.xib; sourceTree = "<group>"; };
+		C5B66785261C7490000997D8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		C5B66786261C7490000997D8 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		C5B6678B261C8AAF000997D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5B6678F261C9D53000997D8 /* VerifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVC.swift; sourceTree = "<group>"; };
+		C5B66790261C9D53000997D8 /* VerifyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyVC.xib; sourceTree = "<group>"; };
 		C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
 		C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsVC.xib; sourceTree = "<group>"; };
 		F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasfya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,9 +110,9 @@
 			children = (
 				5B4F10272619FD600031C7F9 /* AppDelegate.swift */,
 				5B4F10292619FD600031C7F9 /* SceneDelegate.swift */,
-				5B4F10302619FD610031C7F9 /* Assets.xcassets */,
 				5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */,
 				5B4F10352619FD610031C7F9 /* Info.plist */,
+				C5B6678B261C8AAF000997D8 /* Assets.xcassets */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -112,6 +120,8 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C5B6678E261C9D1C000997D8 /* Verification code */,
+				C5B66784261C7465000997D8 /* Login */,
 				C500DF2C261B51D800CF576E /* NotLoggedIn */,
 				5B4F1044261A0E400031C7F9 /* CreateAccount */,
 				C5CFFC80261A02B30094AA9A /* Account Settings */,
@@ -173,6 +183,24 @@
 			path = NotLoggedIn;
 			sourceTree = "<group>";
 		};
+		C5B66784261C7465000997D8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C5B66785261C7490000997D8 /* LoginVC.swift */,
+				C5B66786261C7490000997D8 /* LoginVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C5B6678E261C9D1C000997D8 /* Verification code */ = {
+			isa = PBXGroup;
+			children = (
+				C5B6678F261C9D53000997D8 /* VerifyVC.swift */,
+				C5B66790261C9D53000997D8 /* VerifyVC.xib */,
+			);
+			path = "Verification code";
+			sourceTree = "<group>";
+		};
 		C5CFFC80261A02B30094AA9A /* Account Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +221,7 @@
 				5B4F10202619FD600031C7F9 /* Sources */,
 				5B4F10212619FD600031C7F9 /* Frameworks */,
 				5B4F10222619FD600031C7F9 /* Resources */,
+				766ADF243C4C81FDCEA28985 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,10 +269,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B66788261C7490000997D8 /* LoginVC.xib in Resources */,
 				C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */,
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
+				C5B66792261C9D53000997D8 /* VerifyVC.xib in Resources */,
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
-				5B4F10312619FD610031C7F9 /* Assets.xcassets in Resources */,
+				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
 				5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */,
 			);
@@ -252,6 +283,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		766ADF243C4C81FDCEA28985 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tasfya/Pods-Tasfya-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tasfya/Pods-Tasfya-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tasfya/Pods-Tasfya-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9CD75B6F2C43BFCAF373664A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,11 +333,13 @@
 				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
+				C5B66787261C7490000997D8 /* LoginVC.swift in Sources */,
 				C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
 				5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */,
+				C5B66791261C9D53000997D8 /* VerifyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
