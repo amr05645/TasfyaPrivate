@@ -35,6 +35,7 @@
 		5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB126E261F056C00FB655E /* SideMenuCell.xib */; };
 		5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB126F261F056C00FB655E /* SideMenuCell.swift */; };
 		5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB1270261F056C00FB655E /* SideMenuVC.xib */; };
+		5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB1278261F065200FB655E /* UIImageView+Extension.swift */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500DF2D261B526A00CF576E /* NotLoggedVC.swift */; };
 		C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C500DF2E261B526A00CF576E /* NotLoggedVC.xib */; };
@@ -79,6 +80,7 @@
 		5BFB126E261F056C00FB655E /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		5BFB126F261F056C00FB655E /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		5BFB1270261F056C00FB655E /* SideMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuVC.xib; sourceTree = "<group>"; };
+		5BFB1278261F065200FB655E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C500DF2D261B526A00CF576E /* NotLoggedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedVC.swift; sourceTree = "<group>"; };
 		C500DF2E261B526A00CF576E /* NotLoggedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotLoggedVC.xib; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		5B4F10422619FDCF0031C7F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5BFB1278261F065200FB655E /* UIImageView+Extension.swift */,
 				5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
@@ -442,6 +445,7 @@
 				5B83D660261C9F4A00A50228 /* AddressCell.swift in Sources */,
 				5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */,
 				5B83D64C261C92A800A50228 /* OrdersVC.swift in Sources */,
+				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,
 				5B83D667261C9F7600A50228 /* AddressesVC.swift in Sources */,
 				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
