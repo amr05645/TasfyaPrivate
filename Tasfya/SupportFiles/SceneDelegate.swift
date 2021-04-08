@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
@@ -18,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		self.window = UIWindow(windowScene: windowScene)
-		window?.rootViewController = VerifyVC()
+        let vc = VerifyVC()
+        let sideMenu = SideMenuVC()
+        sideMenu.rootVC = vc
+		window?.rootViewController = sideMenu
 		window?.makeKeyAndVisible()
 	}
 
