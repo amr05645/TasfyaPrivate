@@ -40,6 +40,7 @@
 		5BFB12AE261F07C600FB655E /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12A4261F07C600FB655E /* AddressCell.swift */; };
 		5BFB12AF261F07C600FB655E /* AddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12A5261F07C600FB655E /* AddressesVC.swift */; };
 		5BFB12B0261F07C600FB655E /* AddressesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB12A6261F07C600FB655E /* AddressesVC.xib */; };
+		5BFB12C6261F14F200FB655E /* SideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500DF2D261B526A00CF576E /* NotLoggedVC.swift */; };
 		C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C500DF2E261B526A00CF576E /* NotLoggedVC.xib */; };
@@ -95,6 +96,7 @@
 		5BFB12A4261F07C600FB655E /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		5BFB12A5261F07C600FB655E /* AddressesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesVC.swift; sourceTree = "<group>"; };
 		5BFB12A6261F07C600FB655E /* AddressesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressesVC.xib; sourceTree = "<group>"; };
+		5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelegate.swift; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C500DF2D261B526A00CF576E /* NotLoggedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedVC.swift; sourceTree = "<group>"; };
 		C500DF2E261B526A00CF576E /* NotLoggedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotLoggedVC.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				5B7BD929261B201800AF1253 /* Constants.swift */,
 				5B83D627261C503F00A50228 /* PickerTF.swift */,
 				5B83D656261C941B00A50228 /* ReusableView.swift */,
+				5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -271,8 +274,8 @@
 		5BFB126B261F056C00FB655E /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				5BFB126C261F056C00FB655E /* SideMenuVC.swift */,
 				5BFB126D261F056C00FB655E /* Cells */,
+				5BFB126C261F056C00FB655E /* SideMenuVC.swift */,
 				5BFB1270261F056C00FB655E /* SideMenuVC.xib */,
 			);
 			path = SideMenu;
@@ -509,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7BD92A261B201800AF1253 /* Constants.swift in Sources */,
+				5BFB12C6261F14F200FB655E /* SideMenuDelegate.swift in Sources */,
 				5BFB12AE261F07C600FB655E /* AddressCell.swift in Sources */,
 				5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */,
 				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,

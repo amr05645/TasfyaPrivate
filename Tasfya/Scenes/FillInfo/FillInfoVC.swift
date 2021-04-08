@@ -30,7 +30,6 @@ class FillInfoVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPayment(to: .cash)
-        self.showLogo()
     }
     
     func setPayment(to option: PaymentOptions) {

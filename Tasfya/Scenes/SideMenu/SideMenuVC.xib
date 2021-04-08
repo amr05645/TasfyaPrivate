@@ -14,8 +14,8 @@
             <connections>
                 <outlet property="containerView" destination="s6g-Ok-u4w" id="Oxh-CE-Fih"/>
                 <outlet property="dimeView" destination="RJz-85-UK6" id="veb-0s-qUv"/>
-                <outlet property="sideMenuLeading" destination="z5M-es-RaD" id="NXc-Zp-kto"/>
                 <outlet property="sideMenuView" destination="8ZZ-KN-n8h" id="X5k-dp-kas"/>
+                <outlet property="sideMenueTrailing" destination="9at-yP-c9d" id="2Ce-R6-JKf"/>
                 <outlet property="tableView" destination="0jZ-sA-9fI" id="te8-QH-h47"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,7 +34,7 @@
                     <color key="backgroundColor" name="#F2E7FE-placeHolder"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ZZ-KN-n8h" userLabel="Side Menu View">
-                    <rect key="frame" x="0.0" y="0.0" width="310.5" height="896"/>
+                    <rect key="frame" x="-310.5" y="0.0" width="310.5" height="896"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Asd-SN-Vf8">
                             <rect key="frame" x="77.5" y="64" width="155.5" height="155.5"/>
@@ -53,7 +53,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jZ-sA-9fI">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jZ-sA-9fI">
                             <rect key="frame" x="10" y="289.5" width="290.5" height="562.5"/>
                             <color key="backgroundColor" name="darkBlue121A50"/>
                         </tableView>
@@ -74,6 +74,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="s6g-Ok-u4w" firstAttribute="leading" secondItem="8ZZ-KN-n8h" secondAttribute="trailing" id="9at-yP-c9d"/>
                 <constraint firstItem="8ZZ-KN-n8h" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.75" id="BSg-2w-W20"/>
                 <constraint firstItem="RJz-85-UK6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Die-d2-Fdp"/>
                 <constraint firstItem="RJz-85-UK6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IDS-BW-WSp"/>
@@ -87,7 +88,6 @@
                 <constraint firstItem="8ZZ-KN-n8h" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cff-NW-qVt"/>
                 <constraint firstItem="s6g-Ok-u4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fEO-lk-eQF"/>
                 <constraint firstItem="s6g-Ok-u4w" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gu1-fJ-Kjx"/>
-                <constraint firstItem="8ZZ-KN-n8h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="z5M-es-RaD"/>
             </constraints>
             <point key="canvasLocation" x="11.594202898550726" y="85.714285714285708"/>
         </view>

@@ -8,10 +8,18 @@
 import UIKit
 
 class BaseVC: UIViewController {
+    
+    weak var delegate: SideMenuDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setSideMenuBtn()
+        self.showLogo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        delegate?.addGestures()
     }
     
     func showLogo() {
@@ -40,7 +48,7 @@ class BaseVC: UIViewController {
     }
     
     @objc private func sideMenuTapped() {
-        
+        delegate?.showSideMenu()
     }
-
+    
 }

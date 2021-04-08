@@ -29,7 +29,6 @@ class ComplainVC: UIViewController {
 extension ComplainVC: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        print(textView.text.count)
         complainLabel.isHidden = !(textView.text.isEmpty)
     }
 }

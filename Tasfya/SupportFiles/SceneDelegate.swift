@@ -19,8 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		self.window = UIWindow(windowScene: windowScene)
-        let vc = VerifyVC()
+        let vc = FillInfoVC()
         let sideMenu = SideMenuVC()
+        vc.delegate = sideMenu
         sideMenu.rootVC = vc
 		window?.rootViewController = sideMenu
 		window?.makeKeyAndVisible()

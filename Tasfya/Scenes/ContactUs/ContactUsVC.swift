@@ -25,5 +25,6 @@ class ContactUsVC: UIViewController {
     }
     
     @IBAction func complainTapped(_ sender: Any) {
+        self.navigationController?.pushViewController(ComplainVC(), animated: true)
     }
 }

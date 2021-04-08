@@ -33,7 +33,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="imageTint">
-                                                <color key="value" name="sideMenuRowColor #918BCC"/>
+                                                <color key="value" name="sideMenuRow #918BCC"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
@@ -48,7 +48,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRE-NJ-jXI">
                                 <rect key="frame" x="35" y="0.0" width="285" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" name="sideMenuRowColor #918BCC"/>
+                                <color key="textColor" name="sideMenuRow #918BCC"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -63,6 +63,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="icon" destination="N97-8n-sef" id="g4b-Pc-vws"/>
+                <outlet property="titleLabel" destination="GRE-NJ-jXI" id="XOB-IS-Ugp"/>
+            </connections>
             <point key="canvasLocation" x="32" y="80"/>
         </tableViewCell>
     </objects>
@@ -70,6 +74,9 @@
         <image name="SmallPhoneImage" width="32" height="44.869998931884766"/>
         <namedColor name="darkBlue121A50">
             <color red="0.071000002324581146" green="0.10199999809265137" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sideMenuRow #918BCC">
+            <color red="0.56862745098039214" green="0.54509803921568623" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sideMenuRowColor #918BCC">
             <color red="0.56862745098039214" green="0.54509803921568623" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

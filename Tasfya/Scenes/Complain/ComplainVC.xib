@@ -51,8 +51,8 @@
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="nMA-p0-BRA">
-                    <rect key="frame" x="65.5" y="380.5" width="18" height="144"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nMA-p0-BRA">
+                    <rect key="frame" x="65.5" y="410.5" width="18" height="114"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmallProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-HL-0MR">
                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -62,21 +62,21 @@
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmallPhoneImage" translatesAutoresizingMaskIntoConstraints="NO" id="q9f-tL-s62">
-                            <rect key="frame" x="0.0" y="63" width="18" height="18"/>
+                            <rect key="frame" x="0.0" y="48" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="q9f-tL-s62" secondAttribute="height" id="U3v-Jq-X4k"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmallCountryImage" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-Mt-XaV">
-                            <rect key="frame" x="0.0" y="126" width="18" height="18"/>
+                            <rect key="frame" x="0.0" y="96" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="FGy-Mt-XaV" secondAttribute="height" id="cH4-FZ-BOX"/>
                             </constraints>
                         </imageView>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="buV-0j-YzB">
-                    <rect key="frame" x="123.5" y="380.5" width="270.5" height="144"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="buV-0j-YzB">
+                    <rect key="frame" x="123.5" y="410.5" width="270.5" height="114"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xT6-gk-ygF">
                             <rect key="frame" x="0.0" y="0.0" width="270.5" height="18"/>
@@ -90,7 +90,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJf-n8-AlJ">
-                            <rect key="frame" x="0.0" y="63" width="270.5" height="18"/>
+                            <rect key="frame" x="0.0" y="48" width="270.5" height="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
@@ -101,7 +101,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Zf-9KT">
-                            <rect key="frame" x="0.0" y="126" width="270.5" height="18"/>
+                            <rect key="frame" x="0.0" y="96" width="270.5" height="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
