@@ -36,6 +36,16 @@
 		5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB126F261F056C00FB655E /* SideMenuCell.swift */; };
 		5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB1270261F056C00FB655E /* SideMenuVC.xib */; };
 		5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB1278261F065200FB655E /* UIImageView+Extension.swift */; };
+		5BFB12A7261F07C600FB655E /* FillInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB1299261F07C600FB655E /* FillInfoVC.xib */; };
+		5BFB12A8261F07C600FB655E /* FillInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB129A261F07C600FB655E /* FillInfoVC.swift */; };
+		5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB129D261F07C600FB655E /* OrderCell.xib */; };
+		5BFB12AA261F07C600FB655E /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB129E261F07C600FB655E /* OrderCell.swift */; };
+		5BFB12AB261F07C600FB655E /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB129F261F07C600FB655E /* OrdersVC.swift */; };
+		5BFB12AC261F07C600FB655E /* OrdersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB12A0261F07C600FB655E /* OrdersVC.xib */; };
+		5BFB12AD261F07C600FB655E /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB12A3261F07C600FB655E /* AddressCell.xib */; };
+		5BFB12AE261F07C600FB655E /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12A4261F07C600FB655E /* AddressCell.swift */; };
+		5BFB12AF261F07C600FB655E /* AddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12A5261F07C600FB655E /* AddressesVC.swift */; };
+		5BFB12B0261F07C600FB655E /* AddressesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB12A6261F07C600FB655E /* AddressesVC.xib */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500DF2D261B526A00CF576E /* NotLoggedVC.swift */; };
 		C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C500DF2E261B526A00CF576E /* NotLoggedVC.xib */; };
@@ -81,6 +91,16 @@
 		5BFB126F261F056C00FB655E /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		5BFB1270261F056C00FB655E /* SideMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuVC.xib; sourceTree = "<group>"; };
 		5BFB1278261F065200FB655E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		5BFB1299261F07C600FB655E /* FillInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillInfoVC.xib; sourceTree = "<group>"; };
+		5BFB129A261F07C600FB655E /* FillInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
+		5BFB129D261F07C600FB655E /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		5BFB129E261F07C600FB655E /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		5BFB129F261F07C600FB655E /* OrdersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		5BFB12A0261F07C600FB655E /* OrdersVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersVC.xib; sourceTree = "<group>"; };
+		5BFB12A3261F07C600FB655E /* AddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
+		5BFB12A4261F07C600FB655E /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		5BFB12A5261F07C600FB655E /* AddressesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesVC.swift; sourceTree = "<group>"; };
+		5BFB12A6261F07C600FB655E /* AddressesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressesVC.xib; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C500DF2D261B526A00CF576E /* NotLoggedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedVC.swift; sourceTree = "<group>"; };
 		C500DF2E261B526A00CF576E /* NotLoggedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotLoggedVC.xib; sourceTree = "<group>"; };
@@ -159,6 +179,9 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5BFB12A1261F07C600FB655E /* Address */,
+				5BFB1298261F07C600FB655E /* FillInfo */,
+				5BFB129B261F07C600FB655E /* Orders */,
 				5BFB126B261F056C00FB655E /* SideMenu */,
 				5BFB1269261F054F00FB655E /* BaseVC.swift */,
 				C5B6678E261C9D1C000997D8 /* Verification code */,
@@ -270,6 +293,53 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5BFB1298261F07C600FB655E /* FillInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5BFB1299261F07C600FB655E /* FillInfoVC.xib */,
+				5BFB129A261F07C600FB655E /* FillInfoVC.swift */,
+			);
+			path = FillInfo;
+			sourceTree = "<group>";
+		};
+		5BFB129B261F07C600FB655E /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				5BFB129C261F07C600FB655E /* Cells */,
+				5BFB129F261F07C600FB655E /* OrdersVC.swift */,
+				5BFB12A0261F07C600FB655E /* OrdersVC.xib */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		5BFB129C261F07C600FB655E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5BFB129D261F07C600FB655E /* OrderCell.xib */,
+				5BFB129E261F07C600FB655E /* OrderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5BFB12A1261F07C600FB655E /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				5BFB12A2261F07C600FB655E /* Cells */,
+				5BFB12A5261F07C600FB655E /* AddressesVC.swift */,
+				5BFB12A6261F07C600FB655E /* AddressesVC.xib */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		5BFB12A2261F07C600FB655E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5BFB12A3261F07C600FB655E /* AddressCell.xib */,
+				5BFB12A4261F07C600FB655E /* AddressCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6F05DB0DB28B498228E21654 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,20 +445,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B66788261C7490000997D8 /* LoginVC.xib in Resources */,
+				5BFB12AD261F07C600FB655E /* AddressCell.xib in Resources */,
 				5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */,
 				C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */,
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
 				C5B66792261C9D53000997D8 /* VerifyVC.xib in Resources */,
+				5BFB12AC261F07C600FB655E /* OrdersVC.xib in Resources */,
+				5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */,
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
 				5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */,
 				5B83D64D261C92A800A50228 /* OrdersVC.xib in Resources */,
 				5B83D661261C9F4A00A50228 /* AddressCell.xib in Resources */,
+				5BFB12A7261F07C600FB655E /* FillInfoVC.xib in Resources */,
 				5B83D630261C6BA600A50228 /* ContactUsVC.xib in Resources */,
 				5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */,
 				5B83D638261C7B3000A50228 /* ComplainVC.xib in Resources */,
 				5B83D644261C8F2400A50228 /* ReturnOrderVC.xib in Resources */,
+				5BFB12B0261F07C600FB655E /* AddressesVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,17 +517,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7BD92A261B201800AF1253 /* Constants.swift in Sources */,
+				5BFB12AE261F07C600FB655E /* AddressCell.swift in Sources */,
 				5B83D660261C9F4A00A50228 /* AddressCell.swift in Sources */,
 				5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */,
 				5B83D64C261C92A800A50228 /* OrdersVC.swift in Sources */,
 				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,
 				5B83D667261C9F7600A50228 /* AddressesVC.swift in Sources */,
 				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
+				5BFB12A8261F07C600FB655E /* FillInfoVC.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
 				5B83D643261C8F2400A50228 /* ReturnOrderVC.swift in Sources */,
 				5B83D657261C941B00A50228 /* ReusableView.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
+				5BFB12AA261F07C600FB655E /* OrderCell.swift in Sources */,
 				C5B66787261C7490000997D8 /* LoginVC.swift in Sources */,
+				5BFB12AF261F07C600FB655E /* AddressesVC.swift in Sources */,
 				C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5B83D637261C7B3000A50228 /* ComplainVC.swift in Sources */,
@@ -462,6 +541,7 @@
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
 				5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */,
+				5BFB12AB261F07C600FB655E /* OrdersVC.swift in Sources */,
 				C5B66791261C9D53000997D8 /* VerifyVC.swift in Sources */,
 				5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */,
 			);

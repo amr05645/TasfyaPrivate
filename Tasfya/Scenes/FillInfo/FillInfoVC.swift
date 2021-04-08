@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FillInfoVC: UIViewController {
+class FillInfoVC: BaseVC {
     
     enum PaymentOptions {
         case cash
@@ -26,10 +26,11 @@ class FillInfoVC: UIViewController {
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setPayment(to: .cash)
+        self.showLogo()
     }
     
     func setPayment(to option: PaymentOptions) {
