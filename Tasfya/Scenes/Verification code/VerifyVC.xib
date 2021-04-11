@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LoginImg" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-Na-iLM">
-                    <rect key="frame" x="50" y="54" width="314" height="245.5"/>
+                    <rect key="frame" x="50" y="54" width="314" height="286.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Enter Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-9v-b4x">
-                    <rect key="frame" x="50" y="379.5" width="314" height="40"/>
+                    <rect key="frame" x="50" y="380.5" width="314" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="bDs-Gt-h3b"/>
                     </constraints>
@@ -36,7 +36,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vi-QR-fzq" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
-                    <rect key="frame" x="50" y="427" width="314" height="50"/>
+                    <rect key="frame" x="50" y="428" width="314" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="OxA-QU-JJI"/>
@@ -57,7 +57,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buu-Fs-Eah">
-                    <rect key="frame" x="50" y="537" width="314" height="40"/>
+                    <rect key="frame" x="50" y="518" width="314" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="2HV-FY-JtK"/>
                     </constraints>
@@ -81,7 +81,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUj-uG-ziv">
-                    <rect key="frame" x="50" y="537" width="314" height="40"/>
+                    <rect key="frame" x="50" y="518" width="314" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="eC1-Lx-HqE"/>
                     </constraints>
@@ -101,14 +101,14 @@
                 <constraint firstItem="qUj-uG-ziv" firstAttribute="leading" secondItem="buu-Fs-Eah" secondAttribute="leading" id="5Ve-Vv-dNB"/>
                 <constraint firstItem="3Vi-QR-fzq" firstAttribute="centerX" secondItem="mcd-9v-b4x" secondAttribute="centerX" id="5y0-P7-7NP"/>
                 <constraint firstItem="buu-Fs-Eah" firstAttribute="centerX" secondItem="3Vi-QR-fzq" secondAttribute="centerX" id="8Qz-PU-7FZ"/>
-                <constraint firstItem="e9u-Na-iLM" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.3" id="EUZ-ka-g5X"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e9u-Na-iLM" secondAttribute="trailing" constant="50" id="GAD-Th-5Ps"/>
                 <constraint firstItem="e9u-Na-iLM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="KHz-2b-JZN"/>
-                <constraint firstItem="mcd-9v-b4x" firstAttribute="top" secondItem="e9u-Na-iLM" secondAttribute="bottom" constant="80" id="Nmn-7p-duQ"/>
+                <constraint firstItem="3Vi-QR-fzq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NQa-fT-2sI"/>
+                <constraint firstItem="mcd-9v-b4x" firstAttribute="top" secondItem="e9u-Na-iLM" secondAttribute="bottom" constant="40" id="Nmn-7p-duQ"/>
                 <constraint firstItem="3Vi-QR-fzq" firstAttribute="trailing" secondItem="mcd-9v-b4x" secondAttribute="trailing" id="QiH-c1-33s"/>
-                <constraint firstItem="RdG-uR-JeV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="buu-Fs-Eah" secondAttribute="bottom" constant="50" id="SrG-2a-AUE"/>
+                <constraint firstItem="RdG-uR-JeV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="buu-Fs-Eah" secondAttribute="bottom" constant="20" id="SrG-2a-AUE"/>
                 <constraint firstItem="e9u-Na-iLM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Vn7-dc-EQf"/>
-                <constraint firstItem="buu-Fs-Eah" firstAttribute="top" secondItem="3Vi-QR-fzq" secondAttribute="bottom" constant="60" id="W1m-9q-bgq"/>
+                <constraint firstItem="buu-Fs-Eah" firstAttribute="top" secondItem="3Vi-QR-fzq" secondAttribute="bottom" constant="40" id="W1m-9q-bgq"/>
                 <constraint firstItem="buu-Fs-Eah" firstAttribute="trailing" secondItem="3Vi-QR-fzq" secondAttribute="trailing" id="Yeo-4g-Q4t"/>
                 <constraint firstItem="3Vi-QR-fzq" firstAttribute="leading" secondItem="mcd-9v-b4x" secondAttribute="leading" id="YyA-0V-ZcP"/>
                 <constraint firstItem="RdG-uR-JeV" firstAttribute="trailing" secondItem="buu-Fs-Eah" secondAttribute="trailing" id="fuf-wM-orK"/>

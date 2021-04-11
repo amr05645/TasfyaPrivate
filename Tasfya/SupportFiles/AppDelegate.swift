@@ -44,7 +44,7 @@ extension AppDelegate {
         // Sets shadow (line below the bar) to a blank image
         UINavigationBar.appearance().shadowImage = UIImage()
         // Sets the translucent background color
-        UINavigationBar.appearance().backgroundColor = .white
+        UINavigationBar.appearance().backgroundColor = .black
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
     }
 }
