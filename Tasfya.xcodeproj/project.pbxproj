@@ -12,6 +12,10 @@
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
 		5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */; };
 		5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */; };
+		5B74132526259340000A9A3A /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74132326259340000A9A3A /* CartVC.swift */; };
+		5B74132626259340000A9A3A /* CartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B74132426259340000A9A3A /* CartVC.xib */; };
+		5B74132A2625985A000A9A3A /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7413282625985A000A9A3A /* CartCell.swift */; };
+		5B74132B2625985A000A9A3A /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7413292625985A000A9A3A /* CartCell.xib */; };
 		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
 		5B83D628261C503F00A50228 /* PickerTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D627261C503F00A50228 /* PickerTF.swift */; };
@@ -70,6 +74,10 @@
 		5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
 		5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
+		5B74132326259340000A9A3A /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		5B74132426259340000A9A3A /* CartVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartVC.xib; sourceTree = "<group>"; };
+		5B7413282625985A000A9A3A /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		5B7413292625985A000A9A3A /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B83D627261C503F00A50228 /* PickerTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTF.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B74132226259316000A9A3A /* Cart */,
 				C5499BD5261F0E89001FCFCA /* Product page */,
 				5BFB12A1261F07C600FB655E /* Address */,
 				5BFB1298261F07C600FB655E /* FillInfo */,
@@ -224,6 +233,25 @@
 				5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */,
 			);
 			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		5B74132226259316000A9A3A /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				5B74132D2625985F000A9A3A /* Cells */,
+				5B74132326259340000A9A3A /* CartVC.swift */,
+				5B74132426259340000A9A3A /* CartVC.xib */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		5B74132D2625985F000A9A3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B7413282625985A000A9A3A /* CartCell.swift */,
+				5B7413292625985A000A9A3A /* CartCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5B83D626261C501700A50228 /* Helpers */ = {
@@ -484,6 +512,7 @@
 				5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */,
 				C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */,
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
+				5B74132626259340000A9A3A /* CartVC.xib in Resources */,
 				C5B66792261C9D53000997D8 /* VerifyVC.xib in Resources */,
 				5BFB12AC261F07C600FB655E /* OrdersVC.xib in Resources */,
 				5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */,
@@ -497,6 +526,7 @@
 				5B83D630261C6BA600A50228 /* ContactUsVC.xib in Resources */,
 				5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */,
 				5B83D638261C7B3000A50228 /* ComplainVC.xib in Resources */,
+				5B74132B2625985A000A9A3A /* CartCell.xib in Resources */,
 				5B83D644261C8F2400A50228 /* ReturnOrderVC.xib in Resources */,
 				5BFB12B0261F07C600FB655E /* AddressesVC.xib in Resources */,
 			);
@@ -558,7 +588,9 @@
 				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,
 				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
 				5BFB12A8261F07C600FB655E /* FillInfoVC.swift in Sources */,
+				5B74132A2625985A000A9A3A /* CartCell.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
+				5B74132526259340000A9A3A /* CartVC.swift in Sources */,
 				C53CA9BB2620671D00B02340 /* SizeCell.swift in Sources */,
 				5B83D643261C8F2400A50228 /* ReturnOrderVC.swift in Sources */,
 				5B83D657261C941B00A50228 /* ReusableView.swift in Sources */,
