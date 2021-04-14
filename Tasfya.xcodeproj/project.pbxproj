@@ -24,6 +24,8 @@
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
 		5B7DE39C2626EEC900A1F320 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */; };
 		5B7DE39D2626EEC900A1F320 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DE39B2626EEC900A1F320 /* CheckoutVC.xib */; };
+		5B7DE3B22627021700A1F320 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DE3B02627021700A1F320 /* AddAddressVC.swift */; };
+		5B7DE3B32627021700A1F320 /* AddAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DE3B12627021700A1F320 /* AddAddressVC.xib */; };
 		5B83D628261C503F00A50228 /* PickerTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D627261C503F00A50228 /* PickerTF.swift */; };
 		5B83D62F261C6BA600A50228 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D62D261C6BA600A50228 /* ContactUsVC.swift */; };
 		5B83D630261C6BA600A50228 /* ContactUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B83D62E261C6BA600A50228 /* ContactUsVC.xib */; };
@@ -92,6 +94,8 @@
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		5B7DE39B2626EEC900A1F320 /* CheckoutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutVC.xib; sourceTree = "<group>"; };
+		5B7DE3B02627021700A1F320 /* AddAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
+		5B7DE3B12627021700A1F320 /* AddAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAddressVC.xib; sourceTree = "<group>"; };
 		5B83D627261C503F00A50228 /* PickerTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTF.swift; sourceTree = "<group>"; };
 		5B83D62D261C6BA600A50228 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		5B83D62E261C6BA600A50228 /* ContactUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsVC.xib; sourceTree = "<group>"; };
@@ -209,24 +213,25 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				5B7413322625B147000A9A3A /* OrderDetails */,
-				C5CFFC80261A02B30094AA9A /* Account Settings */,
-				5BFB12A1261F07C600FB655E /* Address */,
 				5BFB1269261F054F00FB655E /* BaseVC.swift */,
+				C5CFFC80261A02B30094AA9A /* Account Settings */,
+				5B7DE3AF2627020400A1F320 /* AddAddress */,
+				5BFB12A1261F07C600FB655E /* Address */,
 				5B74132226259316000A9A3A /* Cart */,
+				5B7DE39F2626EECE00A1F320 /* Checkout */,
 				5B83D634261C7B1400A50228 /* Complain */,
 				5B83D62C261C6B8200A50228 /* ContactUs */,
 				5B4F1044261A0E400031C7F9 /* CreateAccount */,
 				5BFB1298261F07C600FB655E /* FillInfo */,
 				C5B66784261C7465000997D8 /* Login */,
 				C500DF2C261B51D800CF576E /* NotLoggedIn */,
+				5B7413322625B147000A9A3A /* OrderDetails */,
 				5BFB129B261F07C600FB655E /* Orders */,
 				C5499BD5261F0E89001FCFCA /* Product page */,
 				5B83D640261C8F0900A50228 /* ReturnOrder */,
 				5BD201BE261B5BD700E9935D /* Settings */,
 				5BFB126B261F056C00FB655E /* SideMenu */,
 				C5B6678E261C9D1C000997D8 /* Verification code */,
-				5B7DE39F2626EECE00A1F320 /* Checkout */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -294,6 +299,15 @@
 				5B7DE39B2626EEC900A1F320 /* CheckoutVC.xib */,
 			);
 			path = Checkout;
+			sourceTree = "<group>";
+		};
+		5B7DE3AF2627020400A1F320 /* AddAddress */ = {
+			isa = PBXGroup;
+			children = (
+				5B7DE3B02627021700A1F320 /* AddAddressVC.swift */,
+				5B7DE3B12627021700A1F320 /* AddAddressVC.xib */,
+			);
+			path = AddAddress;
 			sourceTree = "<group>";
 		};
 		5B83D626261C501700A50228 /* Helpers */ = {
@@ -559,6 +573,7 @@
 				C5B66792261C9D53000997D8 /* VerifyVC.xib in Resources */,
 				5BFB12AC261F07C600FB655E /* OrdersVC.xib in Resources */,
 				5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */,
+				5B7DE3B32627021700A1F320 /* AddAddressVC.xib in Resources */,
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				C5499BD9261F0EC4001FCFCA /* ProductPageVC.xib in Resources */,
@@ -650,6 +665,7 @@
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5B83D637261C7B3000A50228 /* ComplainVC.swift in Sources */,
 				5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */,
+				5B7DE3B22627021700A1F320 /* AddAddressVC.swift in Sources */,
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
 				5B83D62F261C6BA600A50228 /* ContactUsVC.swift in Sources */,
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
