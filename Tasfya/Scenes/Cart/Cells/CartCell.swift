@@ -12,11 +12,11 @@ class CartCell: UITableViewCell, ReusableView {
     var count: Int? {
         didSet {
             countLabel.text = "\(count ?? 0)"
-            priceLable.text = "\(count! * 600) EGP"
+            priceLable.text = "\(count! * 6000) EGP"
         }
     }
     
-    var max = 3
+    var max = 10
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var sizeLabel: UILabel!

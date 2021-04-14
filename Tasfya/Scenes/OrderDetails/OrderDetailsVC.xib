@@ -28,11 +28,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MCN-vt-WK3">
-                    <rect key="frame" x="20" y="89" width="374" height="582"/>
+                    <rect key="frame" x="20" y="89" width="374" height="562"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-ND-Y02">
-                    <rect key="frame" x="20" y="691" width="374" height="171"/>
+                    <rect key="frame" x="20" y="671" width="374" height="171"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-ME-okA">
                             <rect key="frame" x="15" y="25" width="299" height="109"/>
@@ -102,7 +102,7 @@
                 <constraint firstItem="172-vP-JRD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8b6-oj-lq2"/>
                 <constraint firstItem="172-vP-JRD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EXp-kw-Clf"/>
                 <constraint firstItem="MCN-vt-WK3" firstAttribute="leading" secondItem="172-vP-JRD" secondAttribute="leading" id="Gnf-mX-gVe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aRh-ND-Y02" secondAttribute="bottom" id="LNs-0k-sVQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aRh-ND-Y02" secondAttribute="bottom" constant="20" id="LNs-0k-sVQ"/>
                 <constraint firstItem="172-vP-JRD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="S9v-qu-zLt"/>
                 <constraint firstItem="aRh-ND-Y02" firstAttribute="leading" secondItem="MCN-vt-WK3" secondAttribute="leading" id="qfP-Bu-EmZ"/>
                 <constraint firstItem="MCN-vt-WK3" firstAttribute="centerX" secondItem="172-vP-JRD" secondAttribute="centerX" id="qxj-4M-T7X"/>

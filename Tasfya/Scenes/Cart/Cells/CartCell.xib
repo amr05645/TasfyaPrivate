@@ -35,11 +35,15 @@
                                     <action selector="deleteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HTA-wn-g1O"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="productPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-jM-aWq">
-                                <rect key="frame" x="10" y="10" width="91.5" height="115"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-jM-aWq">
+                                <rect key="frame" x="10" y="10" width="95" height="95"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pbx-jM-aWq" secondAttribute="height" id="1Ga-Qu-QPD"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ku0-Qe-TUE">
-                                <rect key="frame" x="106.5" y="10" width="224.5" height="20"/>
+                                <rect key="frame" x="110" y="10" width="221" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="HW7-5h-PH9"/>
                                 </constraints>
@@ -47,8 +51,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3ni-2V-owh">
-                                <rect key="frame" x="106.5" y="35" width="116.5" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ni-2V-owh">
+                                <rect key="frame" x="110" y="35" width="116.5" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-xf-4pL">
                                         <rect key="frame" x="0.0" y="0.0" width="116.5" height="20"/>
@@ -101,7 +105,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OIF-Rc-gVB">
-                                        <rect key="frame" x="0.0" y="35" width="116.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="25" width="116.5" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-Jo-h3S">
                                                 <rect key="frame" x="0.0" y="0.0" width="36.5" height="20"/>
@@ -139,7 +143,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ixL-E5-xUY">
-                                        <rect key="frame" x="0.0" y="70" width="116.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="50" width="116.5" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="odN-SO-C9S">
                                                 <rect key="frame" x="0.0" y="0.0" width="36.5" height="20"/>
@@ -219,8 +223,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SdN-kC-74k">
-                                <rect key="frame" x="281" y="105" width="75" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200 EGP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SdN-kC-74k">
+                                <rect key="frame" x="281" y="84.5" width="75" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="#F2E7FE-placeHolder"/>
                                 <nil key="highlightedColor"/>
@@ -235,10 +239,9 @@
                             <constraint firstAttribute="trailing" secondItem="SdN-kC-74k" secondAttribute="trailing" constant="10" id="Ghk-wV-oyf"/>
                             <constraint firstItem="u31-wl-Oi8" firstAttribute="top" secondItem="tGP-1b-Nat" secondAttribute="top" id="HBD-2I-64N"/>
                             <constraint firstItem="3ni-2V-owh" firstAttribute="bottom" secondItem="pbx-jM-aWq" secondAttribute="bottom" id="Hha-p0-4Zx"/>
+                            <constraint firstItem="SdN-kC-74k" firstAttribute="bottom" secondItem="ixL-E5-xUY" secondAttribute="bottom" id="LOc-Ki-v6R"/>
                             <constraint firstItem="pbx-jM-aWq" firstAttribute="top" secondItem="tGP-1b-Nat" secondAttribute="top" constant="10" id="Ld8-8H-05c"/>
-                            <constraint firstItem="pbx-jM-aWq" firstAttribute="width" secondItem="tGP-1b-Nat" secondAttribute="width" multiplier="0.25" id="P5p-gi-yfV"/>
                             <constraint firstItem="pbx-jM-aWq" firstAttribute="centerY" secondItem="tGP-1b-Nat" secondAttribute="centerY" id="Smd-Im-NzI"/>
-                            <constraint firstItem="SdN-kC-74k" firstAttribute="centerY" secondItem="ixL-E5-xUY" secondAttribute="centerY" id="adS-O5-MM1"/>
                             <constraint firstItem="Z2G-hb-hwY" firstAttribute="centerX" secondItem="u31-wl-Oi8" secondAttribute="centerX" id="gbS-gY-MKg"/>
                             <constraint firstItem="u31-wl-Oi8" firstAttribute="width" secondItem="u31-wl-Oi8" secondAttribute="height" id="ifQ-BT-se6"/>
                             <constraint firstItem="Z2G-hb-hwY" firstAttribute="leading" secondItem="u31-wl-Oi8" secondAttribute="leading" id="jdl-i0-WcD"/>
@@ -271,7 +274,6 @@
     </objects>
     <resources>
         <image name="close" width="33" height="84"/>
-        <image name="productPhoto" width="490" height="254"/>
         <namedColor name="#F2E7FE-placeHolder">
             <color red="0.94900000095367432" green="0.90600001811981201" blue="0.99599999189376831" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -280,6 +282,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
