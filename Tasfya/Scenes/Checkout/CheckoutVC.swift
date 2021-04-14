@@ -8,22 +8,47 @@
 import UIKit
 
 class CheckoutVC: UIViewController {
+    
+    enum PaymentOptions {
+        case cash
+        case online
+    }
+    
+    @IBOutlet weak var cashImage: UIImageView!
+    @IBOutlet weak var onlineImage: UIImageView!
+    @IBOutlet weak var cashLabel: UILabel!
+    @IBOutlet weak var onlineLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setPayment(to: .cash)
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setPayment(to option: PaymentOptions) {
+        configurePaymentViews(to: option)
     }
-    */
 
+    func configurePaymentViews(to option: PaymentOptions) {
+        let radioOn = Constants.images.whiteRadioOn
+        let radioOff = Constants.images.radioOff
+        let colorOn = UIColor.white
+        let colorOff = Constants.colors.placeHolder
+
+        cashImage.image = option == .cash ? radioOn : radioOff
+        cashLabel.textColor = option == .cash ? colorOn : colorOff
+        onlineImage.image = option == .online ? radioOn : radioOff
+        onlineLabel.textColor = option == .online ? colorOn : colorOff
+    }
+    
+    
+    @IBAction func cashTapped(_ sender: Any) {
+        setPayment(to: .cash)
+    }
+
+    @IBAction func onlineTapped(_ sender: Any) {
+        setPayment(to: .online)
+    }
+    
+    @IBAction func checkoutTapped(_ sender: Any) {
+    }
 }

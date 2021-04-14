@@ -145,7 +145,7 @@
                         <constraint firstAttribute="height" constant="70" id="MTf-Zj-56c"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                    <state key="normal" title="Create">
+                    <state key="normal" title="Confirm">
                         <color key="titleColor" name="#121A50-darkBkue"/>
                     </state>
                     <connections>
