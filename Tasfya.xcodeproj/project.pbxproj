@@ -22,6 +22,8 @@
 		5B74133C2625B46B000A9A3A /* OrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B74133A2625B46B000A9A3A /* OrderDetailsCell.xib */; };
 		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
+		5B7DE39C2626EEC900A1F320 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */; };
+		5B7DE39D2626EEC900A1F320 /* CheckoutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DE39B2626EEC900A1F320 /* CheckoutVC.xib */; };
 		5B83D628261C503F00A50228 /* PickerTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D627261C503F00A50228 /* PickerTF.swift */; };
 		5B83D62F261C6BA600A50228 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D62D261C6BA600A50228 /* ContactUsVC.swift */; };
 		5B83D630261C6BA600A50228 /* ContactUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B83D62E261C6BA600A50228 /* ContactUsVC.xib */; };
@@ -88,6 +90,8 @@
 		5B74133A2625B46B000A9A3A /* OrderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsCell.xib; sourceTree = "<group>"; };
 		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		5B7DE39B2626EEC900A1F320 /* CheckoutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutVC.xib; sourceTree = "<group>"; };
 		5B83D627261C503F00A50228 /* PickerTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTF.swift; sourceTree = "<group>"; };
 		5B83D62D261C6BA600A50228 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		5B83D62E261C6BA600A50228 /* ContactUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsVC.xib; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				5BD201BE261B5BD700E9935D /* Settings */,
 				5BFB126B261F056C00FB655E /* SideMenu */,
 				C5B6678E261C9D1C000997D8 /* Verification code */,
+				5B7DE39F2626EECE00A1F320 /* Checkout */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -280,6 +285,15 @@
 				5B74133A2625B46B000A9A3A /* OrderDetailsCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5B7DE39F2626EECE00A1F320 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */,
+				5B7DE39B2626EEC900A1F320 /* CheckoutVC.xib */,
+			);
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 		5B83D626261C501700A50228 /* Helpers */ = {
@@ -550,6 +564,7 @@
 				C5499BD9261F0EC4001FCFCA /* ProductPageVC.xib in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
 				5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */,
+				5B7DE39D2626EEC900A1F320 /* CheckoutVC.xib in Resources */,
 				C5499BE0261F1BE2001FCFCA /* ProductImgCell.xib in Resources */,
 				5BFB12A7261F07C600FB655E /* FillInfoVC.xib in Resources */,
 				5B83D630261C6BA600A50228 /* ContactUsVC.xib in Resources */,
@@ -617,6 +632,7 @@
 				5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */,
 				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,
 				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
+				5B7DE39C2626EEC900A1F320 /* CheckoutVC.swift in Sources */,
 				5BFB12A8261F07C600FB655E /* FillInfoVC.swift in Sources */,
 				5B74132A2625985A000A9A3A /* CartCell.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
