@@ -21,7 +21,7 @@ class LoginVC: UIViewController {
 		countryCodeTF.becomeFirstResponder()
 	}
 	
-	@IBAction func loginBtn(_ sender: Any) {
+	@IBAction func sendCodeBtn(_ sender: Any) {
 	}
 	
     override func viewDidLoad() {
