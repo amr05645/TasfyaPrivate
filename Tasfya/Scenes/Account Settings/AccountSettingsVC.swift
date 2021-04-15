@@ -21,6 +21,15 @@ class AccountSettingsVC: UIViewController {
 	@IBAction func deleteAccountBtn(_ sender: Any) {
 	}
 	
+	@IBAction func editinformation(_ sender: Any) {
+		usernameTF.isUserInteractionEnabled = true
+		phonenumberTF.isUserInteractionEnabled = true
+		emailTF.isUserInteractionEnabled = true
+		genderTF.isUserInteractionEnabled = true
+		countryTF.isUserInteractionEnabled = true
+	}
+	
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()

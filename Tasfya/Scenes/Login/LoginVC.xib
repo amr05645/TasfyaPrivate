@@ -86,11 +86,11 @@
                         <constraint firstAttribute="height" constant="80" id="Mxn-wB-ZDG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                    <state key="normal" title="Login">
+                    <state key="normal" title="Send Code">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="loginBtn:" destination="-1" eventType="touchUpInside" id="mpM-Ul-mWA"/>
+                        <action selector="sendCodeBtn:" destination="-1" eventType="touchUpInside" id="mpM-Ul-mWA"/>
                     </connections>
                 </button>
             </subviews>

@@ -45,6 +45,12 @@
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500DF2D261B526A00CF576E /* NotLoggedVC.swift */; };
 		C500DF30261B526B00CF576E /* NotLoggedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C500DF2E261B526A00CF576E /* NotLoggedVC.xib */; };
+		C525B06F2625A7B700E69D74 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C525B06D2625A7B700E69D74 /* HomeScreenVC.swift */; };
+		C525B0702625A7B700E69D74 /* HomeScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C525B06E2625A7B700E69D74 /* HomeScreenVC.xib */; };
+		C525B0742625AB4500E69D74 /* AdvertiseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C525B0722625AB4500E69D74 /* AdvertiseCell.swift */; };
+		C525B0752625AB4500E69D74 /* AdvertiseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C525B0732625AB4500E69D74 /* AdvertiseCell.xib */; };
+		C525B07B2625B2CE00E69D74 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C525B0792625B2CE00E69D74 /* BrandCell.swift */; };
+		C525B07C2625B2CE00E69D74 /* BrandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C525B07A2625B2CE00E69D74 /* BrandCell.xib */; };
 		C53CA9BB2620671D00B02340 /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53CA9B92620671D00B02340 /* SizeCell.swift */; };
 		C53CA9BC2620671D00B02340 /* SizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53CA9BA2620671D00B02340 /* SizeCell.xib */; };
 		C5499BD8261F0EC4001FCFCA /* ProductPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499BD6261F0EC4001FCFCA /* ProductPageVC.swift */; };
@@ -108,6 +114,12 @@
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C500DF2D261B526A00CF576E /* NotLoggedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedVC.swift; sourceTree = "<group>"; };
 		C500DF2E261B526A00CF576E /* NotLoggedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotLoggedVC.xib; sourceTree = "<group>"; };
+		C525B06D2625A7B700E69D74 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
+		C525B06E2625A7B700E69D74 /* HomeScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenVC.xib; sourceTree = "<group>"; };
+		C525B0722625AB4500E69D74 /* AdvertiseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseCell.swift; sourceTree = "<group>"; };
+		C525B0732625AB4500E69D74 /* AdvertiseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvertiseCell.xib; sourceTree = "<group>"; };
+		C525B0792625B2CE00E69D74 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
+		C525B07A2625B2CE00E69D74 /* BrandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandCell.xib; sourceTree = "<group>"; };
 		C53CA9B92620671D00B02340 /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
 		C53CA9BA2620671D00B02340 /* SizeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SizeCell.xib; sourceTree = "<group>"; };
 		C5499BD6261F0EC4001FCFCA /* ProductPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageVC.swift; sourceTree = "<group>"; };
@@ -189,6 +201,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C525B06C2625A78100E69D74 /* Home screen */,
 				C5499BD5261F0E89001FCFCA /* Product page */,
 				5BFB12A1261F07C600FB655E /* Address */,
 				5BFB1298261F07C600FB655E /* FillInfo */,
@@ -371,6 +384,27 @@
 			path = NotLoggedIn;
 			sourceTree = "<group>";
 		};
+		C525B06C2625A78100E69D74 /* Home screen */ = {
+			isa = PBXGroup;
+			children = (
+				C525B0772625AB5100E69D74 /* Cells */,
+				C525B06D2625A7B700E69D74 /* HomeScreenVC.swift */,
+				C525B06E2625A7B700E69D74 /* HomeScreenVC.xib */,
+			);
+			path = "Home screen";
+			sourceTree = "<group>";
+		};
+		C525B0772625AB5100E69D74 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C525B0722625AB4500E69D74 /* AdvertiseCell.swift */,
+				C525B0732625AB4500E69D74 /* AdvertiseCell.xib */,
+				C525B0792625B2CE00E69D74 /* BrandCell.swift */,
+				C525B07A2625B2CE00E69D74 /* BrandCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C5499BD5261F0E89001FCFCA /* Product page */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,8 +523,11 @@
 				5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */,
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
+				C525B0702625A7B700E69D74 /* HomeScreenVC.xib in Resources */,
 				C5499BD9261F0EC4001FCFCA /* ProductPageVC.xib in Resources */,
+				C525B07C2625B2CE00E69D74 /* BrandCell.xib in Resources */,
 				5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */,
+				C525B0752625AB4500E69D74 /* AdvertiseCell.xib in Resources */,
 				5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */,
 				C5499BE0261F1BE2001FCFCA /* ProductImgCell.xib in Resources */,
 				5BFB12A7261F07C600FB655E /* FillInfoVC.xib in Resources */,
@@ -568,17 +605,20 @@
 				5BFB12AF261F07C600FB655E /* AddressesVC.swift in Sources */,
 				C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
+				C525B07B2625B2CE00E69D74 /* BrandCell.swift in Sources */,
 				5B83D637261C7B3000A50228 /* ComplainVC.swift in Sources */,
 				5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */,
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
 				5B83D62F261C6BA600A50228 /* ContactUsVC.swift in Sources */,
 				5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */,
 				C5499BDF261F1BE2001FCFCA /* ProductImgCell.swift in Sources */,
+				C525B06F2625A7B700E69D74 /* HomeScreenVC.swift in Sources */,
 				C5499BD8261F0EC4001FCFCA /* ProductPageVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
 				5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */,
 				5BFB12AB261F07C600FB655E /* OrdersVC.swift in Sources */,
 				C5B66791261C9D53000997D8 /* VerifyVC.swift in Sources */,
+				C525B0742625AB4500E69D74 /* AdvertiseCell.swift in Sources */,
 				5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

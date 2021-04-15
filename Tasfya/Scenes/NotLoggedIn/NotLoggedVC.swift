@@ -10,10 +10,10 @@ import UIKit
 class NotLoggedVC: UIViewController {
 	
 	
-	@IBAction func loginBtn(_ sender: Any) {
+	@IBAction func createAccountBtn(_ sender: Any) {
 	}
 	
-	@IBAction func createAccountBtn(_ sender: Any) {
+	@IBAction func continuAsGuestBtn(_ sender: Any) {
 	}
 	
 	

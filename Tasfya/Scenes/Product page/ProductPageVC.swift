@@ -13,11 +13,17 @@ class ProductPageVC: UIViewController {
 	@IBOutlet weak var SizeCollectionView: UICollectionView!
 	@IBOutlet weak var ColorCollectionView: UICollectionView!
 	@IBOutlet weak var PageController: UIPageControl!
+	@IBOutlet weak var productNameLbl: UILabel!
 	@IBOutlet weak var oldPriceLbl: UILabel!
 	@IBOutlet weak var newPriceLbl: UILabel!
 	
+	@IBAction func minCountBtn(_ sender: Any) {
+	}
+	
+	@IBAction func addCountBtn(_ sender: Any) {
+	}
+	
 	@IBAction func addToCartBtn(_ sender: Any) {
-		
 	}
 	
 	var timer : Timer?
@@ -49,7 +55,7 @@ class ProductPageVC: UIViewController {
 	
 	@objc func moveToNextIndex() {
 		currentCellIndex += 1
-			ProductImgCollectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+		ProductImgCollectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
 	}
 	
 }
@@ -58,53 +64,57 @@ class ProductPageVC: UIViewController {
 extension ProductPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		if collectionView == ProductImgCollectionView {
+		switch collectionView {
+		case ProductImgCollectionView:
 			return Int(Int16.max)
-		} else if collectionView == SizeCollectionView {
+		case SizeCollectionView:
 			return 20
-		} else if collectionView == ColorCollectionView {
+		case ColorCollectionView:
 			return 20
-		} else {
+		default:
 			return 0
 		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		if collectionView == ProductImgCollectionView {
+		switch collectionView {
+		case ProductImgCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductImgCell", for: indexPath) as! ProductImgCell
 			return cell
-		} else if collectionView == SizeCollectionView {
+		case SizeCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCell", for: indexPath) as! SizeCell
 			return cell
-		} else if collectionView == ColorCollectionView {
+		case ColorCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath)
 			cell.backgroundColor = .red
 			return cell
-		} else {
+		default:
 			return UICollectionViewCell()
 		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-		if collectionView == ProductImgCollectionView {
+		switch collectionView {
+		case ProductImgCollectionView:
 			return 0
-		} else if collectionView == SizeCollectionView {
+		case SizeCollectionView:
 			return 10
-		} else if collectionView == ColorCollectionView {
+		case ColorCollectionView:
 			return 10
-		} else {
+		default:
 			return 0
 		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		if collectionView == ProductImgCollectionView {
+		switch collectionView {
+		case ProductImgCollectionView:
 			return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-		} else if collectionView == SizeCollectionView {
+		case SizeCollectionView:
 			return CGSize(width: collectionView.frame.width / 6, height: collectionView.frame.height)
-		} else if collectionView == ColorCollectionView {
+		case ColorCollectionView:
 			return CGSize(width: collectionView.frame.width / 6, height: collectionView.frame.height)
-		} else {
+		default:
 			return CGSize()
 		}
 	}
