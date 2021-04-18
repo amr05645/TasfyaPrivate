@@ -11,35 +11,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="SizeCell" id="gTV-IL-0wX" customClass="SizeCell" customModule="Tasfya" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="419" height="228"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="gTV-IL-0wX" customClass="CategoryCell" customModule="Tasfya" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="419" height="228"/>
+                <rect key="frame" x="0.0" y="0.0" width="206" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxl" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="sg1-AO-iLc">
-                        <rect key="frame" x="10" y="0.0" width="399" height="228"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oq-ZQ-F4v">
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="40"/>
                         <color key="backgroundColor" name="darkBlue121A50"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="vpJ-GK-Z2p"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" name="darkBlue121A50"/>
             <constraints>
-                <constraint firstItem="sg1-AO-iLc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Tt-qW-QTP"/>
-                <constraint firstItem="sg1-AO-iLc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Mrc-1e-mSn"/>
-                <constraint firstAttribute="bottom" secondItem="sg1-AO-iLc" secondAttribute="bottom" id="Rzw-LP-1IM"/>
-                <constraint firstAttribute="trailing" secondItem="sg1-AO-iLc" secondAttribute="trailing" constant="10" id="WlO-9Q-3FZ"/>
+                <constraint firstAttribute="bottom" secondItem="4Oq-ZQ-F4v" secondAttribute="bottom" id="QY9-hw-gTN"/>
+                <constraint firstItem="4Oq-ZQ-F4v" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YN1-P1-XDi"/>
+                <constraint firstAttribute="trailing" secondItem="4Oq-ZQ-F4v" secondAttribute="trailing" id="epI-cM-heg"/>
+                <constraint firstItem="4Oq-ZQ-F4v" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sRo-KF-BsF"/>
             </constraints>
-            <size key="customSize" width="419" height="228"/>
+            <size key="customSize" width="206" height="50"/>
             <connections>
-                <outlet property="sizeLabel" destination="sg1-AO-iLc" id="6s1-bO-2PT"/>
+                <outlet property="categoryLbl" destination="4Oq-ZQ-F4v" id="QGr-WG-w4h"/>
             </connections>
-            <point key="canvasLocation" x="247.10144927536234" y="65.625"/>
+            <point key="canvasLocation" x="169.56521739130437" y="69.642857142857139"/>
         </collectionViewCell>
     </objects>
     <resources>

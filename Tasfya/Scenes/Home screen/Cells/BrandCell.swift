@@ -14,9 +14,15 @@ class BrandCell: UICollectionViewCell {
 	@IBOutlet weak var oldPriceLbl: UILabel!
 	@IBOutlet weak var brandLogoImg: UIImageView!
 	@IBOutlet weak var brandNameLbl: UILabel!
+	@IBOutlet weak var addproductBtn: UIButton!
+	
 	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+	
+	@IBAction func AddProduct(_ sender: Any) {
+	}
+	
 
 }

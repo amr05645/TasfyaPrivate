@@ -62,6 +62,7 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 			return cell
 		case brandsCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
+			cell.addproductBtn.isHidden = true
 			return cell
 		default :
 			return UICollectionViewCell()
@@ -88,7 +89,7 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		switch collectionView {
-		case adsCollectionView:
+		case brandsCollectionView:
 			return UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
 		default:
 			return UIEdgeInsets()
