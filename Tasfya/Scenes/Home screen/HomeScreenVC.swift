@@ -72,9 +72,14 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 	}
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = BrandPageVC()
-        vc.title = "Brand Name"
-        self.navigationController?.pushViewController(vc, animated: true)
+        switch collectionView {
+        case brandsCollectionView:
+            let vc = BrandPageVC()
+            vc.title = "Brand Name"
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            return
+        }
     }
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

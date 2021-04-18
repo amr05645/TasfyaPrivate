@@ -42,6 +42,14 @@ class SideMenuVC: UIViewController {
     private func addRoot() {
         navVC = UINavigationController(rootViewController: rootVC!)
         navVC.delegate = self
+        navVC.navigationBar.backgroundColor = .clear
+        navVC.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        // Sets shadow (line below the bar) to a blank image
+        navVC.navigationBar.shadowImage = UIImage()
+        // Sets the translucent background color
+        navVC.navigationBar.tintColor = #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
+        navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1) ]
+
         self.addChild(navVC)
         navVC.view.frame = containerView.bounds
         self.containerView.addSubview(navVC.view)
