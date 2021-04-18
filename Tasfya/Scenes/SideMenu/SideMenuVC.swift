@@ -41,6 +41,7 @@ class SideMenuVC: UIViewController {
     
     private func addRoot() {
         navVC = UINavigationController(rootViewController: rootVC!)
+        navVC.delegate = self
         self.addChild(navVC)
         navVC.view.frame = containerView.bounds
         self.containerView.addSubview(navVC.view)
@@ -145,5 +146,12 @@ extension SideMenuVC: SideMenuDelegate {
                        delay: 0, options: .curveEaseOut) {
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+extension SideMenuVC: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = item
     }
 }
