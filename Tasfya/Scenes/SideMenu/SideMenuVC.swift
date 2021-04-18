@@ -12,15 +12,15 @@ class SideMenuVC: UIViewController {
     var rootVC: UIViewController?
     private var navVC: UINavigationController!
     
-    let sideMenuTitles = [Constants.sideMenuTitles.profile, Constants.sideMenuTitles.settings, Constants.sideMenuTitles.location, Constants.sideMenuTitles.language, Constants.sideMenuTitles.contactUs]
+    let sideMenuTitles = [Constants.sideMenuTitles.home, Constants.sideMenuTitles.profile, Constants.sideMenuTitles.settings, Constants.sideMenuTitles.location, Constants.sideMenuTitles.language, Constants.sideMenuTitles.contactUs, Constants.sideMenuTitles.cart, Constants.sideMenuTitles.orders, Constants.sideMenuTitles.country]
     
-    let sidemMenuIcons: [String : UIImage] = [Constants.sideMenuTitles.profile : #imageLiteral(resourceName: "smallSideMenuProfileImage"), Constants.sideMenuTitles.settings: #imageLiteral(resourceName: "smallSettingsImage"), Constants.sideMenuTitles.location: #imageLiteral(resourceName: "sideMenuLocation"), Constants.sideMenuTitles.language: #imageLiteral(resourceName: "sideMenulanguage"), Constants.sideMenuTitles.contactUs: #imageLiteral(resourceName: "sideMenuContact")]
+    let sidemMenuIcons: [String : UIImage] = [Constants.sideMenuTitles.home: #imageLiteral(resourceName: "LoginImg"), Constants.sideMenuTitles.profile : #imageLiteral(resourceName: "smallSideMenuProfileImage"), Constants.sideMenuTitles.settings: #imageLiteral(resourceName: "smallSettingsImage"), Constants.sideMenuTitles.location: #imageLiteral(resourceName: "sideMenuLocation"), Constants.sideMenuTitles.language: #imageLiteral(resourceName: "sideMenulanguage"), Constants.sideMenuTitles.contactUs: #imageLiteral(resourceName: "sideMenuContact"), Constants.sideMenuTitles.cart: #imageLiteral(resourceName: "cart"), Constants.sideMenuTitles.orders: #imageLiteral(resourceName: "orders"), Constants.sideMenuTitles.country: #imageLiteral(resourceName: "country")]
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dimeView: UIView!
     @IBOutlet weak var sideMenuView: UIView!
-    @IBOutlet weak var sideMenueTrailing: NSLayoutConstraint!
+    @IBOutlet weak var sideMenueLeading: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +70,9 @@ class SideMenuVC: UIViewController {
     @objc private func handleSwipes(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case .left:
-            hideSideMenu()
-        case .right:
             showSideMenu()
+        case .right:
+            hideSideMenu()
         default:
             return
         }
@@ -97,6 +97,8 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         cell?.highLight(status: true)
         hideSideMenu()
         switch sideMenuTitles[indexPath.row] {
+        case Constants.sideMenuTitles.home:
+            self.navigationController?.popToRootViewController(animated: true)
         case Constants.sideMenuTitles.profile:
             navVC.pushViewController(AccountSettingsVC(), animated: true)
         case Constants.sideMenuTitles.settings:
@@ -105,13 +107,17 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
             navVC.pushViewController(AddressesVC(), animated: true)
         case Constants.sideMenuTitles.contactUs:
             navVC.pushViewController(ContactUsVC(), animated: true)
+        case Constants.sideMenuTitles.cart:
+            navVC.pushViewController(CartVC(), animated: true)
+        case Constants.sideMenuTitles.orders:
+            navVC.pushViewController(OrdersVC(), animated: true)
         default:
             return
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 8
+        return tableView.bounds.height / CGFloat(sideMenuTitles.count)
     }
 }
 
@@ -123,7 +129,7 @@ extension SideMenuVC: SideMenuDelegate {
     func showSideMenu() {
         tableView.reloadData()
         dimeView.isHidden = false
-        sideMenueTrailing.constant = -sideMenuView.bounds.width
+        sideMenueLeading.constant = -sideMenuView.bounds.width
         
         UIView.animate(withDuration: 0.3,
                        delay: 0, options: .curveEaseOut) {
@@ -133,7 +139,7 @@ extension SideMenuVC: SideMenuDelegate {
     
     func hideSideMenu() {
         dimeView.isHidden = true
-        sideMenueTrailing.constant = 0
+        sideMenueLeading.constant = 0
         
         UIView.animate(withDuration: 0.2,
                        delay: 0, options: .curveEaseOut) {

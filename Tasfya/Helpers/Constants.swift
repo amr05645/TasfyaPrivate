@@ -35,9 +35,13 @@ struct Colors {
 }
 
 struct SideMenuTitles {
+    var home: String {"Home"}
     var profile: String {"Profile"}
     var settings: String {"Settings"}
     var location: String {"Location"}
     var language: String {"Language"}
     var contactUs: String {"Contact Us"}
+    var cart: String {"Cart"}
+    var orders: String {"Orders"}
+    var country: String {"Country"}
 }

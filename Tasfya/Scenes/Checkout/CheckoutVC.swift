@@ -22,6 +22,12 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPayment(to: .cash)
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
     }
 
     func setPayment(to option: PaymentOptions) {

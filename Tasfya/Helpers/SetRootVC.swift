@@ -10,9 +10,7 @@ import UIKit
 func setRootVC(to viewController: UIViewController) -> UIViewController {
     let vc = viewController
     let sideMenu = SideMenuVC()
-    if let vc = vc as? BaseVC {
-        vc.delegate = sideMenu
-    }
     sideMenu.rootVC = vc
+    BaseVC.delegate = sideMenu
     return sideMenu
 }

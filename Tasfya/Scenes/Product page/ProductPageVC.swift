@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductPageVC: UIViewController {
+class ProductPageVC: BaseVC {
 	
 	@IBOutlet weak var ProductImgCollectionView: UICollectionView!
 	@IBOutlet weak var SizeCollectionView: UICollectionView!

@@ -34,6 +34,10 @@ extension OrdersVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(OrderDetailsVC(), animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.bounds.width

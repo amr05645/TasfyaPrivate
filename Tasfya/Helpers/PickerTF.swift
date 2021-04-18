@@ -42,8 +42,10 @@ class PickerTF: UITextField {
     private func setToolbar() {
         let bar = UIToolbar()
         let done = UIBarButtonItem(title: Constants.titles.done, style: .plain, target: self, action: #selector(doneAction))
+        done.tintColor = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancel = UIBarButtonItem(title: Constants.titles.cancel, style: .plain, target: self, action: #selector(cancelAction))
+        cancel.tintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         bar.items = [cancel, spacer, done]
         bar.sizeToFit()
         self.inputAccessoryView = bar

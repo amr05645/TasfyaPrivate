@@ -9,19 +9,19 @@ import UIKit
 
 class BaseVC: UIViewController {
     
-    weak var delegate: SideMenuDelegate?
+    static weak var delegate: SideMenuDelegate?
     private var languageTF: PickerTF?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setSideMenuBtn()
+        navigationItem.backButtonTitle = ""
         self.showLogo()
-        showLanguageBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        delegate?.addGestures()
+        BaseVC.delegate?.addGestures()
     }
     
     func showLogo() {
@@ -43,16 +43,16 @@ class BaseVC: UIViewController {
     }
     
     private func setSideMenuBtn() {
-        let leftBtn = UIButton()
-        leftBtn.setImage(#imageLiteral(resourceName: "sideMenuBtn"), for: .normal)
-        leftBtn.translatesAutoresizingMaskIntoConstraints = false
+        let menuBtn = UIButton()
+        menuBtn.setImage(#imageLiteral(resourceName: "sideMenuBtn"), for: .normal)
+        menuBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            leftBtn.widthAnchor.constraint(equalToConstant: 18),
-            leftBtn.heightAnchor.constraint(equalTo: leftBtn.widthAnchor)
+            menuBtn.widthAnchor.constraint(equalToConstant: 18),
+            menuBtn.heightAnchor.constraint(equalTo: menuBtn.widthAnchor)
         ])
         
-        leftBtn.addTarget(self, action: #selector(sideMenuTapped), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
+        menuBtn.addTarget(self, action: #selector(sideMenuTapped), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: menuBtn)
     }
     
     private func setLanguageBtn() {
@@ -60,16 +60,16 @@ class BaseVC: UIViewController {
         languageTF?.textAlignment = .right
         languageTF?.textColor = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
         languageTF?.font = languageTF!.font!.withSize(15)
-
+        languageTF?.tintColor = .clear
         languageTF?.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             languageTF!.widthAnchor.constraint(greaterThanOrEqualToConstant: 30)
         ])
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: languageTF!)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: languageTF!)
     }
     
     @objc private func sideMenuTapped() {
-        delegate?.showSideMenu()
+        BaseVC.delegate?.showSideMenu()
     }
 }

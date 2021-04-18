@@ -25,6 +25,7 @@ class CartVC: UIViewController {
     }
     
     @IBAction func buyTapped(_ sender: Any) {
+        self.navigationController?.pushViewController(CheckoutVC(), animated: true)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeScreenVC: UIViewController {
+class HomeScreenVC: BaseVC {
 	
 	var timer : Timer?
 	var currentCellIndex = 0
@@ -18,6 +18,7 @@ class HomeScreenVC: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        showLanguageBtn()
 		adsCollectionView.delegate = self
 		adsCollectionView.dataSource = self
 		brandsCollectionView.delegate = self
@@ -67,6 +68,10 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 			return UICollectionViewCell()
 		}
 	}
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(ProductPageVC(), animated: true)
+    }
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		switch collectionView {

@@ -24,6 +24,7 @@ class AddressesVC: UIViewController {
     }
     
     @IBAction func addAddressTapped(_ sender: Any) {
+        self.navigationController?.pushViewController(AddAddressVC(), animated: true)
     }
     
     
