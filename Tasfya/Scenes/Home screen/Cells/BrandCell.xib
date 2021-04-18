@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -85,20 +86,51 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-Ex-qBa">
                                 <rect key="frame" x="0.0" y="61" width="226" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="productPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-bw-z6y">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcc-NN-AS5">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="productPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-bw-z6y">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="aLg-DR-4vO"/>
+                                                    <constraint firstAttribute="width" secondItem="cg0-bw-z6y" secondAttribute="height" multiplier="1:1" id="uLR-lf-8w8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-zW-7iq">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" name="darkBlue121A50"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="AddProduct:" destination="gTV-IL-0wX" eventType="touchUpInside" id="XRS-cX-xx9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="aLg-DR-4vO"/>
-                                            <constraint firstAttribute="width" secondItem="cg0-bw-z6y" secondAttribute="height" multiplier="1:1" id="uLR-lf-8w8"/>
+                                            <constraint firstAttribute="width" secondItem="hcc-NN-AS5" secondAttribute="height" id="0Ce-Wj-phZ"/>
+                                            <constraint firstAttribute="width" constant="40" id="4vn-aA-8PQ"/>
+                                            <constraint firstItem="cg0-bw-z6y" firstAttribute="centerX" secondItem="hcc-NN-AS5" secondAttribute="centerX" id="A89-uD-lea"/>
+                                            <constraint firstAttribute="bottom" secondItem="hUk-zW-7iq" secondAttribute="bottom" id="DRo-6u-3Ak"/>
+                                            <constraint firstAttribute="trailing" secondItem="hUk-zW-7iq" secondAttribute="trailing" id="OUo-Sq-sKm"/>
+                                            <constraint firstItem="hUk-zW-7iq" firstAttribute="leading" secondItem="hcc-NN-AS5" secondAttribute="leading" id="VdD-ev-6QF"/>
+                                            <constraint firstItem="cg0-bw-z6y" firstAttribute="centerY" secondItem="hcc-NN-AS5" secondAttribute="centerY" id="fey-1x-zCf"/>
+                                            <constraint firstItem="hUk-zW-7iq" firstAttribute="top" secondItem="hcc-NN-AS5" secondAttribute="top" id="ue2-zv-sG2"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FrO-af-jKi">
                                         <rect key="frame" x="50" y="0.0" width="176" height="40"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" name="darkBlue121A50"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hcc-NN-AS5" secondAttribute="bottom" id="9yp-ls-zwv"/>
+                                    <constraint firstItem="hcc-NN-AS5" firstAttribute="top" secondItem="IZ1-Ex-qBa" secondAttribute="top" id="zQQ-vG-dFv"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>
@@ -117,6 +149,7 @@
             </constraints>
             <size key="customSize" width="226" height="327"/>
             <connections>
+                <outlet property="addproductBtn" destination="hUk-zW-7iq" id="bvO-Rz-Hqt"/>
                 <outlet property="brandLogoImg" destination="cg0-bw-z6y" id="sZq-o7-3qb"/>
                 <outlet property="brandNameLbl" destination="FrO-af-jKi" id="KY8-G3-U1G"/>
                 <outlet property="brandPhotoImg" destination="jPw-k7-ygE" id="wOl-da-sC8"/>
@@ -137,5 +170,8 @@
         <namedColor name="red B00020">
             <color red="0.68999999761581421" green="0.0" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

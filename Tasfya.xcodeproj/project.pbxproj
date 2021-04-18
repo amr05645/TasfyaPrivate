@@ -76,6 +76,10 @@
 		C5B66792261C9D53000997D8 /* VerifyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B66790261C9D53000997D8 /* VerifyVC.xib */; };
 		C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */; };
 		C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */; };
+		C5DD37442628541200FFDECB /* BrandPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD37422628541200FFDECB /* BrandPageVC.swift */; };
+		C5DD37452628541200FFDECB /* BrandPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5DD37432628541200FFDECB /* BrandPageVC.xib */; };
+		C5DD374A26286BC800FFDECB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DD374826286BC800FFDECB /* CategoryCell.swift */; };
+		C5DD374B26286BC800FFDECB /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5DD374926286BC800FFDECB /* CategoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +161,10 @@
 		C5B66790261C9D53000997D8 /* VerifyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyVC.xib; sourceTree = "<group>"; };
 		C5CFFC87261A05F70094AA9A /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
 		C5CFFC88261A05F70094AA9A /* AccountSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsVC.xib; sourceTree = "<group>"; };
+		C5DD37422628541200FFDECB /* BrandPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPageVC.swift; sourceTree = "<group>"; };
+		C5DD37432628541200FFDECB /* BrandPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandPageVC.xib; sourceTree = "<group>"; };
+		C5DD374826286BC800FFDECB /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		C5DD374926286BC800FFDECB /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasfya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -225,6 +233,8 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C5DD3741262853D900FFDECB /* BrandPage */,
+				C525B06C2625A78100E69D74 /* Home screen */,
 				5BFB1269261F054F00FB655E /* BaseVC.swift */,
 				C5CFFC80261A02B30094AA9A /* Account Settings */,
 				5B7DE3AF2627020400A1F320 /* AddAddress */,
@@ -537,6 +547,25 @@
 			path = "Account Settings";
 			sourceTree = "<group>";
 		};
+		C5DD3741262853D900FFDECB /* BrandPage */ = {
+			isa = PBXGroup;
+			children = (
+				C5DD374726286B9500FFDECB /* Cell */,
+				C5DD37422628541200FFDECB /* BrandPageVC.swift */,
+				C5DD37432628541200FFDECB /* BrandPageVC.xib */,
+			);
+			path = BrandPage;
+			sourceTree = "<group>";
+		};
+		C5DD374726286B9500FFDECB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C5DD374826286BC800FFDECB /* CategoryCell.swift */,
+				C5DD374926286BC800FFDECB /* CategoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -597,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B66788261C7490000997D8 /* LoginVC.xib in Resources */,
+				C5DD37452628541200FFDECB /* BrandPageVC.xib in Resources */,
 				C53CA9BC2620671D00B02340 /* SizeCell.xib in Resources */,
 				5BFB12AD261F07C600FB655E /* AddressCell.xib in Resources */,
 				5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */,
@@ -626,6 +656,7 @@
 				5B83D644261C8F2400A50228 /* ReturnOrderVC.xib in Resources */,
 				5B7413362625B171000A9A3A /* OrderDetailsVC.xib in Resources */,
 				5BFB12B0261F07C600FB655E /* AddressesVC.xib in Resources */,
+				C5DD374B26286BC800FFDECB /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +719,7 @@
 				5BFB12A8261F07C600FB655E /* FillInfoVC.swift in Sources */,
 				5B74132A2625985A000A9A3A /* CartCell.swift in Sources */,
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
+				C5DD37442628541200FFDECB /* BrandPageVC.swift in Sources */,
 				5B74132526259340000A9A3A /* CartVC.swift in Sources */,
 				5B7413352625B171000A9A3A /* OrderDetailsVC.swift in Sources */,
 				C53CA9BB2620671D00B02340 /* SizeCell.swift in Sources */,
@@ -696,6 +728,7 @@
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5BFB12AA261F07C600FB655E /* OrderCell.swift in Sources */,
 				5B74133B2625B46B000A9A3A /* OrderDetailsCell.swift in Sources */,
+				C5DD374A26286BC800FFDECB /* CategoryCell.swift in Sources */,
 				C5B66787261C7490000997D8 /* LoginVC.swift in Sources */,
 				5BFB12AF261F07C600FB655E /* AddressesVC.swift in Sources */,
 				C500DF2F261B526B00CF576E /* NotLoggedVC.swift in Sources */,
