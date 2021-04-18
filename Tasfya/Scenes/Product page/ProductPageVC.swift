@@ -120,8 +120,13 @@ extension ProductPageVC: UICollectionViewDelegate, UICollectionViewDataSource, U
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-		PageController.currentPage = indexPath.row % 5
-		currentCellIndex = indexPath.row
+        switch collectionView {
+        case ProductImgCollectionView:
+            PageController.currentPage = indexPath.row % 5
+            currentCellIndex = indexPath.row
+        default:
+            return
+        }
 	}
 	
 }

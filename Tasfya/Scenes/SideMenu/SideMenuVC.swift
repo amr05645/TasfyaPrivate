@@ -98,7 +98,7 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         hideSideMenu()
         switch sideMenuTitles[indexPath.row] {
         case Constants.sideMenuTitles.home:
-            self.navigationController?.popToRootViewController(animated: true)
+            navVC.popToRootViewController(animated: true)
         case Constants.sideMenuTitles.profile:
             navVC.pushViewController(AccountSettingsVC(), animated: true)
         case Constants.sideMenuTitles.settings:

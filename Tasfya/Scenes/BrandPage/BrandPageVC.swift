@@ -7,27 +7,34 @@
 
 import UIKit
 
-class BrandPageVC: UIViewController {
+class BrandPageVC: BaseVC {
+    
+    let categories = ["All", "Men", "Women", "Kids"]
+    var selectedCellIndexpth = IndexPath(item: 0, section: 0)
 	
 	@IBOutlet weak var brandImg: UIImageView!
-	
 	@IBOutlet weak var ProductCollectionView: UICollectionView!
 	@IBOutlet weak var CategoryCollectionView: UICollectionView!
 	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-			ProductCollectionView.delegate = self
-			ProductCollectionView.dataSource = self
-			CategoryCollectionView.delegate = self
-			CategoryCollectionView.dataSource = self
-			register()
+        ProductCollectionView.delegate = self
+        ProductCollectionView.dataSource = self
+        CategoryCollectionView.delegate = self
+        CategoryCollectionView.dataSource = self
+        register()
     }
 	
 	func register() {
 		ProductCollectionView.register(UINib(nibName: "BrandCell", bundle: nil), forCellWithReuseIdentifier: "BrandCell")
 		CategoryCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
 	}
+    
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 
 }
 
@@ -38,7 +45,7 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 		case ProductCollectionView:
 			return 20
 		case CategoryCollectionView:
-			return 10
+            return categories.count
 		default:
 			return 0
 		}
@@ -52,11 +59,33 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 			return cell
 		case CategoryCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            cell.categoryLbl.text = categories[indexPath.row]
+            cell.isSelected = indexPath.row == 0 ? true : false
 			return cell
 		default :
 			return UICollectionViewCell()
 		}
 	}
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch collectionView {
+        case ProductCollectionView:
+            self.navigationController?.pushViewController(ProductPageVC(), animated: true)
+        case CategoryCollectionView:
+            if let previousCell = collectionView.cellForItem(at: selectedCellIndexpth) as? CategoryCell {
+                previousCell.isSelected = false
+            }
+            
+            selectedCellIndexpth = indexPath
+            
+            if let currentCell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
+                currentCell.isSelected = true
+            }
+        default:
+            return
+        }
+    }
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		switch collectionView {

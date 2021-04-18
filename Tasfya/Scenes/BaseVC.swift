@@ -16,7 +16,6 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
         setSideMenuBtn()
         navigationItem.backButtonTitle = ""
-        self.showLogo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
