@@ -13,6 +13,10 @@ class LoginVC: UIViewController {
 	@IBOutlet weak var countryCodeTF: PickerTF!
 	@IBOutlet weak var phoneNumperTF: UITextField!
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+	
 	@IBAction func done(_ sender: UITextField) {
 		sender.resignFirstResponder()
 	}
@@ -24,10 +28,4 @@ class LoginVC: UIViewController {
 	@IBAction func sendCodeBtn(_ sender: Any) {
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-
 }

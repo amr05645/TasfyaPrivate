@@ -18,8 +18,8 @@ class HomeScreenVC: BaseVC {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        showLogo()
-        showLanguageBtn()
+		showLogo()
+		showLanguageBtn()
 		adsCollectionView.delegate = self
 		adsCollectionView.dataSource = self
 		brandsCollectionView.delegate = self
@@ -70,17 +70,17 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 			return UICollectionViewCell()
 		}
 	}
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch collectionView {
-        case brandsCollectionView:
-            let vc = BrandPageVC()
-            vc.title = "Brand Name"
-            self.navigationController?.pushViewController(vc, animated: true)
-        default:
-            return
-        }
-    }
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		switch collectionView {
+		case brandsCollectionView:
+			let vc = BrandPageVC()
+			vc.title = "Brand Name"
+			self.navigationController?.pushViewController(vc, animated: true)
+		default:
+			return
+		}
+	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		switch collectionView {

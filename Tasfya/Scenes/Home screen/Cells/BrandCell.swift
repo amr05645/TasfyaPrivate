@@ -8,7 +8,7 @@
 import UIKit
 
 class BrandCell: UICollectionViewCell {
-
+	
 	@IBOutlet weak var brandPhotoImg: UIImageView!
 	@IBOutlet weak var newPriceLbl: UILabel!
 	@IBOutlet weak var oldPriceLbl: UILabel!
@@ -17,12 +17,12 @@ class BrandCell: UICollectionViewCell {
 	@IBOutlet weak var addproductBtn: UIButton!
 	
 	override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+		super.awakeFromNib()
+		// Initialization code
+	}
 	
 	@IBAction func AddProduct(_ sender: Any) {
 	}
 	
-
+	
 }
