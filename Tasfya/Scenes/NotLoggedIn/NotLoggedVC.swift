@@ -9,6 +9,9 @@ import UIKit
 
 class NotLoggedVC: UIViewController {
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 	
 	@IBAction func createAccountBtn(_ sender: Any) {
 	}
@@ -17,10 +20,4 @@ class NotLoggedVC: UIViewController {
 	}
 	
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-
 }

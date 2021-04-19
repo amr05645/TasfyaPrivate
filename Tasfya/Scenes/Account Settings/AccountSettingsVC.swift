@@ -15,6 +15,10 @@ class AccountSettingsVC: UIViewController {
 	@IBOutlet weak var genderTF: UITextField!
 	@IBOutlet weak var countryTF: UITextField!
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+	
 	@IBAction func addAdressesBtn(_ sender: Any) {
 	}
 	
@@ -29,12 +33,4 @@ class AccountSettingsVC: UIViewController {
 		countryTF.isUserInteractionEnabled = true
 	}
 	
-	
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-
 }
