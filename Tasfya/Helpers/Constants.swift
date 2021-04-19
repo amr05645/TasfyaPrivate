@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 
 struct Constants {
     static let images = Images()
     static let titles = Titles()
     static let colors = Colors()
     static let sideMenuTitles = SideMenuTitles()
+    static let messages = Messages()
 }
 
 struct Images {
@@ -22,10 +25,15 @@ struct Images {
 
 struct Titles {
     var done: String {"Done"}
+    var ok: String {"Ok"}
     var cancel: String {"Cancel"}
     var orderID: String {"Order ID"}
     var orderDate: String {"Order Date"}
     var orderStatus: String {"Order Status"}
+}
+
+struct Messages {
+    var langAlert: String {"Kindly confirm changing current language to Arabic".localiz()}
 }
 
 struct Colors {

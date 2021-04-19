@@ -79,9 +79,9 @@ class SideMenuVC: UIViewController {
     @objc private func handleSwipes(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case .left:
-            showSideMenu()
+            LanguageHandler.getLanguage() == .en ? showSideMenu() : hideSideMenu()
         case .right:
-            hideSideMenu()
+            LanguageHandler.getLanguage() == .en ? hideSideMenu() : showSideMenu()
         default:
             return
         }

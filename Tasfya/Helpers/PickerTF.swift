@@ -9,6 +9,8 @@ import UIKit
 
 class PickerTF: UITextField {
     
+    var didSelect: ((String?) -> ())?
+    
     private var picker: UIPickerView?
     private var shadowLayer: CAShapeLayer!
     private var pickerData: [String]? {
@@ -53,7 +55,9 @@ class PickerTF: UITextField {
     
     @objc private func doneAction() {
         guard let picker = picker else {return}
-        self.text = pickerData?[picker.selectedRow(inComponent: 0)] ?? ""
+        let selectedTitle = pickerData?[picker.selectedRow(inComponent: 0)] ?? ""
+        self.text = selectedTitle
+        self.didSelect?(selectedTitle)
         self.resignFirstResponder()
     }
     

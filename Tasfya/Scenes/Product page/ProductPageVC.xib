@@ -16,6 +16,7 @@
                 <outlet property="PageController" destination="ADc-tf-YxG" id="qyL-jc-3vK"/>
                 <outlet property="ProductImgCollectionView" destination="pee-Iz-ph1" id="gJq-Jo-SXc"/>
                 <outlet property="SizeCollectionView" destination="uYf-WT-SVr" id="k6t-xe-9kx"/>
+                <outlet property="detailsLabel" destination="vi3-tu-fXQ" id="TX2-3F-YWl"/>
                 <outlet property="newPriceLbl" destination="fO1-Lh-Stq" id="9fJ-kZ-lh2"/>
                 <outlet property="oldPriceLbl" destination="nqX-sg-1KN" id="Bjf-6i-V4W"/>
                 <outlet property="productNameLbl" destination="WOU-vf-Qp4" id="ANV-1w-SBn"/>

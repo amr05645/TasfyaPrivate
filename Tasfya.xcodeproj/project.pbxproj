@@ -20,6 +20,10 @@
 		5B7413362625B171000A9A3A /* OrderDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7413342625B171000A9A3A /* OrderDetailsVC.xib */; };
 		5B74133B2625B46B000A9A3A /* OrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7413392625B46B000A9A3A /* OrderDetailsCell.swift */; };
 		5B74133C2625B46B000A9A3A /* OrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B74133A2625B46B000A9A3A /* OrderDetailsCell.xib */; };
+		5B785B09262D8A7600C6CA58 /* LanguageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */; };
+		5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B785B0B262D91DD00C6CA58 /* UICollectionView+Extension.swift */; };
+		5B785B0F262D9A3700C6CA58 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B785B0E262D9A3700C6CA58 /* UIViewController+Extension.swift */; };
+		5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B785B16262D9D3C00C6CA58 /* Localizable.strings */; };
 		5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */; };
 		5B7BD92A261B201800AF1253 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BD929261B201800AF1253 /* Constants.swift */; };
 		5B7DE39C2626EEC900A1F320 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */; };
@@ -100,6 +104,11 @@
 		5B7413342625B171000A9A3A /* OrderDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsVC.xib; sourceTree = "<group>"; };
 		5B7413392625B46B000A9A3A /* OrderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsCell.swift; sourceTree = "<group>"; };
 		5B74133A2625B46B000A9A3A /* OrderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsCell.xib; sourceTree = "<group>"; };
+		5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageHandler.swift; sourceTree = "<group>"; };
+		5B785B0B262D91DD00C6CA58 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		5B785B0E262D9A3700C6CA58 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		5B785B15262D9D3C00C6CA58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B785B18262D9D5000C6CA58 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		5B7BD929261B201800AF1253 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B7DE39A2626EEC900A1F320 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
@@ -263,6 +272,8 @@
 			children = (
 				5BFB1278261F065200FB655E /* UIImageView+Extension.swift */,
 				5B7BD926261B18B800AF1253 /* UITextField+Extension.swift */,
+				5B785B0B262D91DD00C6CA58 /* UICollectionView+Extension.swift */,
+				5B785B0E262D9A3700C6CA58 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +351,8 @@
 				5B83D656261C941B00A50228 /* ReusableView.swift */,
 				5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */,
 				5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */,
+				5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */,
+				5B785B16262D9D3C00C6CA58 /* Localizable.strings */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -608,6 +621,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 5B4F101B2619FD600031C7F9;
 			productRefGroup = 5B4F10252619FD600031C7F9 /* Products */;
@@ -637,6 +651,7 @@
 				5BFB12AC261F07C600FB655E /* OrdersVC.xib in Resources */,
 				5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */,
 				5B7DE3B32627021700A1F320 /* AddAddressVC.xib in Resources */,
+				5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */,
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				C525B0702625A7B700E69D74 /* HomeScreenVC.xib in Resources */,
@@ -724,6 +739,7 @@
 				C53CA9BB2620671D00B02340 /* SizeCell.swift in Sources */,
 				5B83D643261C8F2400A50228 /* ReturnOrderVC.swift in Sources */,
 				5B83D657261C941B00A50228 /* ReusableView.swift in Sources */,
+				5B785B0F262D9A3700C6CA58 /* UIViewController+Extension.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5BFB12AA261F07C600FB655E /* OrderCell.swift in Sources */,
 				5B74133B2625B46B000A9A3A /* OrderDetailsCell.swift in Sources */,
@@ -735,6 +751,7 @@
 				C525B07B2625B2CE00E69D74 /* BrandCell.swift in Sources */,
 				5B83D637261C7B3000A50228 /* ComplainVC.swift in Sources */,
 				5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */,
+				5B785B09262D8A7600C6CA58 /* LanguageHandler.swift in Sources */,
 				5B7DE3B22627021700A1F320 /* AddAddressVC.swift in Sources */,
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
 				5B83D62F261C6BA600A50228 /* ContactUsVC.swift in Sources */,
@@ -743,6 +760,7 @@
 				C525B06F2625A7B700E69D74 /* HomeScreenVC.swift in Sources */,
 				C5499BD8261F0EC4001FCFCA /* ProductPageVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
+				5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */,
 				5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */,
 				5BFB12AB261F07C600FB655E /* OrdersVC.swift in Sources */,
 				C5B66791261C9D53000997D8 /* VerifyVC.swift in Sources */,
@@ -762,6 +780,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		5B785B16262D9D3C00C6CA58 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B785B15262D9D3C00C6CA58 /* en */,
+				5B785B18262D9D5000C6CA58 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -769,6 +796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -830,6 +858,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

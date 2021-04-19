@@ -16,7 +16,9 @@ class ProductPageVC: BaseVC {
 	@IBOutlet weak var productNameLbl: UILabel!
 	@IBOutlet weak var oldPriceLbl: UILabel!
 	@IBOutlet weak var newPriceLbl: UILabel!
-	
+    
+    @IBOutlet weak var detailsLabel: UILabel!
+    
 	@IBAction func minCountBtn(_ sender: Any) {
 	}
 	
@@ -41,6 +43,8 @@ class ProductPageVC: BaseVC {
 		PageController.numberOfPages = 5
 		register()
 		startTimer()
+        let language = LanguageHandler.getLanguage()
+        detailsLabel.textAlignment = language == .ar ? .right : .left
 	}
 	
 	func register() {

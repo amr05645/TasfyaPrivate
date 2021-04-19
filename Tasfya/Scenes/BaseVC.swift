@@ -10,12 +10,13 @@ import UIKit
 class BaseVC: UIViewController {
     
     static weak var delegate: SideMenuDelegate?
-    private var languageTF: PickerTF?
+    var selectedLanguage = LanguageHandler.getLanguage()
+    let langBtn = UIButton()
+//    private var languageTF: PickerTF?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setSideMenuBtn()
-        navigationItem.backButtonTitle = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,9 +36,15 @@ class BaseVC: UIViewController {
     }
     
     func showLanguageBtn() {
-        let languages = ["En","عربي"]
-        self.languageTF = PickerTF()
-        languageTF?.setInputPickerData(to: languages)
+        langBtn.setTitleColor(#colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1), for: .normal)
+        switch selectedLanguage {
+        case .ar:
+            langBtn.setTitle("En", for: .normal)
+        case .en:
+            langBtn.setTitle("عربي", for: .normal)
+        default:
+            return
+        }
         setLanguageBtn()
     }
     
@@ -55,20 +62,31 @@ class BaseVC: UIViewController {
     }
     
     private func setLanguageBtn() {
-        languageTF?.text = "عربي"
-        languageTF?.textAlignment = .right
-        languageTF?.textColor = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
-        languageTF?.font = languageTF!.font!.withSize(15)
-        languageTF?.tintColor = .clear
-        languageTF?.translatesAutoresizingMaskIntoConstraints = false
+        
+        langBtn.addTarget(self, action: #selector(langBtnTapped), for: .touchUpInside)
+        langBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            languageTF!.widthAnchor.constraint(greaterThanOrEqualToConstant: 30)
+            langBtn.widthAnchor.constraint(greaterThanOrEqualToConstant: 30)
         ])
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: languageTF!)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: langBtn)
     }
     
     @objc private func sideMenuTapped() {
         BaseVC.delegate?.showSideMenu()
+    }
+    
+    @objc private func langBtnTapped() {
+        
+        self.showAlert(message: Constants.messages.langAlert) {
+            switch self.selectedLanguage {
+            case .ar:
+                LanguageHandler.changeLanguage(to: .en)
+            case .en:
+                LanguageHandler.changeLanguage(to: .ar)
+            default:
+                return
+            }
+        }
     }
 }

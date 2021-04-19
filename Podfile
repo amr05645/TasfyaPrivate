@@ -8,5 +8,5 @@ target 'Tasfya' do
   # Pods for Tasfya
   pod 'IQKeyboardManagerSwift'
 	pod "KWVerificationCodeView"
-
+  pod 'LanguageManager-iOS'
 end
