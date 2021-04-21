@@ -8,6 +8,8 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    var delegate: NavigationDelegate?
 	
 	@IBOutlet weak var flagImg: UIImageView!
 	@IBOutlet weak var countryCodeTF: PickerTF!
@@ -26,6 +28,16 @@ class LoginVC: UIViewController {
 	}
 	
 	@IBAction func sendCodeBtn(_ sender: Any) {
-	}
-	
+        let vc = VerifyVC()
+        self.addChild(vc)
+        vc.view.frame = self.view.bounds
+        self.view.addSubview(vc.view)
+        vc.didMove(toParent: self)
+    }
+    
+    @IBAction func fastOrderTapped(_ sender: Any) {
+        delegate?.goto(FillInfoVC())
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

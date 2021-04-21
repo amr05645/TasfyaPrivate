@@ -52,4 +52,6 @@ struct SideMenuTitles {
     var cart: String {"Cart"}
     var orders: String {"Orders"}
     var country: String {"Country"}
+    var login: String {"Login / Sign Up"}
+    var logout: String {"Logout"}
 }

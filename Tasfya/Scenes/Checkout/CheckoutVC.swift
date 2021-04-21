@@ -22,6 +22,10 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPayment(to: .cash)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = .white
     }
     
@@ -56,5 +60,6 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func checkoutTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

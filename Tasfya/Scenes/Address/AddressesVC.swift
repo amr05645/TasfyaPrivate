@@ -13,6 +13,8 @@ class AddressesVC: UIViewController {
     
     var addresses = [1, 2, 3, 4, 5]
     
+    var checkout = false
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
 
@@ -72,6 +74,10 @@ extension AddressesVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
         
         if let currentCell = collectionView.cellForItem(at: indexPath) as? AddressCell {
             currentCell.isSelected = true
+        }
+        
+        if checkout {
+            self.navigationController?.pushViewController(CheckoutVC(), animated: true)
         }
     }
 }

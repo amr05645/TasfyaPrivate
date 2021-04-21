@@ -12,9 +12,9 @@ class SideMenuVC: UIViewController {
     var rootVC: UIViewController?
     private var navVC: UINavigationController!
     
-    let sideMenuTitles = [Constants.sideMenuTitles.home, Constants.sideMenuTitles.profile, Constants.sideMenuTitles.settings, Constants.sideMenuTitles.location, Constants.sideMenuTitles.language, Constants.sideMenuTitles.contactUs, Constants.sideMenuTitles.cart, Constants.sideMenuTitles.orders, Constants.sideMenuTitles.country]
+    private var sideMenuTitles = [Constants.sideMenuTitles.home, Constants.sideMenuTitles.profile, Constants.sideMenuTitles.settings, Constants.sideMenuTitles.location, Constants.sideMenuTitles.language, Constants.sideMenuTitles.contactUs, Constants.sideMenuTitles.cart, Constants.sideMenuTitles.orders, Constants.sideMenuTitles.country, Constants.sideMenuTitles.login]
     
-    let sidemMenuIcons: [String : UIImage] = [Constants.sideMenuTitles.home: #imageLiteral(resourceName: "LoginImg"), Constants.sideMenuTitles.profile : #imageLiteral(resourceName: "smallSideMenuProfileImage"), Constants.sideMenuTitles.settings: #imageLiteral(resourceName: "smallSettingsImage"), Constants.sideMenuTitles.location: #imageLiteral(resourceName: "sideMenuLocation"), Constants.sideMenuTitles.language: #imageLiteral(resourceName: "sideMenulanguage"), Constants.sideMenuTitles.contactUs: #imageLiteral(resourceName: "sideMenuContact"), Constants.sideMenuTitles.cart: #imageLiteral(resourceName: "cart"), Constants.sideMenuTitles.orders: #imageLiteral(resourceName: "orders"), Constants.sideMenuTitles.country: #imageLiteral(resourceName: "country")]
+    private let sidemMenuIcons: [String : UIImage] = [Constants.sideMenuTitles.home: #imageLiteral(resourceName: "LoginImg"), Constants.sideMenuTitles.profile : #imageLiteral(resourceName: "smallSideMenuProfileImage"), Constants.sideMenuTitles.settings: #imageLiteral(resourceName: "smallSettingsImage"), Constants.sideMenuTitles.location: #imageLiteral(resourceName: "sideMenuLocation"), Constants.sideMenuTitles.language: #imageLiteral(resourceName: "sideMenulanguage"), Constants.sideMenuTitles.contactUs: #imageLiteral(resourceName: "sideMenuContact"), Constants.sideMenuTitles.cart: #imageLiteral(resourceName: "cart"), Constants.sideMenuTitles.orders: #imageLiteral(resourceName: "orders"), Constants.sideMenuTitles.country: #imageLiteral(resourceName: "country")]
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
@@ -27,6 +27,12 @@ class SideMenuVC: UIViewController {
         addRoot()
         setTableView()
         addTapGesture()
+        configureSidemenu()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        configureSidemenu()
     }
     
     private func setTableView() {
@@ -54,6 +60,15 @@ class SideMenuVC: UIViewController {
         navVC.view.frame = containerView.bounds
         self.containerView.addSubview(navVC.view)
         navVC.didMove(toParent: self)
+    }
+    
+    private func configureSidemenu() {
+        sideMenuTitles.removeLast()
+        if CurrentUser.logged {
+            sideMenuTitles.append(Constants.sideMenuTitles.logout)
+        } else {
+            sideMenuTitles.append(Constants.sideMenuTitles.login)
+        }
     }
     
     private func addTapGesture() {
@@ -120,6 +135,10 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
             navVC.pushViewController(CartVC(), animated: true)
         case Constants.sideMenuTitles.orders:
             navVC.pushViewController(OrdersVC(), animated: true)
+        case Constants.sideMenuTitles.login:
+            present(LoginVC(), animated: true, completion: nil)
+        case Constants.sideMenuTitles.logout:
+            CurrentUser.logout()
         default:
             return
         }
@@ -159,7 +178,7 @@ extension SideMenuVC: SideMenuDelegate {
 
 extension SideMenuVC: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        let item = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         viewController.navigationItem.backBarButtonItem = item
     }
 }

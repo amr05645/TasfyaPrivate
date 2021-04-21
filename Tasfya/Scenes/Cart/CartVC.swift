@@ -25,7 +25,16 @@ class CartVC: UIViewController {
     }
     
     @IBAction func buyTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(CheckoutVC(), animated: true)
+        if CurrentUser.logged {
+            let vc = AddressesVC()
+            vc.checkout = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            #warning("handle navigation for logged in user but with no data provided")
+        } else {
+            let vc = LoginVC()
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -37,5 +46,11 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartCell.reuseIdentifier, for: indexPath) as! CartCell
         return cell
+    }
+}
+
+extension CartVC: NavigationDelegate {
+    func goto(_ viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

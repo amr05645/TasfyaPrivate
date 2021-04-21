@@ -13,13 +13,12 @@ class FillInfoVC: BaseVC {
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var countryTF: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    @IBAction func createTapped(_ sender: Any) {
-        
+    @IBAction func confirmTapped(_ sender: Any) {
+        self.navigationController?.pushViewController(CheckoutVC(), animated: true)
     }
 }

@@ -20,12 +20,7 @@ class VerifyVC: UIViewController{
 	@IBOutlet weak var verifingTF: KWVerificationCodeView!
 	@IBOutlet weak var sendAgainBtn: UIButton!
 	
-	@IBAction func sendCodeBtn(_ sender: Any) {
-		
-	}
 	
-	@IBAction func loginBtn(_ sender: Any) {
-	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,6 +29,15 @@ class VerifyVC: UIViewController{
 		startTimer()
 		setAttributedBtn()
 	}
+    
+    @IBAction func sendCodeBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func loginBtn(_ sender: Any) {
+        CurrentUser.login()
+        self.dismiss(animated: true, completion: nil)
+    }
 	
 	
 	func startTimer() {

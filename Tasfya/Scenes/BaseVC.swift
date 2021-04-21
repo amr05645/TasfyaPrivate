@@ -16,7 +16,7 @@ class BaseVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSideMenuBtn()
+        setRightButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +48,11 @@ class BaseVC: UIViewController {
         setLanguageBtn()
     }
     
-    private func setSideMenuBtn() {
+    func setRightButtons() {
+        self.navigationItem.rightBarButtonItems = [setSideMenuBtn(), setCartBtn()]
+    }
+    
+    private func setSideMenuBtn() -> UIBarButtonItem {
         let menuBtn = UIButton()
         menuBtn.setImage(#imageLiteral(resourceName: "sideMenuBtn"), for: .normal)
         menuBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +62,26 @@ class BaseVC: UIViewController {
         ])
         
         menuBtn.addTarget(self, action: #selector(sideMenuTapped), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: menuBtn)
+        return UIBarButtonItem(customView: menuBtn)
+    }
+    
+    func setCartBtn() -> UIBarButtonItem {
+        let cartImage = UIImageView(image: #imageLiteral(resourceName: "cart"))
+        cartImage.imageTint = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
+        let cartBtn = UIButton()
+        cartBtn.addSubview(cartImage)
+        
+        cartImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cartImage.widthAnchor.constraint(equalToConstant: 18),
+            cartImage.heightAnchor.constraint(equalTo: cartImage.widthAnchor),
+            cartImage.centerXAnchor.constraint(equalTo: cartBtn.centerXAnchor),
+            cartImage.centerYAnchor.constraint(equalTo: cartBtn.centerYAnchor)
+        ])
+        
+        cartBtn.addTarget(self, action: #selector(cartTapped), for: .touchUpInside)
+        
+        return UIBarButtonItem(customView: cartBtn)
     }
     
     private func setLanguageBtn() {
@@ -74,6 +97,10 @@ class BaseVC: UIViewController {
     
     @objc private func sideMenuTapped() {
         BaseVC.delegate?.showSideMenu()
+    }
+    
+    @objc private func cartTapped() {
+        self.navigationController?.pushViewController(CartVC(), animated: true)
     }
     
     @objc private func langBtnTapped() {

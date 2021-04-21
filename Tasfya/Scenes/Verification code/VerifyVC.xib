@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -73,7 +73,7 @@
                         <constraint firstAttribute="height" constant="80" id="5eZ-Jh-RTp"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                    <state key="normal" title="Login">
+                    <state key="normal" title="Verify Code">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -95,7 +95,6 @@
             <constraints>
                 <constraint firstItem="buu-Fs-Eah" firstAttribute="leading" secondItem="3Vi-QR-fzq" secondAttribute="leading" id="1Ud-T1-Plw"/>
                 <constraint firstItem="3Vi-QR-fzq" firstAttribute="top" secondItem="mcd-9v-b4x" secondAttribute="bottom" constant="7.5" id="3dd-UC-UQW"/>
-                <constraint firstItem="mcd-9v-b4x" firstAttribute="trailing" secondItem="e9u-Na-iLM" secondAttribute="trailing" id="4Oi-jl-zjw"/>
                 <constraint firstItem="RdG-uR-JeV" firstAttribute="leading" secondItem="buu-Fs-Eah" secondAttribute="leading" id="5BE-zF-T9I"/>
                 <constraint firstItem="mcd-9v-b4x" firstAttribute="leading" secondItem="e9u-Na-iLM" secondAttribute="leading" id="5Sl-pP-bpo"/>
                 <constraint firstItem="qUj-uG-ziv" firstAttribute="leading" secondItem="buu-Fs-Eah" secondAttribute="leading" id="5Ve-Vv-dNB"/>
@@ -105,19 +104,16 @@
                 <constraint firstItem="e9u-Na-iLM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="KHz-2b-JZN"/>
                 <constraint firstItem="3Vi-QR-fzq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NQa-fT-2sI"/>
                 <constraint firstItem="mcd-9v-b4x" firstAttribute="top" secondItem="e9u-Na-iLM" secondAttribute="bottom" constant="40" id="Nmn-7p-duQ"/>
-                <constraint firstItem="3Vi-QR-fzq" firstAttribute="trailing" secondItem="mcd-9v-b4x" secondAttribute="trailing" id="QiH-c1-33s"/>
                 <constraint firstItem="RdG-uR-JeV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="buu-Fs-Eah" secondAttribute="bottom" constant="20" id="SrG-2a-AUE"/>
                 <constraint firstItem="e9u-Na-iLM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Vn7-dc-EQf"/>
                 <constraint firstItem="buu-Fs-Eah" firstAttribute="top" secondItem="3Vi-QR-fzq" secondAttribute="bottom" constant="40" id="W1m-9q-bgq"/>
                 <constraint firstItem="buu-Fs-Eah" firstAttribute="trailing" secondItem="3Vi-QR-fzq" secondAttribute="trailing" id="Yeo-4g-Q4t"/>
                 <constraint firstItem="3Vi-QR-fzq" firstAttribute="leading" secondItem="mcd-9v-b4x" secondAttribute="leading" id="YyA-0V-ZcP"/>
-                <constraint firstItem="RdG-uR-JeV" firstAttribute="trailing" secondItem="buu-Fs-Eah" secondAttribute="trailing" id="fuf-wM-orK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RdG-uR-JeV" secondAttribute="bottom" constant="60" id="m4d-t6-0HY"/>
                 <constraint firstItem="mcd-9v-b4x" firstAttribute="centerX" secondItem="e9u-Na-iLM" secondAttribute="centerX" id="m6x-kj-u6H"/>
                 <constraint firstItem="qUj-uG-ziv" firstAttribute="top" secondItem="buu-Fs-Eah" secondAttribute="top" id="oR9-9z-ISd"/>
                 <constraint firstItem="qUj-uG-ziv" firstAttribute="centerX" secondItem="buu-Fs-Eah" secondAttribute="centerX" id="p3A-rU-Tgw"/>
                 <constraint firstItem="e9u-Na-iLM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="q2K-AT-UZz"/>
-                <constraint firstItem="qUj-uG-ziv" firstAttribute="trailing" secondItem="buu-Fs-Eah" secondAttribute="trailing" id="sDn-NB-Hpa"/>
                 <constraint firstItem="RdG-uR-JeV" firstAttribute="centerX" secondItem="buu-Fs-Eah" secondAttribute="centerX" id="uLB-4V-9UP"/>
             </constraints>
             <point key="canvasLocation" x="-606" y="66"/>
