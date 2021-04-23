@@ -9,6 +9,14 @@ import UIKit
 
 class ProductPageVC: BaseVC {
 	
+	var count: Int? {
+			didSet {
+					amountLbl.text = "\(count ?? 0)"
+			}
+	}
+	
+	var max = 10
+	
 	@IBOutlet weak var ProductImgCollectionView: UICollectionView!
 	@IBOutlet weak var SizeCollectionView: UICollectionView!
 	@IBOutlet weak var ColorCollectionView: UICollectionView!
@@ -16,17 +24,8 @@ class ProductPageVC: BaseVC {
 	@IBOutlet weak var productNameLbl: UILabel!
 	@IBOutlet weak var oldPriceLbl: UILabel!
 	@IBOutlet weak var newPriceLbl: UILabel!
-    
-    @IBOutlet weak var detailsLabel: UILabel!
-    
-	@IBAction func minCountBtn(_ sender: Any) {
-	}
-	
-	@IBAction func addCountBtn(_ sender: Any) {
-	}
-	
-	@IBAction func addToCartBtn(_ sender: Any) {
-	}
+	@IBOutlet weak var detailsLabel: UILabel!
+	@IBOutlet weak var amountLbl: UILabel!
 	
 	var timer : Timer?
 	var currentCellIndex = 0
@@ -41,10 +40,25 @@ class ProductPageVC: BaseVC {
 		ColorCollectionView.delegate = self
 		ColorCollectionView.dataSource = self
 		PageController.numberOfPages = 5
+		count = 1
+		amountLbl.text = "\(count ?? 0)"
 		register()
 		startTimer()
         let language = LanguageHandler.getLanguage()
         detailsLabel.textAlignment = language == .ar ? .right : .left
+	}
+	
+	@IBAction func minCountBtn(_ sender: Any) {
+		guard count! > 1 else {return}
+				count! -= 1
+	}
+	
+	@IBAction func addCountBtn(_ sender: Any) {
+		guard count! < max else {return}
+				count! += 1
+	}
+	
+	@IBAction func addToCartBtn(_ sender: Any) {
 	}
 	
 	func register() {
