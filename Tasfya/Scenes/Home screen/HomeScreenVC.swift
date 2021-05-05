@@ -27,6 +27,7 @@ class HomeScreenVC: BaseVC {
 		pageContrl.numberOfPages = 5
 		register()
 		startTimer()
+		refreshcollectionView()
 	}
 	
 	func register() {
@@ -41,6 +42,17 @@ class HomeScreenVC: BaseVC {
 	@objc func moveToNextIndex() {
 		currentCellIndex += 1
 		adsCollectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+	}
+	
+	func refreshcollectionView() {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(refreshment), for: .valueChanged)
+		brandsCollectionView.refreshControl = refreshControl
+	}
+	
+	@objc func refreshment(refreshControl: UIRefreshControl) {
+		print("refresh done")
+		refreshControl.endRefreshing()
 	}
 	
 }
