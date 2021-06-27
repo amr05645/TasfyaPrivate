@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,9 +19,9 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxl" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sg1-AO-iLc">
-                        <rect key="frame" x="10" y="0.0" width="399" height="228"/>
+                        <rect key="frame" x="196.5" y="105" width="26.5" height="18"/>
                         <color key="backgroundColor" name="darkBlue121A50"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -30,10 +30,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" name="darkBlue121A50"/>
             <constraints>
-                <constraint firstItem="sg1-AO-iLc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Tt-qW-QTP"/>
-                <constraint firstItem="sg1-AO-iLc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Mrc-1e-mSn"/>
-                <constraint firstAttribute="bottom" secondItem="sg1-AO-iLc" secondAttribute="bottom" id="Rzw-LP-1IM"/>
-                <constraint firstAttribute="trailing" secondItem="sg1-AO-iLc" secondAttribute="trailing" constant="10" id="WlO-9Q-3FZ"/>
+                <constraint firstItem="sg1-AO-iLc" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3g0-ID-ReN"/>
+                <constraint firstItem="sg1-AO-iLc" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="fXu-rr-3nw"/>
             </constraints>
             <size key="customSize" width="419" height="228"/>
             <connections>

@@ -57,7 +57,7 @@ class VerifyVC: UIViewController{
 	
 	func setAttributedBtn() {
 		btnTitle = "Send again in \(totalTime) sec "
-		attributedTitle = NSMutableAttributedString(string: btnTitle, attributes: [NSAttributedString.Key.font:UIFont(name: "System Font Regular",size: 25)!])
+		attributedTitle = NSMutableAttributedString(string: btnTitle, attributes: [NSAttributedString.Key.font:UIFont(name: "System Font Regular",size: 20)!])
 		
 		attributedTitle.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1), range: NSRange(location: 0, length: 13))
 		

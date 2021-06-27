@@ -11,12 +11,17 @@ import LanguageManager_iOS
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        setNavBar()
         IQKeyboardManager.shared.enable = true
         LanguageManager.shared.defaultLanguage = .deviceLanguage
+        self.window = UIWindow()
+        window?.rootViewController = setRootVC(to: HomeScreenVC())
+        window?.makeKeyAndVisible()
         return true
     }
 

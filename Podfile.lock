@@ -1,20 +1,24 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.6)
   - KWVerificationCodeView (0.4.0)
+  - LanguageManager-iOS (1.2.3)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KWVerificationCodeView
+  - LanguageManager-iOS
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
     - KWVerificationCodeView
+    - LanguageManager-iOS
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
+  LanguageManager-iOS: 020a6849c97949683926773fd5b82baceaa142db
 
-PODFILE CHECKSUM: 73e03b8e4132a58878f54cbaa32ee586b8ecd3fd
+PODFILE CHECKSUM: 4b8932bcf50f4103b18afb84262d4add72c9e593
 
 COCOAPODS: 1.10.1

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="adsCollectionView" destination="lZY-7l-e15" id="ElW-Y0-e39"/>
                 <outlet property="brandsCollectionView" destination="B8e-Uc-SDc" id="Gfa-Bh-LhT"/>
+                <outlet property="header" destination="k4H-FC-oR6" id="crW-Va-aQ3"/>
                 <outlet property="pageContrl" destination="LkY-z7-490" id="LH8-5h-iah"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,29 +24,46 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-7l-e15">
-                    <rect key="frame" x="20" y="64" width="374" height="160"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4H-FC-oR6">
+                    <rect key="frame" x="20" y="54" width="374" height="241"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-7l-e15">
+                            <rect key="frame" x="0.0" y="20" width="374" height="160"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="3zt-At-Q7T"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gpG-ZP-X28">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LkY-z7-490">
+                            <rect key="frame" x="126.5" y="188" width="121.5" height="28"/>
+                            <color key="pageIndicatorTintColor" name="SelectionColor - #B8B8B8"/>
+                            <color key="currentPageIndicatorTintColor" name="darkBlue121A50"/>
+                        </pageControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-ep-EHV">
+                            <rect key="frame" x="0.0" y="224" width="374" height="7"/>
+                            <color key="backgroundColor" name="darkBlue121A50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="7" id="hlL-kz-gvC"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="160" id="3zt-At-Q7T"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gpG-ZP-X28">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LkY-z7-490">
-                    <rect key="frame" x="145.5" y="232" width="123" height="28"/>
-                    <color key="pageIndicatorTintColor" name="SelectionColor - #B8B8B8"/>
-                    <color key="currentPageIndicatorTintColor" name="darkBlue121A50"/>
-                </pageControl>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-ep-EHV">
-                    <rect key="frame" x="20" y="268" width="374" height="7"/>
-                    <color key="backgroundColor" name="darkBlue121A50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="7" id="hlL-kz-gvC"/>
+                        <constraint firstItem="DZ8-ep-EHV" firstAttribute="leading" secondItem="lZY-7l-e15" secondAttribute="leading" id="FZU-CU-yiT"/>
+                        <constraint firstItem="DZ8-ep-EHV" firstAttribute="trailing" secondItem="lZY-7l-e15" secondAttribute="trailing" id="HX0-EN-uB9"/>
+                        <constraint firstAttribute="trailing" secondItem="DZ8-ep-EHV" secondAttribute="trailing" id="Li8-fY-J1K"/>
+                        <constraint firstItem="lZY-7l-e15" firstAttribute="top" secondItem="k4H-FC-oR6" secondAttribute="top" constant="20" id="NIW-w7-4Gv"/>
+                        <constraint firstItem="LkY-z7-490" firstAttribute="top" secondItem="lZY-7l-e15" secondAttribute="bottom" constant="8" symbolic="YES" id="SFT-xG-5uq"/>
+                        <constraint firstItem="LkY-z7-490" firstAttribute="centerX" secondItem="lZY-7l-e15" secondAttribute="centerX" id="Sh1-3M-4I2"/>
+                        <constraint firstItem="DZ8-ep-EHV" firstAttribute="top" secondItem="LkY-z7-490" secondAttribute="bottom" constant="8" symbolic="YES" id="aS0-8J-yqK"/>
+                        <constraint firstItem="DZ8-ep-EHV" firstAttribute="leading" secondItem="k4H-FC-oR6" secondAttribute="leading" id="epH-48-xjq"/>
+                        <constraint firstAttribute="bottom" secondItem="DZ8-ep-EHV" secondAttribute="bottom" constant="10" id="tpv-hz-klj"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="B8e-Uc-SDc">
@@ -62,21 +80,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="lZY-7l-e15" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3y8-7F-t31"/>
-                <constraint firstItem="LkY-z7-490" firstAttribute="top" secondItem="lZY-7l-e15" secondAttribute="bottom" constant="8" symbolic="YES" id="9Jm-Ao-SJf"/>
-                <constraint firstItem="B8e-Uc-SDc" firstAttribute="trailing" secondItem="DZ8-ep-EHV" secondAttribute="trailing" id="Ejn-j5-2r5"/>
-                <constraint firstItem="B8e-Uc-SDc" firstAttribute="leading" secondItem="DZ8-ep-EHV" secondAttribute="leading" id="LMV-jN-xBD"/>
-                <constraint firstItem="DZ8-ep-EHV" firstAttribute="trailing" secondItem="lZY-7l-e15" secondAttribute="trailing" id="PGR-8v-AGr"/>
-                <constraint firstItem="DZ8-ep-EHV" firstAttribute="leading" secondItem="lZY-7l-e15" secondAttribute="leading" id="RrO-aP-IV5"/>
-                <constraint firstItem="B8e-Uc-SDc" firstAttribute="top" secondItem="DZ8-ep-EHV" secondAttribute="bottom" constant="20" id="RuG-Sg-eoo"/>
-                <constraint firstItem="lZY-7l-e15" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WSm-xo-C8W"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lZY-7l-e15" secondAttribute="trailing" constant="20" id="YvN-O6-rP7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B8e-Uc-SDc" secondAttribute="bottom" constant="20" id="ZRc-Ua-ULN"/>
-                <constraint firstItem="lZY-7l-e15" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="ZTC-F3-btI"/>
-                <constraint firstItem="B8e-Uc-SDc" firstAttribute="centerX" secondItem="DZ8-ep-EHV" secondAttribute="centerX" id="bZw-zT-i62"/>
-                <constraint firstItem="LkY-z7-490" firstAttribute="centerX" secondItem="lZY-7l-e15" secondAttribute="centerX" id="cJJ-au-cZz"/>
-                <constraint firstItem="DZ8-ep-EHV" firstAttribute="top" secondItem="LkY-z7-490" secondAttribute="bottom" constant="8" symbolic="YES" id="cUV-Ki-6x0"/>
-                <constraint firstItem="DZ8-ep-EHV" firstAttribute="centerX" secondItem="lZY-7l-e15" secondAttribute="centerX" id="rYM-yl-dyv"/>
+                <constraint firstItem="B8e-Uc-SDc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2Bq-ES-81F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B8e-Uc-SDc" secondAttribute="bottom" constant="20" id="9Du-EP-Cmt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B8e-Uc-SDc" secondAttribute="trailing" constant="20" id="G72-eB-rAN"/>
+                <constraint firstItem="k4H-FC-oR6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="lVo-FJ-lhv"/>
+                <constraint firstItem="B8e-Uc-SDc" firstAttribute="top" secondItem="k4H-FC-oR6" secondAttribute="bottom" id="uyJ-KG-nOl"/>
+                <constraint firstItem="k4H-FC-oR6" firstAttribute="trailing" secondItem="B8e-Uc-SDc" secondAttribute="trailing" id="vUK-Au-ePV"/>
+                <constraint firstItem="k4H-FC-oR6" firstAttribute="leading" secondItem="B8e-Uc-SDc" secondAttribute="leading" id="vVP-dI-SJM"/>
             </constraints>
             <point key="canvasLocation" x="74" y="70"/>
         </view>

@@ -11,11 +11,14 @@ class HomeScreenVC: BaseVC {
 	
 	var timer : Timer?
 	var currentCellIndex = 0
+    
+    var headerShown = true
 	
 	@IBOutlet weak var adsCollectionView: UICollectionView!
 	@IBOutlet weak var pageContrl: UIPageControl!
 	@IBOutlet weak var brandsCollectionView: UICollectionView!
-	
+    @IBOutlet weak var header: UIView!
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLogo()
@@ -28,6 +31,7 @@ class HomeScreenVC: BaseVC {
 		register()
 		startTimer()
 		refreshcollectionView()
+        addSwipeGesture()
 	}
 	
 	func register() {
@@ -54,6 +58,51 @@ class HomeScreenVC: BaseVC {
 		print("refresh done")
 		refreshControl.endRefreshing()
 	}
+    
+    func addSwipeGesture() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .down {
+            showHeader()
+        }
+
+        if gesture.direction == .up {
+            hideHeader()
+        }
+    }
+
+    func showHeader() {
+        guard !headerShown else {return}
+        guard brandsCollectionView.contentOffset.y <= 0 else {return}
+        headerShown = true
+        brandsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        brandsCollectionView.clipsToBounds = false
+        self.brandsCollectionView.setNeedsLayout()
+        UIView.animate(withDuration: 0.2, animations: {
+            self.header.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.brandsCollectionView.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
+    }
+
+    func hideHeader() {
+        guard headerShown else {return}
+        headerShown = false
+        brandsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        brandsCollectionView.clipsToBounds = false
+        self.brandsCollectionView.setNeedsLayout()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.header.transform = CGAffineTransform(translationX: 0, y: -self.header.bounds.height)
+            self.brandsCollectionView.transform = CGAffineTransform(translationX: 0, y: -self.header.bounds.height)
+        })
+    }
 	
 }
 
