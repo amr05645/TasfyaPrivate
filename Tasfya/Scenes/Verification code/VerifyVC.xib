@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LoginImg" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-Na-iLM">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tasfyalogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-Na-iLM">
                     <rect key="frame" x="50" y="54" width="314" height="286.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Enter Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-9v-b4x">
@@ -120,7 +120,7 @@
         </view>
     </objects>
     <resources>
-        <image name="LoginImg" width="656" height="517"/>
+        <image name="tasfyalogo-1" width="899" height="899"/>
         <namedColor name="darkBlue121A50">
             <color red="0.071000002324581146" green="0.10199999809265137" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

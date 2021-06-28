@@ -128,7 +128,7 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 			let collectionViewSize = collectionView.frame.size.width - padding
 			return CGSize(width: collectionViewSize/2, height: (collectionViewSize/2) + 80)
 		case CategoryCollectionView:
-			return CGSize(width: 10, height: 30)
+            return CGSize(width: CategoryCollectionView.frame.width / 5, height: 30)
 		default:
 			return CGSize.zero
 		}
