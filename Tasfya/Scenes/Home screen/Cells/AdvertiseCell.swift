@@ -9,7 +9,9 @@ import UIKit
 
 class AdvertiseCell: UICollectionViewCell {
 	
-	override func awakeFromNib() {
+    @IBOutlet weak var brandImgs: UIImageView!
+    
+    override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code
 	}

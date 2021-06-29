@@ -8,10 +8,16 @@
 import UIKit
 
 class BrandPageVC: BaseVC {
+    
+    private var lastContentOffset: CGFloat = 0
+    var headerShown = true
 	
 	let categories = ["All", "Men", "Women", "Kids"]
 	var selectedCellIndexpth = IndexPath(item: 0, section: 0)
-	
+    
+    @IBOutlet weak var header: UIView!
+    @IBOutlet weak var headerTop: NSLayoutConstraint!
+    
 	@IBOutlet weak var brandImg: UIImageView!
 	@IBOutlet weak var ProductCollectionView: UICollectionView!
 	@IBOutlet weak var CategoryCollectionView: UICollectionView!
@@ -25,6 +31,7 @@ class BrandPageVC: BaseVC {
 		CategoryCollectionView.dataSource = self
 		register()
 		refreshcollectionView()
+        addSwipeGesture()
 	}
 	
 	func register() {
@@ -46,6 +53,47 @@ class BrandPageVC: BaseVC {
 		print("refresh done")
 		refreshControl.endRefreshing()
 	}
+    
+    func addSwipeGesture() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .down {
+            showHeader()
+        }
+
+        if gesture.direction == .up {
+            hideHeader()
+        }
+    }
+    
+    func showHeader() {
+        guard !headerShown else {return}
+        guard ProductCollectionView.contentOffset.y <= 0 else {return}
+        headerShown = true
+        header.isHidden = false
+        headerTop.constant = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.header.layoutIfNeeded()
+        })
+    }
+
+    func hideHeader() {
+        guard headerShown else {return}
+        headerShown = false
+        header.isHidden = true
+        headerTop.constant = -self.header.bounds.height
+        UIView.animate(withDuration: 0.5, animations: {
+            self.header.layoutIfNeeded()
+        })
+    }
 	
 }
 
@@ -133,5 +181,19 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 			return CGSize.zero
 		}
 	}
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if lastContentOffset > scrollView.contentOffset.y && lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
+            // move down
+            showHeader()
+        } else if lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
+            // move up
+            hideHeader()
+        }
+
+        // update the new position acquired
+        lastContentOffset = scrollView.contentOffset.y
+    }
 	
 }

@@ -8,13 +8,23 @@
 import UIKit
 
 class HomeScreenVC: BaseVC {
+    
+    private var lastContentOffset: CGFloat = 0
 	
 	var timer : Timer?
 	var currentCellIndex = 0
     
     var headerShown = true
+    
+    var brandsImgs: [UIImage] = [UIImage(named: "Addidas")!,
+                      UIImage(named: "DOLCE-GABBANA")!,
+                      UIImage(named: "Gucci")!,
+                      UIImage(named: "H&M")!,
+                      UIImage(named: "Lcwaikiki")!
+    ]
 	
-	@IBOutlet weak var adsCollectionView: UICollectionView!
+    @IBOutlet weak var headerTop: NSLayoutConstraint!
+    @IBOutlet weak var adsCollectionView: UICollectionView!
 	@IBOutlet weak var pageContrl: UIPageControl!
 	@IBOutlet weak var brandsCollectionView: UICollectionView!
     @IBOutlet weak var header: UIView!
@@ -27,7 +37,7 @@ class HomeScreenVC: BaseVC {
 		adsCollectionView.dataSource = self
 		brandsCollectionView.delegate = self
 		brandsCollectionView.dataSource = self
-		pageContrl.numberOfPages = 5
+        pageContrl.numberOfPages = brandsImgs.count
 		register()
 		startTimer()
 		refreshcollectionView()
@@ -83,24 +93,20 @@ class HomeScreenVC: BaseVC {
         guard !headerShown else {return}
         guard brandsCollectionView.contentOffset.y <= 0 else {return}
         headerShown = true
-        brandsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        brandsCollectionView.clipsToBounds = false
-        self.brandsCollectionView.setNeedsLayout()
-        UIView.animate(withDuration: 0.2, animations: {
-            self.header.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.brandsCollectionView.transform = CGAffineTransform(translationX: 0, y: 0)
+        header.isHidden = false
+        headerTop.constant = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.header.layoutIfNeeded()
         })
     }
 
     func hideHeader() {
         guard headerShown else {return}
         headerShown = false
-        brandsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        brandsCollectionView.clipsToBounds = false
-        self.brandsCollectionView.setNeedsLayout()
+        header.isHidden = true
+        headerTop.constant = -self.header.bounds.height
         UIView.animate(withDuration: 0.5, animations: {
-            self.header.transform = CGAffineTransform(translationX: 0, y: -self.header.bounds.height)
-            self.brandsCollectionView.transform = CGAffineTransform(translationX: 0, y: -self.header.bounds.height)
+            self.header.layoutIfNeeded()
         })
     }
 	
@@ -122,7 +128,10 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 		switch collectionView {
 		case adsCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdvertiseCell", for: indexPath) as! AdvertiseCell
-			return cell
+            if indexPath.row < brandsImgs.count {
+                cell.brandImgs.image = brandsImgs[indexPath.row]
+            }
+            return cell
 		case brandsCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
 			cell.addproductBtn.isHidden = true
@@ -185,9 +194,25 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 		if collectionView == adsCollectionView {
-			pageContrl.currentPage = indexPath.row % 5
+            pageContrl.currentPage = indexPath.row % brandsImgs.count
 			currentCellIndex = indexPath.row
 		}
 	}
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+//        #warning("get direction")
+        
+        if lastContentOffset > scrollView.contentOffset.y && lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
+            // move down
+            showHeader()
+        } else if lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
+            // move up
+            hideHeader()
+        }
+
+        // update the new position acquired
+        lastContentOffset = scrollView.contentOffset.y
+    }
 	
 }

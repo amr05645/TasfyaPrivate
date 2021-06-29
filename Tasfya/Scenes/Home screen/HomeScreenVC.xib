@@ -15,6 +15,7 @@
                 <outlet property="adsCollectionView" destination="lZY-7l-e15" id="ElW-Y0-e39"/>
                 <outlet property="brandsCollectionView" destination="B8e-Uc-SDc" id="Gfa-Bh-LhT"/>
                 <outlet property="header" destination="k4H-FC-oR6" id="crW-Va-aQ3"/>
+                <outlet property="headerTop" destination="lVo-FJ-lhv" id="rJE-w2-ky1"/>
                 <outlet property="pageContrl" destination="LkY-z7-490" id="LH8-5h-iah"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
