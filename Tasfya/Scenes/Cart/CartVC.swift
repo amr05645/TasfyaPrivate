@@ -30,7 +30,7 @@ class CartVC: UIViewController {
     }
     
     @IBAction func buyTapped(_ sender: Any) {
-        if CurrentUser.logged {
+        if let _ = CurrentUser.get() {
             let vc = AddressesVC()
             vc.checkout = true
             self.navigationController?.pushViewController(vc, animated: true)

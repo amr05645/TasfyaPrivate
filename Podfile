@@ -9,4 +9,6 @@ target 'Tasfya' do
   pod 'IQKeyboardManagerSwift'
 	pod "KWVerificationCodeView"
   pod 'LanguageManager-iOS'
+  pod 'Firebase/Auth'
+  pod 'PKHUD'
 end

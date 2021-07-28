@@ -7,6 +7,9 @@
 
 import UIKit
 import KWVerificationCodeView
+import FirebaseAuth
+import PKHUD
+
 
 class VerifyVC: UIViewController{
 	
@@ -35,9 +38,22 @@ class VerifyVC: UIViewController{
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        CurrentUser.login()
-        self.navigationController?.pushViewController(HomeScreenVC(), animated: true)
-        self.dismiss(animated: true, completion: nil)
+        guard let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else { return }
+        self.showProgress()
+        let credential = PhoneAuthProvider.provider().credential(
+            withVerificationID: verificationID,
+            verificationCode: verifingTF.getVerificationCode())
+        Auth.auth().signIn(with: credential) { (user, error) in
+            self.hideProgress()
+            if let error = error {
+                HUD.flash(.label("\(error.localizedDescription)"), delay: 1)
+                print(error.localizedDescription)
+                return
+            }
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            CurrentUser.save(userID: userID)
+            self.navigationController?.pushViewController(HomeScreenVC(), animated: true)
+        }
     }
 	
 	

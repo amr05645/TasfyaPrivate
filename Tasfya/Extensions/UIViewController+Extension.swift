@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 extension UIViewController {
     func showAlert(message: String, title: String = "", completionHandler: @escaping (() -> ())) {
@@ -18,4 +19,17 @@ extension UIViewController {
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func showAlert(with message: String) {
+        HUD.flash(.label(message), delay: 1)
+    }
+    
+    func showProgress() {
+        HUD.show(.progress)
+    }
+    
+    func hideProgress() {
+        HUD.hide()
+    }
+    
 }

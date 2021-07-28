@@ -12,6 +12,7 @@
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
 		5B4F1047261A0E7E0031C7F9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */; };
 		5B4F1048261A0E7E0031C7F9 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */; };
+		5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */; };
 		5B74132526259340000A9A3A /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74132326259340000A9A3A /* CartVC.swift */; };
 		5B74132626259340000A9A3A /* CartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B74132426259340000A9A3A /* CartVC.xib */; };
 		5B74132A2625985A000A9A3A /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7413282625985A000A9A3A /* CartCell.swift */; };
@@ -99,6 +100,8 @@
 		5B4F1045261A0E7E0031C7F9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		5B4F1046261A0E7E0031C7F9 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
 		5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
+		5B6DE76826B14DF3008BDEF9 /* Tasfya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tasfya.entitlements; sourceTree = "<group>"; };
+		5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B74132326259340000A9A3A /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		5B74132426259340000A9A3A /* CartVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartVC.xib; sourceTree = "<group>"; };
 		5B7413282625985A000A9A3A /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 		5B4F10262619FD600031C7F9 /* Tasfya */ = {
 			isa = PBXGroup;
 			children = (
+				5B6DE76826B14DF3008BDEF9 /* Tasfya.entitlements */,
 				5B80968A2630270D00C71A24 /* Models */,
 				5B83D626261C501700A50228 /* Helpers */,
 				5B4F10422619FDCF0031C7F9 /* Extensions */,
@@ -242,6 +246,7 @@
 				5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */,
 				5B4F10352619FD610031C7F9 /* Info.plist */,
 				C5B6678B261C8AAF000997D8 /* Assets.xcassets */,
+				5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				5BFB12A9261F07C600FB655E /* OrderCell.xib in Resources */,
 				5B7DE3B32627021700A1F320 /* AddAddressVC.xib in Resources */,
 				5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */,
+				5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */,
 				C5CFFC8A261A05F70094AA9A /* AccountSettingsVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				C525B0702625A7B700E69D74 /* HomeScreenVC.xib in Resources */,
@@ -936,6 +942,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Tasfya/Tasfya.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W7KRDUDN4;
 				INFOPLIST_FILE = Tasfya/SupportFiles/Info.plist;
@@ -957,6 +964,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Tasfya/Tasfya.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W7KRDUDN4;
 				INFOPLIST_FILE = Tasfya/SupportFiles/Info.plist;

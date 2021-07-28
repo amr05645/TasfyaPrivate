@@ -66,7 +66,7 @@ class SideMenuVC: UIViewController {
     
     private func configureSidemenu() {
         sideMenuTitles.removeLast()
-        if CurrentUser.logged {
+        if let _ = CurrentUser.get() {
             sideMenuTitles.append(Constants.sideMenuTitles.logout)
         } else {
             sideMenuTitles.append(Constants.sideMenuTitles.login)

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import PKHUD
+import FirebaseAuth
+import AuthenticationServices
 
 class LoginVC: UIViewController {
     
@@ -18,6 +21,20 @@ class LoginVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
+    
+    func phoneLogin() {
+        self.showProgress()
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumperTF.text ?? "", uiDelegate: nil) { (verificationID, error) in
+            self.hideProgress()
+            if let error = error {
+                HUD.flash(.label("\(error.localizedDescription)"), delay: 1)
+                print(error.localizedDescription)
+                return
+            }
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+        }
+        navigationController?.pushViewController(VerifyVC(), animated: true)
+    }
 	
 	@IBAction func done(_ sender: UITextField) {
 		sender.resignFirstResponder()
@@ -28,11 +45,7 @@ class LoginVC: UIViewController {
 	}
 	
 	@IBAction func sendCodeBtn(_ sender: Any) {
-        let vc = VerifyVC()
-        self.addChild(vc)
-        vc.view.frame = self.view.bounds
-        self.view.addSubview(vc.view)
-        vc.didMove(toParent: self)
+        phoneLogin()
     }
     
     @IBAction func fastOrderTapped(_ sender: Any) {

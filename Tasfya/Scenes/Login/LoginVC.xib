@@ -93,24 +93,11 @@
                         <action selector="done:" destination="-1" eventType="primaryActionTriggered" id="IMf-G4-rqj"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-6p-6AF">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-6p-6AF">
                     <rect key="frame" x="157" y="769" width="100" height="33"/>
-                    <state key="normal">
-                        <attributedString key="attributedTitle">
-                            <fragment content="or ">
-                                <attributes>
-                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" metaFont="system" size="17"/>
-                                </attributes>
-                            </fragment>
-                            <fragment content="Fast Order">
-                                <attributes>
-                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" metaFont="system" size="17"/>
-                                    <integer key="NSUnderline" value="1"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="or Fast Order">
+                        <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                     </state>
                     <connections>
                         <action selector="fastOrderTapped:" destination="-1" eventType="touchUpInside" id="5sY-eZ-oPN"/>
