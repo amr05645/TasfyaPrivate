@@ -46,10 +46,13 @@ extension AddressesVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
         cell.addressNameLabel.text = "\(addresses[indexPath.row])"
         
         cell.remove = {
-            collectionView.deleteItems(at: [indexPath])
-            self.addresses.remove(at: indexPath.row)
+            self.collectionView.performBatchUpdates({
+                collectionView.deleteItems(at: [indexPath])
+                self.addresses.remove(at: indexPath.row)
+            }) { (finished) in
+                self.collectionView.reloadData()
+            }
         }
-        
         return cell
     }
     

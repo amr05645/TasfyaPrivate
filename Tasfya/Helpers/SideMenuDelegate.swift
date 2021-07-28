@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SideMenuDelegate: class {
+protocol SideMenuDelegate: AnyObject {
     func showSideMenu()
     func hideSideMenu()
     func addGestures()

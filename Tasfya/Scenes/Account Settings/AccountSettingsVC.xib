@@ -16,6 +16,7 @@
                 <outlet property="emailTF" destination="vQj-wH-mqd" id="Dfb-7a-65j"/>
                 <outlet property="genderTF" destination="gBX-Jd-6mX" id="Cfe-Z4-Jpe"/>
                 <outlet property="phonenumberTF" destination="swP-NO-hJz" id="A3h-HW-Hvo"/>
+                <outlet property="profileImg" destination="FHT-AN-qEl" id="rK9-0I-7bX"/>
                 <outlet property="usernameTF" destination="C6a-3g-3gK" id="DVY-e6-jRz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -321,21 +322,31 @@
                                 <constraint firstItem="XYo-OU-SNI" firstAttribute="top" secondItem="cCg-ow-gvn" secondAttribute="top" id="qMU-y2-Nf9"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlI-li-Qvz">
+                            <rect key="frame" x="124" y="10" width="166" height="159.5"/>
+                            <connections>
+                                <action selector="uploadImagePressed:" destination="-1" eventType="touchUpInside" id="H0J-LX-Vod"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="FHT-AN-qEl" firstAttribute="centerX" secondItem="xU6-zl-7Gf" secondAttribute="centerX" id="3LE-NX-REf"/>
                         <constraint firstAttribute="bottom" secondItem="w9H-qX-jyl" secondAttribute="bottom" constant="10" id="3Qm-hz-ulU"/>
                         <constraint firstAttribute="trailing" secondItem="SqP-bZ-EA8" secondAttribute="trailing" constant="30" id="93g-Rv-3Rc"/>
+                        <constraint firstItem="dlI-li-Qvz" firstAttribute="bottom" secondItem="FHT-AN-qEl" secondAttribute="bottom" id="BHK-91-qHu"/>
                         <constraint firstItem="SqP-bZ-EA8" firstAttribute="top" secondItem="BOV-lj-D5x" secondAttribute="bottom" constant="10" id="Bc1-ZY-p6w"/>
                         <constraint firstItem="FHT-AN-qEl" firstAttribute="top" secondItem="xU6-zl-7Gf" secondAttribute="top" constant="10" id="Bjy-Zy-Y6d"/>
+                        <constraint firstItem="dlI-li-Qvz" firstAttribute="trailing" secondItem="FHT-AN-qEl" secondAttribute="trailing" id="Tfv-se-sy0"/>
                         <constraint firstItem="SqP-bZ-EA8" firstAttribute="leading" secondItem="xU6-zl-7Gf" secondAttribute="leading" constant="30" id="URo-fW-1fp"/>
                         <constraint firstItem="SqP-bZ-EA8" firstAttribute="centerX" secondItem="xU6-zl-7Gf" secondAttribute="centerX" id="Ult-Lr-SZe"/>
                         <constraint firstItem="cCg-ow-gvn" firstAttribute="top" secondItem="SqP-bZ-EA8" secondAttribute="bottom" constant="24" id="YQX-6m-9Tc"/>
+                        <constraint firstItem="dlI-li-Qvz" firstAttribute="leading" secondItem="FHT-AN-qEl" secondAttribute="leading" id="Ycb-NV-g00"/>
                         <constraint firstItem="8Pq-Sf-P3X" firstAttribute="leading" secondItem="FHT-AN-qEl" secondAttribute="trailing" constant="40" id="g0f-3z-Ctn"/>
                         <constraint firstItem="BOV-lj-D5x" firstAttribute="top" secondItem="FHT-AN-qEl" secondAttribute="bottom" constant="20" id="jia-ae-Cu6"/>
                         <constraint firstItem="8Pq-Sf-P3X" firstAttribute="top" secondItem="xU6-zl-7Gf" secondAttribute="top" constant="10" id="mo7-ug-uh8"/>
                         <constraint firstItem="cCg-ow-gvn" firstAttribute="leading" secondItem="SqP-bZ-EA8" secondAttribute="leading" id="ozd-h7-aHM"/>
                         <constraint firstItem="BOV-lj-D5x" firstAttribute="centerX" secondItem="FHT-AN-qEl" secondAttribute="centerX" id="pwj-bX-vRv"/>
+                        <constraint firstItem="dlI-li-Qvz" firstAttribute="top" secondItem="FHT-AN-qEl" secondAttribute="top" id="s5M-es-tbt"/>
                         <constraint firstItem="w9H-qX-jyl" firstAttribute="top" secondItem="cCg-ow-gvn" secondAttribute="bottom" constant="10" id="u1M-WL-7jE"/>
                         <constraint firstItem="FHT-AN-qEl" firstAttribute="height" secondItem="xU6-zl-7Gf" secondAttribute="height" multiplier="0.2" id="v9b-as-Eqx"/>
                         <constraint firstItem="FHT-AN-qEl" firstAttribute="width" secondItem="xU6-zl-7Gf" secondAttribute="width" multiplier="0.4" id="zfo-66-WEE"/>

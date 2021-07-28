@@ -245,7 +245,7 @@
                                 <constraint firstAttribute="height" constant="40" id="GiV-Q5-V4r"/>
                                 <constraint firstAttribute="width" constant="150" id="QcY-DN-Ve9"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <state key="normal" title="+ Add to Cart">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>

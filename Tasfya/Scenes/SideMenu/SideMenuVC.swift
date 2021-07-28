@@ -12,6 +12,8 @@ class SideMenuVC: UIViewController {
     var rootVC: UIViewController?
     private var navVC: UINavigationController!
     
+    var selectedLanguage = LanguageHandler.getLanguage()
+    
     private var sideMenuTitles = [Constants.sideMenuTitles.home, Constants.sideMenuTitles.profile, Constants.sideMenuTitles.settings, Constants.sideMenuTitles.location, Constants.sideMenuTitles.language, Constants.sideMenuTitles.contactUs, Constants.sideMenuTitles.cart, Constants.sideMenuTitles.orders, Constants.sideMenuTitles.country, Constants.sideMenuTitles.login]
     
     private let sidemMenuIcons: [String : UIImage] = [Constants.sideMenuTitles.home: #imageLiteral(resourceName: "tasfyalogo-1"), Constants.sideMenuTitles.profile : #imageLiteral(resourceName: "smallSideMenuProfileImage"), Constants.sideMenuTitles.settings: #imageLiteral(resourceName: "smallSettingsImage"), Constants.sideMenuTitles.location: #imageLiteral(resourceName: "sideMenuLocation"), Constants.sideMenuTitles.language: #imageLiteral(resourceName: "sideMenulanguage"), Constants.sideMenuTitles.contactUs: #imageLiteral(resourceName: "sideMenuContact"), Constants.sideMenuTitles.cart: #imageLiteral(resourceName: "cart"), Constants.sideMenuTitles.orders: #imageLiteral(resourceName: "orders"), Constants.sideMenuTitles.country: #imageLiteral(resourceName: "country")]
@@ -136,9 +138,22 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.orders:
             navVC.pushViewController(OrdersVC(), animated: true)
         case Constants.sideMenuTitles.login:
-            present(LoginVC(), animated: true, completion: nil)
+            let vc = LoginVC()
+            vc.delegate = self
+            navVC.pushViewController(vc, animated: true)
         case Constants.sideMenuTitles.logout:
             CurrentUser.logout()
+        case Constants.sideMenuTitles.language:
+            self.showAlert(message: Constants.messages.langAlert) {
+                switch self.selectedLanguage {
+                case .ar:
+                    LanguageHandler.changeLanguage(to: .en)
+                case .en:
+                    LanguageHandler.changeLanguage(to: .ar)
+                default:
+                    return
+                }
+            }
         default:
             return
         }
@@ -180,5 +195,11 @@ extension SideMenuVC: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         let item = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         viewController.navigationItem.backBarButtonItem = item
+    }
+}
+
+extension SideMenuVC: NavigationDelegate {
+    func goto(_ viewController: UIViewController) {
+        self.navVC.pushViewController(viewController, animated: true)
     }
 }

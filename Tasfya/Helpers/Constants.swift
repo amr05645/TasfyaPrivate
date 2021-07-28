@@ -24,12 +24,12 @@ struct Images {
 }
 
 struct Titles {
-    var done: String {"Done"}
-    var ok: String {"Ok"}
-    var cancel: String {"Cancel"}
-    var orderID: String {"Order ID"}
-    var orderDate: String {"Order Date"}
-    var orderStatus: String {"Order Status"}
+    var done: String {"Done".localiz()}
+    var ok: String {"Ok".localiz()}
+    var cancel: String {"Cancel".localiz()}
+    var orderID: String {"Order ID".localiz()}
+    var orderDate: String {"Order Date".localiz()}
+    var orderStatus: String {"Order Status".localiz()}
 }
 
 struct Messages {
@@ -43,15 +43,15 @@ struct Colors {
 }
 
 struct SideMenuTitles {
-    var home: String {"Home"}
-    var profile: String {"Profile"}
-    var settings: String {"Settings"}
-    var location: String {"Location"}
-    var language: String {"Language"}
-    var contactUs: String {"Contact Us"}
-    var cart: String {"Cart"}
-    var orders: String {"Orders"}
-    var country: String {"Country"}
-    var login: String {"Login / Sign Up"}
-    var logout: String {"Logout"}
+    var home: String {"Home".localiz()}
+    var profile: String {"Profile".localiz()}
+    var settings: String {"Settings".localiz()}
+    var location: String {"Location".localiz()}
+    var language: String {"Language".localiz()}
+    var contactUs: String {"Contact Us".localiz()}
+    var cart: String {"Cart".localiz()}
+    var orders: String {"Orders".localiz()}
+    var country: String {"Country".localiz()}
+    var login: String {"Login / Sign Up".localiz()}
+    var logout: String {"Logout".localiz()}
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrdersVC: UIViewController {
+class OrdersVC: BaseVC {
     
     
     @IBOutlet weak var collectionView: UICollectionView!

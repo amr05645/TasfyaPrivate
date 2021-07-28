@@ -12,7 +12,7 @@ class BrandPageVC: BaseVC {
     private var lastContentOffset: CGFloat = 0
     var headerShown = true
 	
-	let categories = ["All", "Men", "Women", "Kids"]
+    let categories = ["All".localiz(), "Men".localiz(), "Women".localiz(), "Kids".localiz()]
 	var selectedCellIndexpth = IndexPath(item: 0, section: 0)
     
     @IBOutlet weak var header: UIView!

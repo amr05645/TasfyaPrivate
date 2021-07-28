@@ -36,6 +36,7 @@ class VerifyVC: UIViewController{
     
     @IBAction func loginBtn(_ sender: Any) {
         CurrentUser.login()
+        self.navigationController?.pushViewController(HomeScreenVC(), animated: true)
         self.dismiss(animated: true, completion: nil)
     }
 	

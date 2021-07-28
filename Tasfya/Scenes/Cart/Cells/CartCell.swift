@@ -18,6 +18,10 @@ class CartCell: UITableViewCell, ReusableView {
     
     var max = 10
     
+    var remove: (() -> ())?
+    
+    var priceChanged: ((Float) -> ())?
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var colorView: UIView!
@@ -32,18 +36,20 @@ class CartCell: UITableViewCell, ReusableView {
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        
+        remove?()
     }
     
     
     @IBAction func plusTapped(_ sender: Any) {
         guard count! < max else {return}
             count! += 1
+        priceChanged?(Float(count! * 6000))
     }
     
     
     @IBAction func minusTapped(_ sender: Any) {
         guard count! > 1 else {return}
             count! -= 1
+        priceChanged?(Float(-count! * 6000))
     }
 }

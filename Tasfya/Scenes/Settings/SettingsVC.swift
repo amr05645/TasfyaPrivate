@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsVC: UIViewController {
     
+    var selectedLanguage = LanguageHandler.getLanguage()
+    
     @IBOutlet weak var languageTF: PickerTF!
     
     @IBOutlet weak var versionLabel: UILabel!

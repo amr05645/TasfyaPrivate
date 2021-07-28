@@ -40,6 +40,7 @@
 		5B83D643261C8F2400A50228 /* ReturnOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D641261C8F2400A50228 /* ReturnOrderVC.swift */; };
 		5B83D644261C8F2400A50228 /* ReturnOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B83D642261C8F2400A50228 /* ReturnOrderVC.xib */; };
 		5B83D657261C941B00A50228 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83D656261C941B00A50228 /* ReusableView.swift */; };
+		5BB4A2F726AEF21B00153AC8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4A2F626AEF21A00153AC8 /* ImagePicker.swift */; };
 		5BD201BB261B5BCD00E9935D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD201B9261B5BCD00E9935D /* SettingsVC.swift */; };
 		5BD201BC261B5BCD00E9935D /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD201BA261B5BCD00E9935D /* SettingsVC.xib */; };
 		5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */; };
@@ -132,6 +133,7 @@
 		5B83D65E261C9F4A00A50228 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		5B83D65F261C9F4A00A50228 /* AddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
 		5B83D665261C9F7600A50228 /* AddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesVC.swift; sourceTree = "<group>"; };
+		5BB4A2F626AEF21A00153AC8 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5BD201B9261B5BCD00E9935D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5BD201BA261B5BCD00E9935D /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRootVC.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				5B7BD929261B201800AF1253 /* Constants.swift */,
 				5B83D627261C503F00A50228 /* PickerTF.swift */,
 				5B83D656261C941B00A50228 /* ReusableView.swift */,
+				5BB4A2F626AEF21A00153AC8 /* ImagePicker.swift */,
 				5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */,
 				5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */,
 				5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */,
@@ -750,6 +753,7 @@
 				C5CFFC89261A05F70094AA9A /* AccountSettingsVC.swift in Sources */,
 				C5DD37442628541200FFDECB /* BrandPageVC.swift in Sources */,
 				5B74132526259340000A9A3A /* CartVC.swift in Sources */,
+				5BB4A2F726AEF21B00153AC8 /* ImagePicker.swift in Sources */,
 				5B7413352625B171000A9A3A /* OrderDetailsVC.swift in Sources */,
 				C53CA9BB2620671D00B02340 /* SizeCell.swift in Sources */,
 				5B83D643261C8F2400A50228 /* ReturnOrderVC.swift in Sources */,

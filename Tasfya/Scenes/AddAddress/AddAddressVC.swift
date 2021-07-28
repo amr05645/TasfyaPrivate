@@ -25,7 +25,7 @@ class AddAddressVC: UIViewController {
     }
     
     @IBAction func confirmtapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.pushViewController(CheckoutVC(), animated: true)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrderDetailsVC: UIViewController {
+class OrderDetailsVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,4 +34,9 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: OrderDetailsCell.reuseIdentifier, for: indexPath) as! OrderDetailsCell
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }

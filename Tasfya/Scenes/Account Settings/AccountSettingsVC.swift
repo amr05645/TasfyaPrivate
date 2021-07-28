@@ -9,14 +9,18 @@ import UIKit
 
 class AccountSettingsVC: UIViewController {
 	
-	@IBOutlet weak var usernameTF: UITextField!
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var usernameTF: UITextField!
 	@IBOutlet weak var phonenumberTF: UITextField!
 	@IBOutlet weak var emailTF: UITextField!
 	@IBOutlet weak var genderTF: UITextField!
 	@IBOutlet weak var countryTF: UITextField!
+    
+    var imagePicker: ImagePicker!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
 	}
 	
 	@IBAction func addAdressesBtn(_ sender: Any) {
@@ -54,5 +58,14 @@ class AccountSettingsVC: UIViewController {
         countryTF.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
-	
+    @IBAction func uploadImagePressed(_ sender: UIButton) {
+        self.imagePicker.present(from: sender)
+    }
+    
+}
+
+extension AccountSettingsVC: ImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        profileImg.image = image
+    }
 }

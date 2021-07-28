@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ReusableView: class {}
+protocol ReusableView: AnyObject {}
 
 extension ReusableView {
     static var reuseIdentifier: String {

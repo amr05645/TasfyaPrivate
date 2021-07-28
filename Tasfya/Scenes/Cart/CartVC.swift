@@ -9,6 +9,11 @@ import UIKit
 
 class CartVC: UIViewController {
     
+    var selectedCellIndexPath = IndexPath(item: 0, section: 0)
+    
+    var cartItems = [1, 2, 3, 4, 5]
+    
+    var total: Float = 0.0
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
@@ -29,22 +34,35 @@ class CartVC: UIViewController {
             let vc = AddressesVC()
             vc.checkout = true
             self.navigationController?.pushViewController(vc, animated: true)
-            #warning("handle navigation for logged in user but with no data provided")
+//            #warning("handle navigation for logged in user but with no data provided")
         } else {
             let vc = LoginVC()
             vc.delegate = self
-            self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
 
 extension CartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        cartItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartCell.reuseIdentifier, for: indexPath) as! CartCell
+        cell.priceChanged = { [weak self] value in
+            self?.total += value
+            self?.totalLabel.text = "\(self?.total ?? 0)"
+        }
+        cell.remove = {
+            self.tableView.performBatchUpdates({
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.cartItems.remove(at: indexPath.row)
+            }) { (finished) in
+                self.tableView.reloadData()
+            }
+        }
+        
         return cell
     }
 }
