@@ -27,7 +27,7 @@
                     <rect key="frame" x="50" y="54" width="314" height="427.5"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwW-cb-rSP">
-                    <rect key="frame" x="50" y="521.5" width="114" height="40"/>
+                    <rect key="frame" x="50" y="521.5" width="215.5" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagImg" translatesAutoresizingMaskIntoConstraints="NO" id="URT-PA-XKQ">
                             <rect key="frame" x="0.0" y="10" width="50" height="20"/>
@@ -36,14 +36,14 @@
                                 <constraint firstAttribute="height" constant="20" id="w5C-RN-ciV"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+971" placeholder="+971" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hxo-gV-R9T" customClass="PickerTF" customModule="Tasfya" customModuleProvider="target">
-                            <rect key="frame" x="58" y="0.0" width="56" height="40"/>
+                        <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chose country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hxo-gV-R9T" customClass="PickerTF" customModule="Tasfya" customModuleProvider="target">
+                            <rect key="frame" x="58" y="0.0" width="157.5" height="40"/>
                             <color key="textColor" name="redE51929"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-TK-DJg">
-                            <rect key="frame" x="0.0" y="0.0" width="114" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="215.5" height="40"/>
                             <connections>
                                 <action selector="countryCodeBtn:" destination="-1" eventType="touchUpInside" id="YM0-pD-d9Z"/>
                             </connections>
@@ -130,7 +130,7 @@
     </objects>
     <designables>
         <designable name="Hxo-gV-R9T">
-            <size key="intrinsicContentSize" width="56" height="30"/>
+            <size key="intrinsicContentSize" width="157.5" height="31.5"/>
         </designable>
     </designables>
     <resources>

@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BrandPageVC: BaseVC {
     
     private var lastContentOffset: CGFloat = 0
     var headerShown = true
-	
-    let categories = ["All".localiz(), "Men".localiz(), "Women".localiz(), "Kids".localiz()]
+    
+    var products = [Product]()
+    var detailImg = UIImageView()
 	var selectedCellIndexpth = IndexPath(item: 0, section: 0)
     
     @IBOutlet weak var header: UIView!
@@ -25,6 +27,7 @@ class BrandPageVC: BaseVC {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        getData()
 		ProductCollectionView.delegate = self
 		ProductCollectionView.dataSource = self
 		CategoryCollectionView.delegate = self
@@ -32,7 +35,32 @@ class BrandPageVC: BaseVC {
 		register()
 		refreshcollectionView()
         addSwipeGesture()
+        brandImg.image = detailImg.image
 	}
+    
+    func getData() {
+        let jsonUrlString = "https://fakestoreapi.com/products"
+        
+        guard let url = URL(string: jsonUrlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            guard let data = data else { return }
+            
+            do {
+                self.products = try JSONDecoder().decode([Product].self, from: data)
+            }
+            catch let jsonError
+            {
+                print("error serializing json", jsonError)
+            }
+            DispatchQueue.main.async {
+                self.ProductCollectionView.reloadData()
+                self.CategoryCollectionView.reloadData()
+            }
+        }.resume()
+        
+    }
 	
 	func register() {
 		ProductCollectionView.register(UINib(nibName: "BrandCell", bundle: nil), forCellWithReuseIdentifier: "BrandCell")
@@ -101,9 +129,9 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		switch collectionView {
 		case ProductCollectionView:
-			return 20
+            return products.count
 		case CategoryCollectionView:
-			return categories.count
+            return products.count
 		default:
 			return 0
 		}
@@ -113,11 +141,26 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 		switch collectionView {
 		case ProductCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
-			cell.brandNameLbl.text = "Product name"
+            cell.brandNameLbl.text = products[indexPath.row].title
+            let completeLink = URL(string: products[indexPath.row].image!)
+            cell.brandPhotoImg.kf.setImage(with: completeLink)
+            let processor = DownsamplingImageProcessor(size: cell.brandPhotoImg.bounds.size)
+                |> RoundCornerImageProcessor(cornerRadius: 20)
+            cell.brandPhotoImg.kf.indicatorType = .activity
+            cell.brandPhotoImg.kf.setImage(
+                with: completeLink,
+                placeholder: nil,
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
+            cell.newPriceLbl.text = "\((products[indexPath.row].price)!)"
 			return cell
 		case CategoryCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-			cell.categoryLbl.text = categories[indexPath.row]
+            cell.categoryLbl.text = products[indexPath.row].category
 			cell.isSelected = indexPath.row == 0 ? true : false
 			return cell
 		default :
@@ -128,7 +171,13 @@ extension BrandPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		switch collectionView {
 		case ProductCollectionView:
-			self.navigationController?.pushViewController(ProductPageVC(), animated: true)
+            let selectedProduct = products[indexPath.row]
+            let vc = ProductPageVC()
+            vc.detailName = selectedProduct.title!
+            vc.newprice = "\((selectedProduct.price)!)"
+            let completeLink = URL(string: products[indexPath.row].image!)
+            vc.detailImg.kf.setImage(with: completeLink)
+			self.navigationController?.pushViewController(vc, animated: true)
 		case CategoryCollectionView:
 			if let previousCell = collectionView.cellForItem(at: selectedCellIndexpth) as? CategoryCell {
 				previousCell.isSelected = false

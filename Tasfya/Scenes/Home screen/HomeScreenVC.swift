@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeScreenVC: BaseVC {
     
@@ -16,12 +17,7 @@ class HomeScreenVC: BaseVC {
     
     var headerShown = true
     
-    var brandsImgs: [UIImage] = [UIImage(named: "Addidas")!,
-                      UIImage(named: "DOLCE-GABBANA")!,
-                      UIImage(named: "Gucci")!,
-                      UIImage(named: "H&M")!,
-                      UIImage(named: "Lcwaikiki")!
-    ]
+    var products = [Product]()
 	
     @IBOutlet weak var headerTop: NSLayoutConstraint!
     @IBOutlet weak var adsCollectionView: UICollectionView!
@@ -31,18 +27,38 @@ class HomeScreenVC: BaseVC {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        getData()
 		showLogo()
 		showLanguageBtn()
 		adsCollectionView.delegate = self
 		adsCollectionView.dataSource = self
 		brandsCollectionView.delegate = self
 		brandsCollectionView.dataSource = self
-        pageContrl.numberOfPages = brandsImgs.count
+        pageContrl.translatesAutoresizingMaskIntoConstraints = false
+        pageContrl.numberOfPages = 5
 		register()
 		startTimer()
 		refreshcollectionView()
         addSwipeGesture()
 	}
+    
+    func getData() {
+        let jsonUrlString = "https://fakestoreapi.com/products"
+        guard let url = URL(string: jsonUrlString) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            do {
+                self.products = try JSONDecoder().decode([Product].self, from: data)
+            }
+            catch let jsonError
+            {
+                print("error serializing json", jsonError)
+            }
+            DispatchQueue.main.async {
+                self.brandsCollectionView.reloadData()
+            }
+        }.resume()
+    }
 	
 	func register() {
 		adsCollectionView.register(UINib(nibName: "AdvertiseCell", bundle: nil), forCellWithReuseIdentifier: "AdvertiseCell")
@@ -109,9 +125,7 @@ class HomeScreenVC: BaseVC {
             self.header.layoutIfNeeded()
         })
     }
-	
 }
-
 
 extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
@@ -120,7 +134,7 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 		case adsCollectionView:
 			return Int(Int16.max)
 		default:
-			return 20
+            return products.count
 		}
 	}
 	
@@ -128,13 +142,44 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 		switch collectionView {
 		case adsCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdvertiseCell", for: indexPath) as! AdvertiseCell
-            if indexPath.row < brandsImgs.count {
-                cell.brandImgs.image = brandsImgs[indexPath.row]
+            if indexPath.row < products.count   {
+                let completeLink = URL(string: products[indexPath.row].image!)
+                cell.brandImgs.kf.setImage(with: completeLink)
+                let processor = DownsamplingImageProcessor(size: cell.brandImgs.bounds.size)
+                    |> RoundCornerImageProcessor(cornerRadius: 20)
+                cell.brandImgs.kf.indicatorType = .activity
+                cell.brandImgs.kf.setImage(
+                    with: completeLink,
+                    placeholder: nil,
+                    options: [
+                        .processor(processor),
+                        .scaleFactor(UIScreen.main.scale),
+                        .transition(.fade(1)),
+                        .cacheOriginalImage
+                    ])
+            } else {
+                currentCellIndex = 0
             }
             return cell
 		case brandsCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
 			cell.addproductBtn.isHidden = true
+            cell.brandNameLbl.text = products[indexPath.row].category
+            let completeLink = URL(string: products[indexPath.row].image!)
+            cell.brandPhotoImg.kf.setImage(with: completeLink)
+            let processor = DownsamplingImageProcessor(size: cell.brandPhotoImg.bounds.size)
+                |> RoundCornerImageProcessor(cornerRadius: 20)
+            cell.brandPhotoImg.kf.indicatorType = .activity
+            cell.brandPhotoImg.kf.setImage(
+                with: completeLink,
+                placeholder: nil,
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
+            cell.newPriceLbl.text = "\((products[indexPath.row].price)!)"
 			return cell
 		default :
 			return UICollectionViewCell()
@@ -145,7 +190,9 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 		switch collectionView {
 		case brandsCollectionView:
 			let vc = BrandPageVC()
-			vc.title = "Brand Name"
+            vc.title = "\((products[indexPath.row].category)!)"
+            let completeLink = URL(string: products[indexPath.row].image!)
+            vc.detailImg.kf.setImage(with: completeLink)
 			self.navigationController?.pushViewController(vc, animated: true)
 		default:
 			return
@@ -194,14 +241,12 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 		if collectionView == adsCollectionView {
-            pageContrl.currentPage = indexPath.row % brandsImgs.count
+            pageContrl.currentPage = indexPath.row
 			currentCellIndex = indexPath.row
 		}
 	}
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
-//        #warning("get direction")
         
         if lastContentOffset > scrollView.contentOffset.y && lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
             // move down
@@ -210,9 +255,6 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             // move up
             hideHeader()
         }
-
-        // update the new position acquired
         lastContentOffset = scrollView.contentOffset.y
     }
-	
 }

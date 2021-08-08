@@ -19,6 +19,7 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         getVersion()
         setLanguageOptions()
+        self.languageTF.text = UserDefaults.standard.value(forKey: "lang") as? String
     }
     
     private func setLanguageOptions() {
@@ -37,6 +38,20 @@ class SettingsVC: UIViewController {
     
     @IBAction func languageTapped(_ sender: Any) {
         languageTF.becomeFirstResponder()
+        languageTF.changeLanguage = {
+            UserDefaults.standard.setValue(self.languageTF.text, forKey: "lang")
+            self.showAlert(message: Constants.messages.langAlert) {
+                switch self.selectedLanguage {
+                case .ar:
+                    LanguageHandler.changeLanguage(to: .en)
+                case .en:
+                    LanguageHandler.changeLanguage(to: .ar)
+                default:
+                    return
+                }
+            }
+        }
+        
     }
     
     @IBAction func aboutTapped(_ sender: Any) {

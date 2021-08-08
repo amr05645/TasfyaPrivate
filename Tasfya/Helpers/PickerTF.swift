@@ -10,6 +10,7 @@ import UIKit
 class PickerTF: UITextField {
     
     var didSelect: ((String?) -> ())?
+    var changeLanguage: (() -> ())?
     
     private var picker: UIPickerView?
     private var shadowLayer: CAShapeLayer!
@@ -57,6 +58,7 @@ class PickerTF: UITextField {
         guard let picker = picker else {return}
         let selectedTitle = pickerData?[picker.selectedRow(inComponent: 0)] ?? ""
         self.text = selectedTitle
+        self.changeLanguage?()
         self.didSelect?(selectedTitle)
         self.resignFirstResponder()
     }

@@ -20,11 +20,12 @@ class LoginVC: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        setCodeOptions()
 	}
     
     func phoneLogin() {
         self.showProgress()
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumperTF.text ?? "", uiDelegate: nil) { (verificationID, error) in
+        PhoneAuthProvider.provider().verifyPhoneNumber("\(countryCodeTF.text ?? "")\(phoneNumperTF.text ?? "")" , uiDelegate: nil) { (verificationID, error) in
             self.hideProgress()
             if let error = error {
                 HUD.flash(.label("\(error.localizedDescription)"), delay: 1)
@@ -34,6 +35,11 @@ class LoginVC: UIViewController {
             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
         }
         navigationController?.pushViewController(VerifyVC(), animated: true)
+    }
+    
+    private func setCodeOptions() {
+        let code = ["+20", "+965"]
+        countryCodeTF.setInputPickerData(to: code)
     }
 	
 	@IBAction func done(_ sender: UITextField) {

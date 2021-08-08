@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ProductPageVC: BaseVC {
 	
-	var count: Int? {
-			didSet {
-					amountLbl.text = "\(count ?? 0)"
-			}
-	}
+    var count: Int? {
+        didSet {
+            amountLbl.text = "\(count ?? 0)"
+        }
+    }
 	
 	var max = 10
 	
@@ -29,6 +30,10 @@ class ProductPageVC: BaseVC {
 	
 	var timer : Timer?
 	var currentCellIndex = 0
+    
+    var detailName = ""
+    var newprice = ""
+    var detailImg = UIImageView()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -44,6 +49,9 @@ class ProductPageVC: BaseVC {
 		amountLbl.text = "\(count ?? 0)"
 		register()
 		startTimer()
+        detailsLabel.text = detailName
+        productNameLbl.text = detailName
+        newPriceLbl.text = newprice
         let language = LanguageHandler.getLanguage()
         detailsLabel.textAlignment = language == .ar ? .right : .left
 	}
@@ -98,6 +106,7 @@ extension ProductPageVC: UICollectionViewDelegate, UICollectionViewDataSource, U
 		switch collectionView {
 		case ProductImgCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductImgCell", for: indexPath) as! ProductImgCell
+            cell.productPhoto.image = detailImg.image
 			return cell
 		case SizeCollectionView:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCell", for: indexPath) as! SizeCell

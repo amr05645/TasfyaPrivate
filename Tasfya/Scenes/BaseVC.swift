@@ -12,8 +12,7 @@ class BaseVC: UIViewController {
     static weak var delegate: SideMenuDelegate?
     var selectedLanguage = LanguageHandler.getLanguage()
     let langBtn = UIButton()
-//    private var languageTF: PickerTF?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setRightButtons()

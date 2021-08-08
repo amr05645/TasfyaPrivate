@@ -45,14 +45,14 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOU-vf-Qp4">
-                            <rect key="frame" x="20" y="200" width="134.5" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WOU-vf-Qp4">
+                            <rect key="frame" x="20" y="200" width="374" height="24"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <color key="textColor" name="darkBlue121A50"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-tf-YxG">
-                            <rect key="frame" x="128" y="168" width="158" height="27.5"/>
+                        <pageControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-tf-YxG">
+                            <rect key="frame" x="20" y="168" width="374" height="27.5"/>
                             <color key="pageIndicatorTintColor" name="SelectionColor - #B8B8B8"/>
                             <color key="currentPageIndicatorTintColor" name="darkBlue121A50"/>
                         </pageControl>
@@ -267,6 +267,8 @@
                         <constraint firstItem="sKd-9K-yuy" firstAttribute="top" secondItem="uqb-TH-g5M" secondAttribute="bottom" constant="20" id="Kgt-99-7KX"/>
                         <constraint firstItem="nqX-sg-1KN" firstAttribute="bottom" secondItem="fO1-Lh-Stq" secondAttribute="bottom" id="Khq-a1-ihd"/>
                         <constraint firstItem="KQO-Kr-qJo" firstAttribute="centerX" secondItem="nqX-sg-1KN" secondAttribute="centerX" id="Kvc-XO-voi"/>
+                        <constraint firstItem="ADc-tf-YxG" firstAttribute="trailing" secondItem="pee-Iz-ph1" secondAttribute="trailing" id="LP2-i4-VJg"/>
+                        <constraint firstItem="WOU-vf-Qp4" firstAttribute="trailing" secondItem="pee-Iz-ph1" secondAttribute="trailing" id="N6Y-Rj-CZW"/>
                         <constraint firstItem="uqb-TH-g5M" firstAttribute="trailing" secondItem="vi3-tu-fXQ" secondAttribute="trailing" id="Qb6-pj-jnO"/>
                         <constraint firstItem="vi3-tu-fXQ" firstAttribute="trailing" secondItem="pee-Iz-ph1" secondAttribute="trailing" id="Qp2-S2-f7o"/>
                         <constraint firstItem="ADc-tf-YxG" firstAttribute="centerX" secondItem="pee-Iz-ph1" secondAttribute="centerX" id="Sxe-a1-wQX"/>
@@ -276,6 +278,7 @@
                         <constraint firstItem="KQO-Kr-qJo" firstAttribute="trailing" secondItem="nqX-sg-1KN" secondAttribute="trailing" id="ebQ-OO-chb"/>
                         <constraint firstItem="KQO-Kr-qJo" firstAttribute="centerY" secondItem="nqX-sg-1KN" secondAttribute="centerY" id="fHh-2d-JKm"/>
                         <constraint firstItem="fO1-Lh-Stq" firstAttribute="leading" secondItem="WOU-vf-Qp4" secondAttribute="leading" id="gjU-qQ-iVG"/>
+                        <constraint firstItem="ADc-tf-YxG" firstAttribute="leading" secondItem="pee-Iz-ph1" secondAttribute="leading" id="n1B-uD-n0a"/>
                         <constraint firstItem="WOU-vf-Qp4" firstAttribute="top" secondItem="pee-Iz-ph1" secondAttribute="bottom" constant="40" id="ow7-fF-uSc"/>
                         <constraint firstItem="QHs-2O-HVy" firstAttribute="centerX" secondItem="sKd-9K-yuy" secondAttribute="centerX" id="pui-Kh-oh2"/>
                         <constraint firstItem="vi3-tu-fXQ" firstAttribute="leading" secondItem="pee-Iz-ph1" secondAttribute="leading" id="qg4-Gf-s36"/>

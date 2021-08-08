@@ -11,4 +11,7 @@ target 'Tasfya' do
   pod 'LanguageManager-iOS'
   pod 'Firebase/Auth'
   pod 'PKHUD'
+  pod 'Kingfisher'
+  pod 'RealmSwift'
+  pod 'GoogleMaps'
 end

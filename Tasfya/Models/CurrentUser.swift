@@ -15,7 +15,7 @@ struct CurrentUser {
     }
     
     static func logout() {
-        UserDefaults.standard.removeObject(forKey: "logged")
+        UserDefaults.standard.removeObject(forKey: "UID")
     }
     
     static func save(userID: String) {

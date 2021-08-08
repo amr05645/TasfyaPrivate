@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAddressVC" customModule="Tasfya" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="16n-Zg-BMJ" id="N1V-8y-4F4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -120,7 +121,7 @@
                         <action selector="confirmtapped:" destination="-1" eventType="touchUpInside" id="FL1-QA-DBo"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16n-Zg-BMJ">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16n-Zg-BMJ" customClass="GMSMapView">
                     <rect key="frame" x="123.5" y="290" width="270.5" height="462"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>

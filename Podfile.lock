@@ -22,6 +22,11 @@ PODS:
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30907.0)
     - PromisesObjC (~> 1.2)
+  - GoogleMaps (4.2.0):
+    - GoogleMaps/Maps (= 4.2.0)
+  - GoogleMaps/Base (4.2.0)
+  - GoogleMaps/Maps (4.2.0):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (7.3.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -39,6 +44,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
   - IQKeyboardManagerSwift (6.5.6)
+  - Kingfisher (6.2.1)
   - KWVerificationCodeView (0.4.0)
   - LanguageManager-iOS (1.2.3)
   - nanopb (2.30907.0):
@@ -48,13 +54,21 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PKHUD (5.3.0)
   - PromisesObjC (1.2.12)
+  - Realm (10.7.2):
+    - Realm/Headers (= 10.7.2)
+  - Realm/Headers (10.7.2)
+  - RealmSwift (10.7.2):
+    - Realm (= 10.7.2)
 
 DEPENDENCIES:
   - Firebase/Auth
+  - GoogleMaps
   - IQKeyboardManagerSwift
+  - Kingfisher
   - KWVerificationCodeView
   - LanguageManager-iOS
   - PKHUD
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
@@ -63,14 +77,18 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - GoogleDataTransport
+    - GoogleMaps
     - GoogleUtilities
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
+    - Kingfisher
     - KWVerificationCodeView
     - LanguageManager-iOS
     - nanopb
     - PKHUD
     - PromisesObjC
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   Firebase: d59ad4129167f9f0d2a4f6c1f0c462254b6002c8
@@ -78,15 +96,19 @@ SPEC CHECKSUMS:
   FirebaseCore: 049029df3096e5c118917029be7da75ee16f3b1b
   FirebaseCoreDiagnostics: 066f996579cf097bdad3d7dc9a918d6b9e129c50
   GoogleDataTransport: b006084b73915a42c28a3466961a4edda3065da6
+  GoogleMaps: eb03e327edfd70b06de1e6e321653f73712df7ad
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
   LanguageManager-iOS: 020a6849c97949683926773fd5b82baceaa142db
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
+  RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
 
-PODFILE CHECKSUM: c2c8426b9980f2a5fef3d3993dd9480f1e0081bc
+PODFILE CHECKSUM: 969d2f431a7a006824148d2afdef573b0a7dc098
 
 COCOAPODS: 1.10.1

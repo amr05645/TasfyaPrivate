@@ -9,6 +9,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import LanguageManager_iOS
 import Firebase
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         LanguageManager.shared.defaultLanguage = .deviceLanguage
-        UITextField.appearance().textAlignment = LanguageManager.shared.currentLanguage == .ar ? .right : .left
-        UILabel.appearance().textAlignment = LanguageManager.shared.currentLanguage == .ar ? .right : .left
+//        UITextField.appearance().textAlignment = LanguageManager.shared.currentLanguage == .ar ? .right : .left
+//        UILabel.appearance().textAlignment = LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        GMSServices.provideAPIKey("AIzaSyBe-66bJ_0AhrTsBazivN6ow4GEr2Hizbc")
         
         self.window = UIWindow()
         window?.rootViewController = setRootVC(to: HomeScreenVC())

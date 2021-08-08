@@ -7,17 +7,22 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps
 
 class AddAddressVC: UIViewController {
+    
+    @IBOutlet weak var mapView: GMSMapView!
     
     private let locationManager = CLLocationManager()
     var lat: CLLocationDegrees?
     var lng: CLLocationDegrees?
+    let marker = GMSMarker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        mapView.delegate = self
     }
     
     @IBAction func locationTapped(_ sender: Any) {
@@ -31,12 +36,24 @@ class AddAddressVC: UIViewController {
 
 extension AddAddressVC: CLLocationManagerDelegate {
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        guard status == .authorizedWhenInUse else {return}
+        locationManager.startUpdatingLocation()
+        mapView.isMyLocationEnabled = true
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {return}
-//        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-        self.lat = location.coordinate.latitude
-        self.lng = location.coordinate.longitude
-                
+        guard let location = locations.first else {return}
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        marker.map = mapView
+        marker.appearAnimation = .pop
         locationManager.stopUpdatingLocation()
+    }
+}
+
+extension AddAddressVC: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        marker.position = CLLocationCoordinate2D(latitude: position.target.latitude, longitude: position.target.longitude)
     }
 }
