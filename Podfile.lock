@@ -43,6 +43,9 @@ PODS:
   - GoogleUtilities/Reachability (7.3.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (6.2.1)
   - KWVerificationCodeView (0.4.0)
@@ -63,6 +66,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - GoogleMaps
+  - ImageSlideshow (~> 1.9.0)
   - IQKeyboardManagerSwift
   - Kingfisher
   - KWVerificationCodeView
@@ -80,6 +84,7 @@ SPEC REPOS:
     - GoogleMaps
     - GoogleUtilities
     - GTMSessionFetcher
+    - ImageSlideshow
     - IQKeyboardManagerSwift
     - Kingfisher
     - KWVerificationCodeView
@@ -99,6 +104,7 @@ SPEC CHECKSUMS:
   GoogleMaps: eb03e327edfd70b06de1e6e321653f73712df7ad
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
@@ -109,6 +115,6 @@ SPEC CHECKSUMS:
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
 
-PODFILE CHECKSUM: 8a056460a15add2b27be13dec4530446b9c03035
+PODFILE CHECKSUM: 4812ef4e1eef40f5219ab79b8fb27dc42fce98a7
 
 COCOAPODS: 1.10.1

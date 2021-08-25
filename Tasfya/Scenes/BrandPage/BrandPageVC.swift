@@ -33,7 +33,6 @@ class BrandPageVC: BaseVC {
 		CategoryCollectionView.delegate = self
 		CategoryCollectionView.dataSource = self
 		register()
-		refreshcollectionView()
         addSwipeGesture()
         brandImg.image = detailImg.image
 	}
@@ -69,17 +68,6 @@ class BrandPageVC: BaseVC {
 	
 	@IBAction func homeTapped(_ sender: Any) {
 		self.navigationController?.popToRootViewController(animated: true)
-	}
-	
-	func refreshcollectionView() {
-		let refreshControl = UIRefreshControl()
-		refreshControl.addTarget(self, action: #selector(refreshment), for: .valueChanged)
-		ProductCollectionView.refreshControl = refreshControl
-	}
-	
-	@objc func refreshment(refreshControl: UIRefreshControl) {
-		print("refresh done")
-		refreshControl.endRefreshing()
 	}
     
     func addSwipeGesture() {

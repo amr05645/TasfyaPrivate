@@ -14,4 +14,5 @@ target 'Tasfya' do
   pod 'RealmSwift'
   pod 'GoogleMaps'
   pod 'MOLH'
+  pod 'ImageSlideshow', '~> 1.9.0'
 end
