@@ -46,7 +46,7 @@ PODS:
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (6.2.1)
   - KWVerificationCodeView (0.4.0)
-  - LanguageManager-iOS (1.2.3)
+  - MOLH (1.4.3)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
@@ -66,7 +66,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
   - KWVerificationCodeView
-  - LanguageManager-iOS
+  - MOLH
   - PKHUD
   - RealmSwift
 
@@ -83,7 +83,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - KWVerificationCodeView
-    - LanguageManager-iOS
+    - MOLH
     - nanopb
     - PKHUD
     - PromisesObjC
@@ -102,13 +102,13 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
-  LanguageManager-iOS: 020a6849c97949683926773fd5b82baceaa142db
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
 
-PODFILE CHECKSUM: 969d2f431a7a006824148d2afdef573b0a7dc098
+PODFILE CHECKSUM: 8a056460a15add2b27be13dec4530446b9c03035
 
 COCOAPODS: 1.10.1

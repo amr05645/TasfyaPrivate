@@ -7,7 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import LanguageManager_iOS
+import MOLH
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         IQKeyboardManager.shared.enable = true
-        LanguageManager.shared.defaultLanguage = .deviceLanguage
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		self.window = UIWindow(windowScene: windowScene)
 		window?.rootViewController = setRootVC(to: HomeScreenVC())

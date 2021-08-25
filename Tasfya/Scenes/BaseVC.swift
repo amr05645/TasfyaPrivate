@@ -37,9 +37,9 @@ class BaseVC: UIViewController {
     func showLanguageBtn() {
         langBtn.setTitleColor(#colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1), for: .normal)
         switch selectedLanguage {
-        case .ar:
+        case "ar":
             langBtn.setTitle("En", for: .normal)
-        case .en:
+        case "en":
             langBtn.setTitle("عربي", for: .normal)
         default:
             return
@@ -106,10 +106,10 @@ class BaseVC: UIViewController {
         
         self.showAlert(message: Constants.messages.langAlert) {
             switch self.selectedLanguage {
-            case .ar:
-                LanguageHandler.changeLanguage(to: .en)
-            case .en:
-                LanguageHandler.changeLanguage(to: .ar)
+            case "ar":
+                LanguageHandler.changeLanguage(to: "en")
+            case "en":
+                LanguageHandler.changeLanguage(to: "ar")
             default:
                 return
             }

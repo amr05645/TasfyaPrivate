@@ -6,29 +6,24 @@
 //
 
 import Foundation
-import LanguageManager_iOS
 import IQKeyboardManagerSwift
+import MOLH
 
 struct LanguageHandler {
     
-    static func changeLanguage(to language: Languages) {
+    static func changeLanguage(to language: String) {
         
-        // change the language
-        LanguageManager.shared.setLanguage(language: language)
-        { title -> UIViewController in
-            return setRootVC(to: HomeScreenVC())
-        } animation: { view in
-            // do custom animation
-            view.transform = CGAffineTransform(scaleX: 2, y: 2)
-            view.alpha = 0
-        }
+        MOLH.setLanguageTo(language)
         
-        UITextField.appearance().textAlignment = language == .ar ? .right : .left
-        UITextView.appearance().textAlignment = language == .ar ? .right : .left
+        UIApplication.shared.keyWindow?.rootViewController = setRootVC(to: HomeScreenVC())
+        
+        UITextField.appearance().textAlignment = language == "ar" ? .right : .left
+        UITextView.appearance().textAlignment = language == "ar" ? .right : .left
+        UILabel.appearance().textAlignment = language == "ar" ? .right : .left
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = Constants.titles.done
     }
     
-    static func getLanguage() -> Languages {
-        return LanguageManager.shared.currentLanguage
+    static func getLanguage() -> String {
+        return MOLHLanguage.currentAppleLanguage()
     }
 }

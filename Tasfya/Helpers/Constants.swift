@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import LanguageManager_iOS
+import MOLH
 
 
 struct Constants {
@@ -24,16 +24,16 @@ struct Images {
 }
 
 struct Titles {
-    var done: String {"Done".localiz()}
-    var ok: String {"Ok".localiz()}
-    var cancel: String {"Cancel".localiz()}
-    var orderID: String {"Order ID".localiz()}
-    var orderDate: String {"Order Date".localiz()}
-    var orderStatus: String {"Order Status".localiz()}
+    var done: String {"Done".localized}
+    var ok: String {"Ok".localized}
+    var cancel: String {"Cancel".localized}
+    var orderID: String {"Order ID".localized}
+    var orderDate: String {"Order Date".localized}
+    var orderStatus: String {"Order Status".localized}
 }
 
 struct Messages {
-    var langAlert: String {"Kindly confirm changing current language to Arabic".localiz()}
+    var langAlert: String {"Kindly confirm changing current language to Arabic".localized}
 }
 
 struct Colors {
@@ -43,15 +43,15 @@ struct Colors {
 }
 
 struct SideMenuTitles {
-    var home: String {"Home".localiz()}
-    var profile: String {"Profile".localiz()}
-    var settings: String {"Settings".localiz()}
-    var location: String {"Location".localiz()}
-    var language: String {"Language".localiz()}
-    var contactUs: String {"Contact Us".localiz()}
-    var cart: String {"Cart".localiz()}
-    var orders: String {"Orders".localiz()}
-    var country: String {"Country".localiz()}
-    var login: String {"Login / Sign Up".localiz()}
-    var logout: String {"Logout".localiz()}
+    var home: String {"Home".localized}
+    var profile: String {"Profile".localized}
+    var settings: String {"Settings".localized}
+    var location: String {"Location".localized}
+    var language: String {"Language".localized}
+    var contactUs: String {"Contact Us".localized}
+    var cart: String {"Cart".localized}
+    var orders: String {"Orders".localized}
+    var country: String {"Country".localized}
+    var login: String {"Login / Sign Up".localized}
+    var logout: String {"Logout".localized}
 }

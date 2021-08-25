@@ -13,7 +13,10 @@ import AuthenticationServices
 class LoginVC: UIViewController {
     
     var delegate: NavigationDelegate?
-	
+    let country = ["Egypt", "Kuwait"]
+    let flags: [String : UIImage] = ["Egypt": #imageLiteral(resourceName: "flag-egypt.png"), "Kuwait": #imageLiteral(resourceName: "flagImg")]
+    let code = ["Egypt":"+20", "Kuwait":"+965"]
+    
 	@IBOutlet weak var flagImg: UIImageView!
 	@IBOutlet weak var countryCodeTF: PickerTF!
 	@IBOutlet weak var phoneNumperTF: UITextField!
@@ -38,8 +41,12 @@ class LoginVC: UIViewController {
     }
     
     private func setCodeOptions() {
-        let code = ["+20", "+965"]
-        countryCodeTF.setInputPickerData(to: code)
+        countryCodeTF.setInputPickerData(to: country)
+        countryCodeTF.didSelect = { [weak self] country in
+            guard let country = country else {return}
+            self?.flagImg.image = self?.flags[country]
+            self?.countryCodeTF.changeText(to: self?.code[country] ?? "")
+        }
     }
 	
 	@IBAction func done(_ sender: UITextField) {

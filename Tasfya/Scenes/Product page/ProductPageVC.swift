@@ -53,7 +53,7 @@ class ProductPageVC: BaseVC {
         productNameLbl.text = detailName
         newPriceLbl.text = newprice
         let language = LanguageHandler.getLanguage()
-        detailsLabel.textAlignment = language == .ar ? .right : .left
+        detailsLabel.textAlignment = language == "ar" ? .right : .left
 	}
 	
 	@IBAction func minCountBtn(_ sender: Any) {

@@ -8,10 +8,10 @@ target 'Tasfya' do
   # Pods for Tasfya
   pod 'IQKeyboardManagerSwift'
 	pod "KWVerificationCodeView"
-  pod 'LanguageManager-iOS'
   pod 'Firebase/Auth'
   pod 'PKHUD'
   pod 'Kingfisher'
   pod 'RealmSwift'
   pod 'GoogleMaps'
+  pod 'MOLH'
 end

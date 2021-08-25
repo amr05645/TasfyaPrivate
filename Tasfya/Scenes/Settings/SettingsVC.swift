@@ -42,10 +42,10 @@ class SettingsVC: UIViewController {
             UserDefaults.standard.setValue(self.languageTF.text, forKey: "lang")
             self.showAlert(message: Constants.messages.langAlert) {
                 switch self.selectedLanguage {
-                case .ar:
-                    LanguageHandler.changeLanguage(to: .en)
-                case .en:
-                    LanguageHandler.changeLanguage(to: .ar)
+                case "ar":
+                    LanguageHandler.changeLanguage(to: "en")
+                case "en":
+                    LanguageHandler.changeLanguage(to: "ar")
                 default:
                     return
                 }

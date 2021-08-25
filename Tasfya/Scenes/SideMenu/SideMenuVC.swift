@@ -96,9 +96,9 @@ class SideMenuVC: UIViewController {
     @objc private func handleSwipes(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case .left:
-            LanguageHandler.getLanguage() == .en ? showSideMenu() : hideSideMenu()
+            LanguageHandler.getLanguage() == "en" ? showSideMenu() : hideSideMenu()
         case .right:
-            LanguageHandler.getLanguage() == .en ? hideSideMenu() : showSideMenu()
+            LanguageHandler.getLanguage() == "en" ? hideSideMenu() : showSideMenu()
         default:
             return
         }
@@ -146,10 +146,10 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.language:
             self.showAlert(message: Constants.messages.langAlert) {
                 switch self.selectedLanguage {
-                case .ar:
-                    LanguageHandler.changeLanguage(to: .en)
-                case .en:
-                    LanguageHandler.changeLanguage(to: .ar)
+                case "ar":
+                    LanguageHandler.changeLanguage(to: "en")
+                case "en":
+                    LanguageHandler.changeLanguage(to: "ar")
                 default:
                     return
                 }

@@ -66,6 +66,10 @@ class PickerTF: UITextField {
     @objc private func cancelAction() {
         self.resignFirstResponder()
     }
+    
+    func changeText(to text: String) {
+        self.text = text
+    }
 }
 
 //MARK:- UIPickerViewDataSource, UIPickerViewDelegate

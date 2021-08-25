@@ -1,0 +1,31 @@
+
+
+/* Class = "UILabel"; text = "Account Settings"; ObjectID = "BOV-lj-D5x"; */
+"BOV-lj-D5x.text" = "اعدادات الحساب";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "C6a-3g-3gK"; */
+"C6a-3g-3gK.placeholder" = "User Name";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "IN9-64-Vlu"; */
+"IN9-64-Vlu.normalTitle" = "Save";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "gBX-Jd-6mX"; */
+"gBX-Jd-6mX.placeholder" = "Gender";
+
+/* Class = "UITextField"; placeholder = "Country"; ObjectID = "iYx-P4-RVp"; */
+"iYx-P4-RVp.placeholder" = "Country";
+
+/* Class = "UILabel"; text = "Adresses"; ObjectID = "mUY-rN-Ru6"; */
+"mUY-rN-Ru6.text" = "Adresses";
+
+/* Class = "UILabel"; text = "Delete The Account"; ObjectID = "q9i-dJ-Be8"; */
+"q9i-dJ-Be8.text" = "Delete The Account";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "swP-NO-hJz"; */
+"swP-NO-hJz.placeholder" = "Phone Number";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "tB4-ms-xfe"; */
+"tB4-ms-xfe.normalTitle" = "Cancel";
+
+/* Class = "UITextField"; placeholder = "E-Mail"; ObjectID = "vQj-wH-mqd"; */
+"vQj-wH-mqd.placeholder" = "E-Mail";
