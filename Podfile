@@ -15,4 +15,5 @@ target 'Tasfya' do
   pod 'GoogleMaps'
   pod 'MOLH'
   pod 'ImageSlideshow', '~> 1.9.0'
+  pod "ImageSlideshow/Kingfisher"
 end

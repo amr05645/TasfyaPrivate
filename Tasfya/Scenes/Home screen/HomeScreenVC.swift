@@ -14,9 +14,6 @@ class HomeScreenVC: BaseVC {
     private var lastContentOffset: CGFloat = 0
     
     var headerShown = true
-    
-    let localSource = [BundleImageSource(imageString: "SmallPhoneImage"), BundleImageSource(imageString: "SmallMailImage"), BundleImageSource(imageString: "SmallLocationImage"), BundleImageSource(imageString: "SmallGenderImage")]
-    
     var categories: Categories?
     
     @IBOutlet weak var advertiseImgSlider: ImageSlideshow!
@@ -33,7 +30,6 @@ class HomeScreenVC: BaseVC {
         brandsCollectionView.dataSource = self
         register()
         addSwipeGesture()
-        setupImageSlider()
     }
     
     func getPostString(params:[String:Any]) -> String {
@@ -68,6 +64,7 @@ class HomeScreenVC: BaseVC {
             }
             DispatchQueue.main.async {
                 self.brandsCollectionView.reloadData()
+                self.setupImageSlider()
             }
         }
         task.resume()
@@ -78,16 +75,27 @@ class HomeScreenVC: BaseVC {
     }
     
     func setupImageSlider() {
+        let url = "http://yousry.drayman.co/"
+        var imagesSources: [KingfisherSource] = []
+        guard let data = categories?.data else {return}
+        for item in data {
+            let imageUrl = item.image ?? ""
+            let finalUrl = url + imageUrl
+            guard let completeLink = URL(string: finalUrl ) else {return}
+            imagesSources.append(KingfisherSource(url: completeLink))
+        }
         let pageIndicator = UIPageControl()
         pageIndicator.currentPageIndicatorTintColor = #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
         pageIndicator.pageIndicatorTintColor = UIColor.lightGray
         advertiseImgSlider.pageIndicator = pageIndicator
         advertiseImgSlider.slideshowInterval = 2.5
         advertiseImgSlider.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
-        advertiseImgSlider.pageIndicator?.numberOfPages = localSource.count
-        advertiseImgSlider.contentScaleMode = UIViewContentMode.scaleAspectFit
+        advertiseImgSlider.activityIndicator = DefaultActivityIndicator()
+        advertiseImgSlider.pageIndicator?.numberOfPages = imagesSources.count
+        advertiseImgSlider.contentScaleMode = UIViewContentMode.scaleToFill
         advertiseImgSlider.delegate = self
-        advertiseImgSlider.setImageInputs(localSource)
+        advertiseImgSlider.setImageInputs(imagesSources)
+        
     }
     
     func addSwipeGesture() {
@@ -143,7 +151,11 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let category = categories?.data?[indexPath.row]
         cell.addproductBtn.isHidden = true
         cell.brandNameLbl.text = category?.name
-        let completeLink = URL(string: "https://yousry.drayman.co/resources"+"\(String(describing: category?.image))")
+        let url = "http://yousry.drayman.co/"
+        let imageURL = category?.image ?? ""
+        let finalUrl = url + imageURL
+        let completeLink = URL(string: finalUrl )
+        cell.brandLogoImg.kf.setImage(with: completeLink)
         cell.brandPhotoImg.kf.setImage(with: completeLink)
         let processor = DownsamplingImageProcessor(size: cell.brandPhotoImg.bounds.size)
             |> RoundCornerImageProcessor(cornerRadius: 20)
@@ -157,6 +169,24 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])
+        let masterUrl = "http://yousry.drayman.co/"
+        let iconURL = category?.icon ?? ""
+        let finalIconUrl = masterUrl + iconURL
+        let completeIconLink = URL(string: finalIconUrl )
+        cell.brandLogoImg.kf.setImage(with: completeIconLink)
+        cell.brandLogoImg.kf.setImage(with: completeIconLink)
+        let process = DownsamplingImageProcessor(size: cell.brandPhotoImg.bounds.size)
+            |> RoundCornerImageProcessor(cornerRadius: 20)
+        cell.brandPhotoImg.kf.indicatorType = .activity
+        cell.brandPhotoImg.kf.setImage(
+            with: completeLink,
+            placeholder: nil,
+            options: [
+                .processor(process),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
         return cell
     }
     
@@ -164,7 +194,10 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let category = categories!.data![indexPath.row]
         let vc = BrandPageVC()
         vc.title = "\(String(describing: category.name!))"
-        let completeLink = URL(string: (category.image!))
+        let url = "http://yousry.drayman.co/"
+        let imageURL = category.image ?? ""
+        let finalUrl = url + imageURL
+        let completeLink = URL(string: finalUrl )
         vc.detailImg.kf.setImage(with: completeLink)
         self.navigationController?.pushViewController(vc, animated: true)
     }

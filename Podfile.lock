@@ -46,6 +46,9 @@ PODS:
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
+  - ImageSlideshow/Kingfisher (1.9.2):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (6.2.1)
   - KWVerificationCodeView (0.4.0)
@@ -67,6 +70,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - GoogleMaps
   - ImageSlideshow (~> 1.9.0)
+  - ImageSlideshow/Kingfisher
   - IQKeyboardManagerSwift
   - Kingfisher
   - KWVerificationCodeView
@@ -115,6 +119,6 @@ SPEC CHECKSUMS:
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
 
-PODFILE CHECKSUM: 4812ef4e1eef40f5219ab79b8fb27dc42fce98a7
+PODFILE CHECKSUM: 4cdd3df4c0b9662617333e5fa4da9824e711900f
 
 COCOAPODS: 1.10.1
