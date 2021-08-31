@@ -154,39 +154,11 @@ extension HomeScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let url = "http://yousry.drayman.co/"
         let imageURL = category?.image ?? ""
         let finalUrl = url + imageURL
-        let completeLink = URL(string: finalUrl )
-        cell.brandLogoImg.kf.setImage(with: completeLink)
-        cell.brandPhotoImg.kf.setImage(with: completeLink)
-        let processor = DownsamplingImageProcessor(size: cell.brandPhotoImg.bounds.size)
-            |> RoundCornerImageProcessor(cornerRadius: 20)
-        cell.brandPhotoImg.kf.indicatorType = .activity
-        cell.brandPhotoImg.kf.setImage(
-            with: completeLink,
-            placeholder: nil,
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
+        cell.brandPhotoImg.showImage(url: finalUrl, cornerRadius: 20)
         let masterUrl = "http://yousry.drayman.co/"
         let iconURL = category?.icon ?? ""
         let finalIconUrl = masterUrl + iconURL
-        let completeIconLink = URL(string: finalIconUrl )
-        cell.brandLogoImg.kf.setImage(with: completeIconLink)
-        cell.brandLogoImg.kf.setImage(with: completeIconLink)
-        let process = DownsamplingImageProcessor(size: cell.brandPhotoImg.bounds.size)
-            |> RoundCornerImageProcessor(cornerRadius: 20)
-        cell.brandPhotoImg.kf.indicatorType = .activity
-        cell.brandPhotoImg.kf.setImage(
-            with: completeLink,
-            placeholder: nil,
-            options: [
-                .processor(process),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
+        cell.brandLogoImg.showImage(url: finalIconUrl, cornerRadius: 0)
         return cell
     }
     
