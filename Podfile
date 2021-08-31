@@ -11,7 +11,6 @@ target 'Tasfya' do
   pod 'Firebase/Auth'
   pod 'PKHUD'
   pod 'Kingfisher'
-  pod 'RealmSwift'
   pod 'GoogleMaps'
   pod 'MOLH'
   pod 'ImageSlideshow', '~> 1.9.0'
