@@ -38,7 +38,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" name="darkBlue121A50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="N97-8n-sef" firstAttribute="centerX" secondItem="Sbc-ik-SJf" secondAttribute="centerX" id="FfO-Y6-3Hh"/>
                                     <constraint firstItem="N97-8n-sef" firstAttribute="centerY" secondItem="Sbc-ik-SJf" secondAttribute="centerY" id="PvH-zG-A7n"/>
@@ -48,13 +48,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GRE-NJ-jXI">
                                 <rect key="frame" x="35" y="0.0" width="285" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="textColor" name="sideMenuRow #918BCC"/>
+                                <color key="textColor" name="darkBlue121A50"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" name="darkBlue121A50"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="sdq-hO-KTu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Kag-hc-JlP"/>
                     <constraint firstItem="sdq-hO-KTu" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="WxY-Sd-iP6"/>

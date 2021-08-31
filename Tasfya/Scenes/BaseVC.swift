@@ -16,6 +16,9 @@ class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setRightButtons()
+        setSideMenuBtn()
+        showLanguageBtn()
+        showLogo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +29,7 @@ class BaseVC: UIViewController {
     func showLogo() {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = #imageLiteral(resourceName: "tasfyaLogo")
+        imageView.image = #imageLiteral(resourceName: "logoImage")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 120),
@@ -40,18 +43,17 @@ class BaseVC: UIViewController {
         case "ar":
             langBtn.setTitle("En", for: .normal)
         case "en":
-            langBtn.setTitle("عربي", for: .normal)
+            langBtn.setTitle("ع", for: .normal)
         default:
             return
         }
-        setLanguageBtn()
     }
     
     func setRightButtons() {
-        self.navigationItem.rightBarButtonItems = [setSideMenuBtn(), setCartBtn()]
+        self.navigationItem.rightBarButtonItems = [setSearchBtn(), setLanguageBtn(), setCartBtn()]
     }
     
-    private func setSideMenuBtn() -> UIBarButtonItem {
+    private func setSideMenuBtn()  {
         let menuBtn = UIButton()
         menuBtn.setImage(#imageLiteral(resourceName: "sideMenuBtn"), for: .normal)
         menuBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -61,11 +63,11 @@ class BaseVC: UIViewController {
         ])
         
         menuBtn.addTarget(self, action: #selector(sideMenuTapped), for: .touchUpInside)
-        return UIBarButtonItem(customView: menuBtn)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuBtn)
     }
     
     func setCartBtn() -> UIBarButtonItem {
-        let cartImage = UIImageView(image: #imageLiteral(resourceName: "cart"))
+        let cartImage = UIImageView(image: #imageLiteral(resourceName: "shopIcon"))
         cartImage.imageTint = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
         let cartBtn = UIButton()
         cartBtn.addSubview(cartImage)
@@ -83,15 +85,37 @@ class BaseVC: UIViewController {
         return UIBarButtonItem(customView: cartBtn)
     }
     
-    private func setLanguageBtn() {
+    func setSearchBtn() -> UIBarButtonItem {
+        let searchImage = UIImageView(image: #imageLiteral(resourceName: "searchIcon"))
+        searchImage.imageTint = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
+        let searchBtn = UIButton()
+        searchBtn.addSubview(searchImage)
+        
+        searchImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchImage.widthAnchor.constraint(equalToConstant: 18),
+            searchImage.heightAnchor.constraint(equalTo: searchImage.widthAnchor),
+            searchImage.centerXAnchor.constraint(equalTo: searchBtn.centerXAnchor),
+            searchImage.centerYAnchor.constraint(equalTo: searchBtn.centerYAnchor)
+        ])
+        
+        searchBtn.addTarget(self, action: #selector(searchTapped), for: .touchUpInside)
+        
+        return UIBarButtonItem(customView: searchBtn)
+    }
+    
+    @objc private func searchTapped() {
+        print("search tapped")
+    }
+    
+    private func setLanguageBtn() -> UIBarButtonItem {
         
         langBtn.addTarget(self, action: #selector(langBtnTapped), for: .touchUpInside)
         langBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             langBtn.widthAnchor.constraint(greaterThanOrEqualToConstant: 30)
         ])
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: langBtn)
+        return UIBarButtonItem(customView: langBtn)
     }
     
     @objc private func sideMenuTapped() {
@@ -99,7 +123,8 @@ class BaseVC: UIViewController {
     }
     
     @objc private func cartTapped() {
-        self.navigationController?.pushViewController(CartVC(), animated: true)
+//        self.navigationController?.pushViewController(CartVC(), animated: true)
+        print("cart tapped")
     }
     
     @objc private func langBtnTapped() {

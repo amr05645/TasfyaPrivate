@@ -13,6 +13,8 @@
 		5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10292619FD600031C7F9 /* SceneDelegate.swift */; };
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
 		5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */; };
+		5B70790726DE3D13002F9C3B /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B70790526DE3D13002F9C3B /* HomeScreenVC.swift */; };
+		5B70790826DE3D13002F9C3B /* HomeScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70790626DE3D13002F9C3B /* HomeScreenVC.xib */; };
 		5B785B09262D8A7600C6CA58 /* LanguageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */; };
 		5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B785B0B262D91DD00C6CA58 /* UICollectionView+Extension.swift */; };
 		5B785B0F262D9A3700C6CA58 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B785B0E262D9A3700C6CA58 /* UIViewController+Extension.swift */; };
@@ -48,6 +50,8 @@
 		5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
 		5B6DE76826B14DF3008BDEF9 /* Tasfya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tasfya.entitlements; sourceTree = "<group>"; };
 		5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B70790526DE3D13002F9C3B /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
+		5B70790626DE3D13002F9C3B /* HomeScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenVC.xib; sourceTree = "<group>"; };
 		5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageHandler.swift; sourceTree = "<group>"; };
 		5B785B0B262D91DD00C6CA58 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		5B785B0E262D9A3700C6CA58 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B70790426DE3CEB002F9C3B /* HomeScreen */,
 				5BFB1269261F054F00FB655E /* BaseVC.swift */,
 				5BFB126B261F056C00FB655E /* SideMenu */,
 			);
@@ -162,6 +167,15 @@
 				5B49072826D13FCF00CD1040 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B70790426DE3CEB002F9C3B /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5B70790526DE3D13002F9C3B /* HomeScreenVC.swift */,
+				5B70790626DE3D13002F9C3B /* HomeScreenVC.xib */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		5B80968A2630270D00C71A24 /* Models */ = {
@@ -296,6 +310,7 @@
 				5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */,
 				5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
+				5B70790826DE3D13002F9C3B /* HomeScreenVC.xib in Resources */,
 				5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +392,7 @@
 				5B83D657261C941B00A50228 /* ReusableView.swift in Sources */,
 				5B785B0F262D9A3700C6CA58 /* UIViewController+Extension.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
+				5B70790726DE3D13002F9C3B /* HomeScreenVC.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,
 				5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */,
 				5B785B09262D8A7600C6CA58 /* LanguageHandler.swift in Sources */,

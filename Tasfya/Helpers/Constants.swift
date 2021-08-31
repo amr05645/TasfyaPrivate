@@ -44,14 +44,17 @@ struct Colors {
 
 struct SideMenuTitles {
     var home: String {"Home".localized}
-    var profile: String {"Profile".localized}
-    var settings: String {"Settings".localized}
-    var location: String {"Location".localized}
-    var language: String {"Language".localized}
+    var categories: String {"Categories".localized}
+    var shop: String {"Shop".localized}
+    var myAccount: String {"My Account".localized}
+    var myOrders: String {"My Orders".localized}
+    var myAddresses: String {"My Addresses".localized}
+    var myFavorites: String {"My Favorites".localized}
     var contactUs: String {"Contact Us".localized}
-    var cart: String {"Cart".localized}
-    var orders: String {"Orders".localized}
-    var country: String {"Country".localized}
+    var about: String {"About".localized}
+    var shareApp: String {"Share App".localized}
+    var rateApp: String {"Rate App".localized}
+    var settings: String {"Settings".localized}
     var login: String {"Login / Sign Up".localized}
     var logout: String {"Logout".localized}
 }

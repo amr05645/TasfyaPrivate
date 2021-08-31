@@ -29,7 +29,7 @@ class SideMenuCell: UITableViewCell, ReusableView {
     }
     
     func highLight(status: Bool) {
-        self.icon.imageTint = status ? .white : #colorLiteral(red: 0.568627451, green: 0.5450980392, blue: 0.8, alpha: 1)
-        self.titleLabel.textColor = status ? .white : #colorLiteral(red: 0.568627451, green: 0.5450980392, blue: 0.8, alpha: 1)
+        self.icon.imageTint = status ? .white : #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
+        self.titleLabel.textColor = status ? .white : #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
     }
 }
