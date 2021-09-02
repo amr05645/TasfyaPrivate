@@ -23,7 +23,7 @@ extension UITextField {
     }
     
     @IBInspectable
-    var cornerRadius: CGFloat {
+    override var cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }
@@ -34,7 +34,7 @@ extension UITextField {
     }
     
     @IBInspectable
-    var borderWidth: CGFloat {
+    override var borderWidth: CGFloat {
         get {
             return self.layer.borderWidth
         }
@@ -45,7 +45,7 @@ extension UITextField {
     }
     
     @IBInspectable
-    var borderColor: UIColor {
+    override var borderColor: UIColor {
         get {
             return UIColor.white
         }
@@ -56,7 +56,7 @@ extension UITextField {
     }
     
     @IBInspectable
-    var shadowRadius: CGFloat {
+    override var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
@@ -66,7 +66,7 @@ extension UITextField {
         }
     }
     @IBInspectable
-    var shadowOffset : CGSize{
+    override var shadowOffset : CGSize{
         
         get{
             return layer.shadowOffset
@@ -77,7 +77,7 @@ extension UITextField {
     }
     
     @IBInspectable
-    var shadowColor : UIColor{
+    override var shadowColor : UIColor{
         get{
             return UIColor.init(cgColor: layer.shadowColor!)
         }
@@ -86,7 +86,7 @@ extension UITextField {
         }
     }
     @IBInspectable
-    var shadowOpacity : Float {
+    override var shadowOpacity : Float {
         
         get{
             return layer.shadowOpacity

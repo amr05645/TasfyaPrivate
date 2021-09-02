@@ -105,7 +105,7 @@ class BaseVC: UIViewController {
     }
     
     @objc private func searchTapped() {
-        print("search tapped")
+        self.navigationController?.pushViewController(SearchVC(), animated: true)
     }
     
     private func setLanguageBtn() -> UIBarButtonItem {

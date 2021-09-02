@@ -58,6 +58,7 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - Parchment (3.0.1)
   - PKHUD (5.3.0)
   - PromisesObjC (1.2.12)
 
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - Kingfisher
   - KWVerificationCodeView
   - MOLH
+  - Parchment (~> 3.0)
   - PKHUD
 
 SPEC REPOS:
@@ -88,6 +90,7 @@ SPEC REPOS:
     - KWVerificationCodeView
     - MOLH
     - nanopb
+    - Parchment
     - PKHUD
     - PromisesObjC
 
@@ -106,9 +109,10 @@ SPEC CHECKSUMS:
   KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: bc42b3554cabe93998e1d800b41c0b46de0871b6
+PODFILE CHECKSUM: fea774b77b3318de50f37467c94ee211aa39e65c
 
 COCOAPODS: 1.10.1
