@@ -30,6 +30,7 @@ struct Titles {
     var orderID: String {"Order ID".localized}
     var orderDate: String {"Order Date".localized}
     var orderStatus: String {"Order Status".localized}
+    var categoris: String {"Categoris".localized}
 }
 
 struct Messages {

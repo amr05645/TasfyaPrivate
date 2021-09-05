@@ -59,7 +59,7 @@ struct ProductData: Codable {
     var lastModified: JSONNull?
     var manufacturersURL, discountPrice: String?
     var categoriesID, categoriesDescriptionID: String?
-    var categoriesName: CategoriesName?
+    var categoriesName: String?
     var images: [Image]?
     var isLiked: String?
     var attributes: [Attribute]?
@@ -118,12 +118,6 @@ struct Value: Codable {
         case id, value, price
         case pricePrefix = "price_prefix"
     }
-}
-
-enum CategoriesName: String, Codable {
-    case menPoloShirts = "Men Polo shirts"
-    case shortsSkirts = "Shorts & Skirts"
-    case sweaters = "Sweaters"
 }
 
 // MARK: - Image

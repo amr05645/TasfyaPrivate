@@ -12,9 +12,13 @@ class PagingControlVC: UIViewController {
     
     let pagingViewController = PagingViewController()
     
-    var categories: Categories?
-    
-    let vc = MainScreenVC()
+    var categories: Categories? {
+        didSet {
+            DispatchQueue.main.async {
+                self.pagingViewController.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +27,7 @@ class PagingControlVC: UIViewController {
         addChild(pagingViewController)
         view.addSubview(pagingViewController.view)
         pagingViewController.didMove(toParent: self)
-        addChild(vc)
-        view.addSubview(vc.view)
-        vc.didMove(toParent: self)
         view.constrainToEdges(pagingViewController.view)
-        view.constrainToEdges(vc.view)
         pagingViewController.textColor = .darkGray
         pagingViewController.selectedTextColor = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
         pagingViewController.indicatorColor = #colorLiteral(red: 0.07100000232, green: 0.1019999981, blue: 0.3140000105, alpha: 1)
@@ -68,9 +68,6 @@ class PagingControlVC: UIViewController {
                     print("error serializing json", jsonError)
                 }
             }
-            DispatchQueue.main.async {
-                self.pagingViewController.reloadData()
-            }
         }
         task.resume()
     }
@@ -84,7 +81,10 @@ extension PagingControlVC: PagingViewControllerDataSource {
     }
     
     func pagingViewController(_ pagingViewController: PagingViewController, viewControllerAt index: Int) -> UIViewController {
-        return vc
+        let viewController = MainScreenVC()
+        let cat = categories?.data?[index]
+        viewController.category = cat
+        return viewController
     }
     
     func pagingViewController(_: PagingViewController, pagingItemAt index: Int) -> PagingItem {

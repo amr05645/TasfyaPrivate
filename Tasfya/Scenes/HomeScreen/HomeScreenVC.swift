@@ -13,7 +13,6 @@ class HomeScreenVC: BaseVC {
     private var lastContentOffset: CGFloat = 0
     
     let vc = PagingControlVC()
-    //    let mainScreenVC = MainScreenVC()
     var getBanners: GetBanners?
     
     var headerShown = true
@@ -86,13 +85,13 @@ class HomeScreenVC: BaseVC {
     }
     
     func addSwipeGesture() {
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeUp.direction = .up
-        self.view.addGestureRecognizer(swipeUp)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeDown.direction = .down
-        self.view.addGestureRecognizer(swipeDown)
+            let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
+            swipeUp.direction = .up
+            self.view.addGestureRecognizer(swipeUp)
+            
+            let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
+            swipeDown.direction = .down
+            self.view.addGestureRecognizer(swipeDown)
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
@@ -107,7 +106,7 @@ class HomeScreenVC: BaseVC {
     
     func showHeader() {
         guard !headerShown else {return}
-        //                guard mainScreenVC.mainCollectionView.contentOffset.y <= 0 else {return}
+//        guard MainScreenVC().mainCollectionView.contentOffset.y <= 0 else {return}
         headerShown = true
         header.isHidden = false
         headerTop.constant = 0
@@ -127,15 +126,14 @@ class HomeScreenVC: BaseVC {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if lastContentOffset > scrollView.contentOffset.y && lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
-            // move down
-            showHeader()
-        } else if lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
-            // move up
-            hideHeader()
-        }
-        lastContentOffset = scrollView.contentOffset.y
+            if self.lastContentOffset > scrollView.contentOffset.y && self.lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
+                // move down
+                self.showHeader()
+            } else if self.lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
+                // move up
+                self.hideHeader()
+            }
+            self.lastContentOffset = scrollView.contentOffset.y
     }
     
 }

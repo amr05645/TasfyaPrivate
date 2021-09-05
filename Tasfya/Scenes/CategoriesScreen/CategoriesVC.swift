@@ -1,49 +1,29 @@
 //
-//  MainScreenVC.swift
+//  CategoriesVC.swift
 //  Tasfya
 //
-//  Created by Amr on 01/09/2021.
+//  Created by Amr on 02/09/2021.
 //
 
 import UIKit
 
-class MainScreenVC: UIViewController {
+class CategoriesVC: UIViewController {
     
-//    var scroll: (() -> ())?
+    var categories: Categories?
     
-    var allProducts: AllProducts? {
-        didSet {
-            DispatchQueue.main.async {
-                self.filterProducts()
-            }
-        }
-    }
-    
-    var products: [ProductData]?
-    
-    var category: Datum?
-    
-    @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var CategoriesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         callPostApi()
-        mainCollectionView.delegate = self
-        mainCollectionView.dataSource = self
+        self.title = Constants.titles.categoris
+        CategoriesCollectionView.delegate = self
+        CategoriesCollectionView.dataSource = self
         register()
     }
     
-    func filterProducts() {
-        if let id = category?.id {
-            products = allProducts?.productData?.filter {$0.categoriesID == id}
-        } else {
-            products = allProducts?.productData
-        }
-        mainCollectionView.reloadData()
-    }
-    
     func register() {
-        mainCollectionView.register(UINib(nibName: "MainCVCell", bundle: nil), forCellWithReuseIdentifier: "MainCVCell")
+        CategoriesCollectionView.register(UINib(nibName: "CategoriesCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCell")
     }
     
     func getPostString(params:[String:Any]) -> String {
@@ -55,7 +35,7 @@ class MainScreenVC: UIViewController {
     }
     
     func callPostApi(){
-        let url = URL(string: "http://yousry.drayman.co/getAllProducts")
+        let url = URL(string: "http://yousry.drayman.co/allCategories")
         guard let requestUrl = url else { fatalError() }
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
@@ -68,13 +48,16 @@ class MainScreenVC: UIViewController {
             }
             if let data = data {
                 do {
-                    let parsedCat = try JSONDecoder().decode(AllProducts.self, from: data)
-                    self.allProducts = parsedCat
+                    let parsedCat = try JSONDecoder().decode(Categories.self, from: data)
+                    self.categories = parsedCat
                 }
                 catch let jsonError
                 {
                     print("error serializing json", jsonError)
                 }
+            }
+            DispatchQueue.main.async {
+                self.CategoriesCollectionView.reloadData()
             }
         }
         task.resume()
@@ -82,34 +65,30 @@ class MainScreenVC: UIViewController {
     
 }
 
-extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products?.count ?? 0
+        return categories?.data?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCVCell", for: indexPath) as! MainCVCell
-        let products = products?[indexPath.row]
-        cell.brandNameLbl.text = products?.productsName
-        cell.priceLbl.text = products?.productsPrice
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
+        let category = categories?.data?[indexPath.row]
+        cell.categoryNameLbl.text = category?.name
+        cell.productCountLbl.text = "\(String(describing: category!.totalProducts!)) products"
         let url = "http://yousry.drayman.co/"
-        let imageURL = products?.productsImage ?? ""
+        let imageURL = category?.image ?? ""
         let finalUrl = url + imageURL
-        cell.productImage.showImage(url: finalUrl, cornerRadius: 0)
+        cell.categoryImg.showImage(url: finalUrl, cornerRadius: 0)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did selected")
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -119,10 +98,6 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat =  20
         let collectionViewSize = collectionView.frame.size.width - padding
-        return CGSize(width: collectionViewSize/2, height: (collectionViewSize/2) + 80)
+        return CGSize(width: (collectionViewSize/2), height: (collectionViewSize/2))
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        self.scroll?()
-//    }
 }
