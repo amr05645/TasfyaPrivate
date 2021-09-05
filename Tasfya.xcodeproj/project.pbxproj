@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B16D1CA26B8120300576A60 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16D1C926B8120300576A60 /* DataModel.swift */; };
+		5B25506A26E4C3BC0075C433 /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25506826E4C3BC0075C433 /* ShopVC.swift */; };
+		5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B25506926E4C3BC0075C433 /* ShopVC.xib */; };
 		5B3BC12826DF892000D210BF /* PagingControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC12726DF892000D210BF /* PagingControlVC.swift */; };
 		5B3BC12B26DFC14300D210BF /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC12926DFC14200D210BF /* MainScreenVC.swift */; };
 		5B3BC12C26DFC14300D210BF /* MainScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3BC12A26DFC14200D210BF /* MainScreenVC.xib */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.release.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.release.xcconfig"; sourceTree = "<group>"; };
 		5B16D1C926B8120300576A60 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		5B25506826E4C3BC0075C433 /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
+		5B25506926E4C3BC0075C433 /* ShopVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopVC.xib; sourceTree = "<group>"; };
 		5B3BC12726DF892000D210BF /* PagingControlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingControlVC.swift; sourceTree = "<group>"; };
 		5B3BC12926DFC14200D210BF /* MainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVC.swift; sourceTree = "<group>"; };
 		5B3BC12A26DFC14200D210BF /* MainScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenVC.xib; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5BDB6BFD26E4BD3200112C97 /* Shop */,
 				5B76840426E1161A0029E2D0 /* CategoriesScreen */,
 				5B7683FA26E0F6950029E2D0 /* SearchScreen */,
 				5B70790426DE3CEB002F9C3B /* HomeScreen */,
@@ -293,6 +298,15 @@
 				5B785B16262D9D3C00C6CA58 /* Localizable.strings */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5BDB6BFD26E4BD3200112C97 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				5B25506826E4C3BC0075C433 /* ShopVC.swift */,
+				5B25506926E4C3BC0075C433 /* ShopVC.xib */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		5BFB1267261F046300FB655E /* Recovered References */ = {
@@ -402,6 +416,7 @@
 				5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */,
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
 				5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */,
+				5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */,
 				5B76840826E1164A0029E2D0 /* CategoriesVC.xib in Resources */,
 				5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */,
 				5B3BC12C26DFC14300D210BF /* MainScreenVC.xib in Resources */,
@@ -497,6 +512,7 @@
 				5B3BC12E26DFCC5700D210BF /* UIView+Extension.swift in Sources */,
 				5B76840C26E117B30029E2D0 /* CategoriesCell.swift in Sources */,
 				5B3BC12826DF892000D210BF /* PagingControlVC.swift in Sources */,
+				5B25506A26E4C3BC0075C433 /* ShopVC.swift in Sources */,
 				5B70790726DE3D13002F9C3B /* HomeScreenVC.swift in Sources */,
 				5B76840226E0FA590029E2D0 /* SearchCell.swift in Sources */,
 				5B7BD927261B18B800AF1253 /* UITextField+Extension.swift in Sources */,

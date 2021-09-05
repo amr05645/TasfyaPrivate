@@ -16,7 +16,7 @@ class HomeScreenVC: BaseVC {
     var getBanners: GetBanners?
     
     var headerShown = true
-    let pageview = PagingControlVC()
+//    let pageview = PagingControlVC()
     
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var advertiseImgSlider: ImageSlideshow!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesVC: UIViewController {
+class CategoriesVC: BaseVC {
     
     var categories: Categories?
     
