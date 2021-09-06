@@ -208,6 +208,11 @@
             <point key="canvasLocation" x="132" y="77"/>
         </view>
     </objects>
+    <designables>
+        <designable name="TFA-kI-zom">
+            <size key="intrinsicContentSize" width="80" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="addressIcon" width="52" height="52"/>
         <image name="countryIcon" width="49" height="49"/>
