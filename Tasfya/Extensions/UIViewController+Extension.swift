@@ -9,6 +9,17 @@ import UIKit
 import PKHUD
 
 extension UIViewController {
+    
+    func dataExist(in textFields: [UITextField]) -> Bool {
+        var status = true
+        for textField in textFields {
+            status = !(textField.text?.isEmpty ?? true)
+            textField.borderWidth = status ? 0 : 0.5
+            textField.borderColor = .red
+        }
+        return status
+    }
+    
     func showAlert(message: String, title: String = "", completionHandler: @escaping (() -> ())) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: Constants.titles.ok, style: .default, handler: {_ in

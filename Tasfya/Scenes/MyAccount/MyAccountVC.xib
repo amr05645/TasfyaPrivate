@@ -246,7 +246,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhx-Ar-CbK">
-                    <rect key="frame" x="0.0" y="821" width="414" height="41"/>
+                    <rect key="frame" x="20" y="811" width="374" height="41"/>
                     <color key="backgroundColor" name="darkBlue121A50"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <state key="normal" title="Save Changes">
@@ -266,10 +266,10 @@
                 <constraint firstItem="r3A-oC-ohc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="L3i-gg-X1s"/>
                 <constraint firstItem="amU-Ae-TlU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Mjx-Xw-nG2"/>
                 <constraint firstItem="hhx-Ar-CbK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="NLW-f1-8pg"/>
+                <constraint firstItem="hhx-Ar-CbK" firstAttribute="leading" secondItem="amU-Ae-TlU" secondAttribute="leading" id="boc-41-pnF"/>
                 <constraint firstItem="amU-Ae-TlU" firstAttribute="top" secondItem="r3A-oC-ohc" secondAttribute="bottom" constant="30" id="csE-Ef-Ejl"/>
-                <constraint firstItem="hhx-Ar-CbK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lkB-1Y-v5L"/>
                 <constraint firstItem="amU-Ae-TlU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nhU-rB-thq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hhx-Ar-CbK" secondAttribute="bottom" id="npx-5q-Cim"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hhx-Ar-CbK" secondAttribute="bottom" constant="10" id="npx-5q-Cim"/>
                 <constraint firstItem="hhx-Ar-CbK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="amU-Ae-TlU" secondAttribute="bottom" constant="20" id="rfO-m4-FFA"/>
             </constraints>
             <point key="canvasLocation" x="132" y="52"/>

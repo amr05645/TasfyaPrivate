@@ -35,6 +35,7 @@ struct Titles {
 
 struct Messages {
     var langAlert: String {"Kindly confirm changing current language to Arabic".localized}
+    var emptyTF: String {"Please fill required fields!".localized}
 }
 
 struct Colors {
