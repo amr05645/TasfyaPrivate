@@ -76,7 +76,7 @@ open class ImagePicker: NSObject {
 extension ImagePicker: UIImagePickerControllerDelegate {
 
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.pickerController(picker, didSelect: nil)
+        self.pickerController(picker, didSelect: #imageLiteral(resourceName: "userImage"))
     }
 
     public func imagePickerController(_ picker: UIImagePickerController,

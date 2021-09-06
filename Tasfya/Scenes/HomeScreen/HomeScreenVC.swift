@@ -16,7 +16,7 @@ class HomeScreenVC: BaseVC {
     var getBanners: GetBanners?
     
     var headerShown = true
-//    let pageview = PagingControlVC()
+    var baseUrl = "https://yousry.drayman.co/"
     
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var advertiseImgSlider: ImageSlideshow!
@@ -33,35 +33,25 @@ class HomeScreenVC: BaseVC {
         addSwipeGesture()
     }
     
-    func callPostApi(){
-        let url = URL(string: "http://yousry.drayman.co/getBanners")
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            if let data = data {
-                do {
-                    let parsedCat = try JSONDecoder().decode(GetBanners.self, from: data)
-                    self.getBanners = parsedCat
-                }
-                catch let jsonError
-                {
-                    print("error serializing json", jsonError)
-                }
+    func callPostApi() {
+        let parameter = [ "language_id" : 1]
+        
+        let service = Service.init(baseUrl: baseUrl)
+        service.getBanners(endPoint: "getBanners",parameter: parameter,  model: "GetBanners")
+        service.completionHandler{ (banners, status, message) in
+            
+            if status {
+                guard let  dataModel = banners else {return}
+                self.getBanners = dataModel as? GetBanners
             }
             DispatchQueue.main.async {
                 self.setupImageSlider()
             }
         }
-        task.resume()
     }
     
     func setupImageSlider() {
-        let url = "http://yousry.drayman.co/"
+        let url = baseUrl
         var imagesSources: [KingfisherSource] = []
         guard let data = getBanners?.data else {return}
         for item in data {
@@ -85,13 +75,13 @@ class HomeScreenVC: BaseVC {
     }
     
     func addSwipeGesture() {
-            let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
-            swipeUp.direction = .up
-            self.view.addGestureRecognizer(swipeUp)
-            
-            let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
-            swipeDown.direction = .down
-            self.view.addGestureRecognizer(swipeDown)
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
@@ -106,7 +96,7 @@ class HomeScreenVC: BaseVC {
     
     func showHeader() {
         guard !headerShown else {return}
-//        guard MainScreenVC().mainCollectionView.contentOffset.y <= 0 else {return}
+        //        guard MainScreenVC().mainCollectionView.contentOffset.y <= 0 else {return}
         headerShown = true
         header.isHidden = false
         headerTop.constant = 0
@@ -126,14 +116,14 @@ class HomeScreenVC: BaseVC {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            if self.lastContentOffset > scrollView.contentOffset.y && self.lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
-                // move down
-                self.showHeader()
-            } else if self.lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
-                // move up
-                self.hideHeader()
-            }
-            self.lastContentOffset = scrollView.contentOffset.y
+        if self.lastContentOffset > scrollView.contentOffset.y && self.lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
+            // move down
+            self.showHeader()
+        } else if self.lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
+            // move up
+            self.hideHeader()
+        }
+        self.lastContentOffset = scrollView.contentOffset.y
     }
     
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class MainScreenVC: UIViewController {
     
-//    var scroll: (() -> ())?
+    //    var scroll: (() -> ())?
     
     var allProducts: AllProducts? {
         didSet {
@@ -20,6 +20,7 @@ class MainScreenVC: UIViewController {
     }
     
     var products: [ProductData]?
+    var baseUrl = "https://yousry.drayman.co/"
     
     var category: Datum?
     
@@ -46,38 +47,18 @@ class MainScreenVC: UIViewController {
         mainCollectionView.register(UINib(nibName: "MainCVCell", bundle: nil), forCellWithReuseIdentifier: "MainCVCell")
     }
     
-    func getPostString(params:[String:Any]) -> String {
-        var data = [String]()
-        for(key, value) in params {
-            data.append(key + "=\(value)")
-        }
-        return data.map { String($0) }.joined(separator: "&")
-    }
-    
-    func callPostApi(){
-        let url = URL(string: "http://yousry.drayman.co/getAllProducts")
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        let parameters = getPostString(params: ["language_id":1])
-        request.httpBody = parameters.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            if let data = data {
-                do {
-                    let parsedCat = try JSONDecoder().decode(AllProducts.self, from: data)
-                    self.allProducts = parsedCat
-                }
-                catch let jsonError
-                {
-                    print("error serializing json", jsonError)
-                }
+    func callPostApi() {
+        let parameter = ["language_id": 1]
+        
+        let service = Service.init(baseUrl: baseUrl)
+        service.getProducts(endPoint: "getAllProducts",parameter: parameter,  model: "getAllProducts")
+        service.completionHandler{ (products, status, message) in
+            
+            if status {
+                guard let  dataModel = products else {return}
+                self.allProducts = dataModel as? AllProducts
             }
         }
-        task.resume()
     }
     
 }
@@ -122,7 +103,7 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: collectionViewSize/2, height: (collectionViewSize/2) + 80)
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        self.scroll?()
-//    }
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //        self.scroll?()
+    //    }
 }

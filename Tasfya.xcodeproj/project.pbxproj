@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B16D1CA26B8120300576A60 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16D1C926B8120300576A60 /* DataModel.swift */; };
+		5B16D1CA26B8120300576A60 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16D1C926B8120300576A60 /* CategoryModel.swift */; };
 		5B25506A26E4C3BC0075C433 /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25506826E4C3BC0075C433 /* ShopVC.swift */; };
 		5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B25506926E4C3BC0075C433 /* ShopVC.xib */; };
+		5B25506F26E4C7EC0075C433 /* MyAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25506D26E4C7EC0075C433 /* MyAccountVC.swift */; };
+		5B25507026E4C7EC0075C433 /* MyAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B25506E26E4C7EC0075C433 /* MyAccountVC.xib */; };
 		5B3BC12826DF892000D210BF /* PagingControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC12726DF892000D210BF /* PagingControlVC.swift */; };
 		5B3BC12B26DFC14300D210BF /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC12926DFC14200D210BF /* MainScreenVC.swift */; };
 		5B3BC12C26DFC14300D210BF /* MainScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3BC12A26DFC14200D210BF /* MainScreenVC.xib */; };
@@ -20,6 +22,7 @@
 		5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10272619FD600031C7F9 /* AppDelegate.swift */; };
 		5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F10292619FD600031C7F9 /* SceneDelegate.swift */; };
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
+		5B6D66D226E4F8BE00C326D1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D66D126E4F8BE00C326D1 /* Services.swift */; };
 		5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */; };
 		5B70790726DE3D13002F9C3B /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B70790526DE3D13002F9C3B /* HomeScreenVC.swift */; };
 		5B70790826DE3D13002F9C3B /* HomeScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70790626DE3D13002F9C3B /* HomeScreenVC.xib */; };
@@ -57,9 +60,11 @@
 
 /* Begin PBXFileReference section */
 		5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.release.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.release.xcconfig"; sourceTree = "<group>"; };
-		5B16D1C926B8120300576A60 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		5B16D1C926B8120300576A60 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5B25506826E4C3BC0075C433 /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
 		5B25506926E4C3BC0075C433 /* ShopVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopVC.xib; sourceTree = "<group>"; };
+		5B25506D26E4C7EC0075C433 /* MyAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountVC.swift; sourceTree = "<group>"; };
+		5B25506E26E4C7EC0075C433 /* MyAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAccountVC.xib; sourceTree = "<group>"; };
 		5B3BC12726DF892000D210BF /* PagingControlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingControlVC.swift; sourceTree = "<group>"; };
 		5B3BC12926DFC14200D210BF /* MainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVC.swift; sourceTree = "<group>"; };
 		5B3BC12A26DFC14200D210BF /* MainScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenVC.xib; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		5B4F10332619FD610031C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4F10352619FD610031C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
+		5B6D66D126E4F8BE00C326D1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		5B6DE76826B14DF3008BDEF9 /* Tasfya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tasfya.entitlements; sourceTree = "<group>"; };
 		5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B70790526DE3D13002F9C3B /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
@@ -136,6 +142,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B25506C26E4C7CC0075C433 /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				5B25506D26E4C7EC0075C433 /* MyAccountVC.swift */,
+				5B25506E26E4C7EC0075C433 /* MyAccountVC.xib */,
+			);
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
 		5B4A33B126DE754400CA9659 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +208,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B25506C26E4C7CC0075C433 /* MyAccount */,
 				5BDB6BFD26E4BD3200112C97 /* Shop */,
 				5B76840426E1161A0029E2D0 /* CategoriesScreen */,
 				5B7683FA26E0F6950029E2D0 /* SearchScreen */,
@@ -280,7 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				5B80968B2630275300C71A24 /* CurrentUser.swift */,
-				5B16D1C926B8120300576A60 /* DataModel.swift */,
+				5B16D1C926B8120300576A60 /* CategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +312,7 @@
 				5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */,
 				5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */,
 				5B785B16262D9D3C00C6CA58 /* Localizable.strings */,
+				5B6D66D126E4F8BE00C326D1 /* Services.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -415,6 +432,7 @@
 				5B7683FE26E0F6B40029E2D0 /* SearchVC.xib in Resources */,
 				5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */,
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
+				5B25507026E4C7EC0075C433 /* MyAccountVC.xib in Resources */,
 				5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */,
 				5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */,
 				5B76840826E1164A0029E2D0 /* CategoriesVC.xib in Resources */,
@@ -519,9 +537,11 @@
 				5B76840726E1164A0029E2D0 /* CategoriesVC.swift in Sources */,
 				5BFB1273261F056C00FB655E /* SideMenuCell.swift in Sources */,
 				5B785B09262D8A7600C6CA58 /* LanguageHandler.swift in Sources */,
+				5B25506F26E4C7EC0075C433 /* MyAccountVC.swift in Sources */,
+				5B6D66D226E4F8BE00C326D1 /* Services.swift in Sources */,
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
-				5B16D1CA26B8120300576A60 /* DataModel.swift in Sources */,
+				5B16D1CA26B8120300576A60 /* CategoryModel.swift in Sources */,
 				5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */,
 				5B80968F2630416D00C71A24 /* NavigationDelegate.swift in Sources */,
 				5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */,

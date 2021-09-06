@@ -9,7 +9,15 @@ import UIKit
 
 class SearchVC: UIViewController {
     
-    var categories: Categories?
+    var categories: Categories? {
+        didSet {
+            DispatchQueue.main.async {
+                self.SearchTableView.reloadData()
+            }
+        }
+    }
+    
+    var baseUrl = "https://yousry.drayman.co/"
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var SearchTableView: UITableView!
@@ -27,41 +35,18 @@ class SearchVC: UIViewController {
         SearchTableView.register(UINib(nibName: "SearchCell", bundle: nil), forCellReuseIdentifier: "SearchCell")
     }
     
-    func getPostString(params:[String:Any]) -> String {
-        var data = [String]()
-        for(key, value) in params {
-            data.append(key + "=\(value)")
-        }
-        return data.map { String($0) }.joined(separator: "&")
-    }
-    
-    func callPostApi(){
-        let url = URL(string: "http://yousry.drayman.co/allCategories")
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        let parameters = getPostString(params: ["language_id":1])
-        request.httpBody = parameters.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            if let data = data {
-                do {
-                    let parsedCat = try JSONDecoder().decode(Categories.self, from: data)
-                    self.categories = parsedCat
-                }
-                catch let jsonError
-                {
-                    print("error serializing json", jsonError)
-                }
-            }
-            DispatchQueue.main.async {
-                self.SearchTableView.reloadData()
+    func callPostApi() {
+        let parameter = ["language_id": 1]
+        
+        let service = Service.init(baseUrl: baseUrl)
+        service.getCategories(endPoint: "allCategories",parameter: parameter,  model: "allCategories")
+        service.completionHandler{ (category, status, message) in
+            
+            if status {
+                guard let  dataModel = category else {return}
+                self.categories = dataModel as? Categories
             }
         }
-        task.resume()
     }
     
 }
