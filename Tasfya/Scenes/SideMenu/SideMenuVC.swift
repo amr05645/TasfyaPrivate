@@ -147,7 +147,7 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.shareApp:
             print(Constants.sideMenuTitles.shareApp)
         case Constants.sideMenuTitles.rateApp:
-            print(Constants.sideMenuTitles.rateApp)
+            navVC.present(RateUsVC(), animated: true, completion: nil)
         case Constants.sideMenuTitles.settings:
             print(Constants.sideMenuTitles.settings)
         case Constants.sideMenuTitles.login:

@@ -62,7 +62,7 @@ You will love shopping with Tasfya! shop till you drop.
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-UO-rcR">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                     <connections>
-                                        <action selector="officialBtnTapped:" destination="-1" eventType="touchUpInside" id="7t7-qa-9HN"/>
+                                        <action selector="officialBtnTapped:" destination="-1" eventType="touchUpInside" id="8Vw-9a-SdO"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -98,7 +98,7 @@ You will love shopping with Tasfya! shop till you drop.
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOd-Py-pZR">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                     <connections>
-                                        <action selector="privacyBtnTapped:" destination="-1" eventType="touchUpInside" id="gEe-dX-tgv"/>
+                                        <action selector="privacyBtnTapped:" destination="-1" eventType="touchUpInside" id="UGv-nm-tKN"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -134,7 +134,7 @@ You will love shopping with Tasfya! shop till you drop.
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-8d-Dnw">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                     <connections>
-                                        <action selector="refundBtnTapped:" destination="-1" eventType="touchUpInside" id="Kfu-7z-wfI"/>
+                                        <action selector="refundBtnTapped:" destination="-1" eventType="touchUpInside" id="TbJ-c5-bzd"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -170,7 +170,7 @@ You will love shopping with Tasfya! shop till you drop.
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpe-PO-62f">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                     <connections>
-                                        <action selector="termsBtnTapped:" destination="-1" eventType="touchUpInside" id="KAk-iK-eyA"/>
+                                        <action selector="termsBtnTapped:" destination="-1" eventType="touchUpInside" id="9QZ-Bf-imF"/>
                                     </connections>
                                 </button>
                             </subviews>
