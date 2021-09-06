@@ -135,8 +135,7 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.myAccount:
             navVC.pushViewController(MyAccountVC(), animated: true)
         case Constants.sideMenuTitles.myOrders:
-            print(Constants.sideMenuTitles.myOrders)
-//            navVC.pushViewController(ContactUsVC(), animated: true)
+            navVC.pushViewController(MyOrdersVC(), animated: true)
         case Constants.sideMenuTitles.myAddresses:
             print(Constants.sideMenuTitles.myAddresses)
 //            navVC.pushViewController(CartVC(), animated: true)
