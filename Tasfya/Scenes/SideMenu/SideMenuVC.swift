@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class SideMenuVC: UIViewController {
     
@@ -106,6 +107,39 @@ class SideMenuVC: UIViewController {
             return
         }
     }
+    
+    func rateApp() {
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+
+        } else if let url = URL(string: "https://apps.apple.com/eg/app/endo/id1568290410") {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+    func shareApp(_ sender: UIButton) {
+        let textToShare = "Check out my app"
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if let myWebsite = URL(string: "https://apps.apple.com/eg/app/endo/id1568290410") {//Enter link to your app here
+            let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "logoTasfya")] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            //Excluded Activities
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+            //
+            
+            activityVC.popoverPresentationController?.sourceView = sender
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
@@ -145,11 +179,11 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.about:
             navVC.pushViewController(AboutUsVC(), animated: true)
         case Constants.sideMenuTitles.shareApp:
-            print(Constants.sideMenuTitles.shareApp)
+            shareApp(UIButton())
         case Constants.sideMenuTitles.rateApp:
-            navVC.present(RateUsVC(), animated: true, completion: nil)
+            rateApp()
         case Constants.sideMenuTitles.settings:
-            print(Constants.sideMenuTitles.settings)
+            navVC.pushViewController(SettingsCV(), animated: true)
         case Constants.sideMenuTitles.login:
 //            let vc = LoginVC()
 //            vc.delegate = self

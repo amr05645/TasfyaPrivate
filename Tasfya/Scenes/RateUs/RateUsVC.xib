@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDi-h9-bjW">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDi-h9-bjW">
                     <rect key="frame" x="82" y="328" width="250" height="250"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQL-21-0zq">
@@ -97,7 +97,6 @@ it would be great to take a moment to rate it.
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.0078431372549019607" green="0.0069567747789999997" blue="0.0069567747789999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="EDi-h9-bjW" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="BYB-pf-gWw"/>
                 <constraint firstItem="EDi-h9-bjW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H9A-64-zBs"/>
