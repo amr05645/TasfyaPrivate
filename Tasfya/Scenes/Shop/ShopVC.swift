@@ -19,5 +19,6 @@ class ShopVC: BaseVC {
         containerView.addSubview(vc.view)
         vc.didMove(toParent: self)
         containerView.constrainToEdges(vc.view)
+        self.navigationItem.setLeftBarButton(nil, animated: false)
     }
 }

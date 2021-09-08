@@ -16,7 +16,7 @@ class SettingsCV: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.setLeftBarButton(nil, animated: false)
     }
     
     @IBAction func editProfileBtnTapped(_ sender: Any) {

@@ -27,6 +27,7 @@ class CategoriesVC: BaseVC {
         self.title = Constants.titles.categoris
         CategoriesCollectionView.delegate = self
         CategoriesCollectionView.dataSource = self
+        self.navigationItem.setLeftBarButton(nil, animated: false)
         register()
     }
     

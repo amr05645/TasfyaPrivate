@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B167CC226E8C87F00C916B1 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B167CC026E8C87F00C916B1 /* CartVC.swift */; };
+		5B167CC326E8C87F00C916B1 /* CartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B167CC126E8C87F00C916B1 /* CartVC.xib */; };
+		5B167CC726E8C94D00C916B1 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B167CC526E8C94D00C916B1 /* CartCell.swift */; };
+		5B167CC826E8C94D00C916B1 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B167CC626E8C94D00C916B1 /* CartCell.xib */; };
 		5B16D1CA26B8120300576A60 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16D1C926B8120300576A60 /* CategoryModel.swift */; };
 		5B25506A26E4C3BC0075C433 /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25506826E4C3BC0075C433 /* ShopVC.swift */; };
 		5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B25506926E4C3BC0075C433 /* ShopVC.xib */; };
@@ -64,6 +68,8 @@
 		5BB730FF26E67AFF00F24AFA /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB730FE26E67AFF00F24AFA /* AboutUsVC.swift */; };
 		5BB7310326E67D4800F24AFA /* RateUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7310126E67D4800F24AFA /* RateUsVC.swift */; };
 		5BB7310426E67D4800F24AFA /* RateUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7310226E67D4800F24AFA /* RateUsVC.xib */; };
+		5BDEB8CA26E8FF3F00086520 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEB8C826E8FF3F00086520 /* ExploreCell.swift */; };
+		5BDEB8CB26E8FF3F00086520 /* ExploreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDEB8C926E8FF3F00086520 /* ExploreCell.xib */; };
 		5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */; };
 		5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB1269261F054F00FB655E /* BaseVC.swift */; };
 		5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB126C261F056C00FB655E /* SideMenuVC.swift */; };
@@ -78,6 +84,10 @@
 
 /* Begin PBXFileReference section */
 		5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.release.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.release.xcconfig"; sourceTree = "<group>"; };
+		5B167CC026E8C87F00C916B1 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		5B167CC126E8C87F00C916B1 /* CartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartVC.xib; sourceTree = "<group>"; };
+		5B167CC526E8C94D00C916B1 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		5B167CC626E8C94D00C916B1 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		5B16D1C926B8120300576A60 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5B25506826E4C3BC0075C433 /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
 		5B25506926E4C3BC0075C433 /* ShopVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopVC.xib; sourceTree = "<group>"; };
@@ -145,6 +155,8 @@
 		5BB730FE26E67AFF00F24AFA /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		5BB7310126E67D4800F24AFA /* RateUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsVC.swift; sourceTree = "<group>"; };
 		5BB7310226E67D4800F24AFA /* RateUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateUsVC.xib; sourceTree = "<group>"; };
+		5BDEB8C826E8FF3F00086520 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		5BDEB8C926E8FF3F00086520 /* ExploreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCell.xib; sourceTree = "<group>"; };
 		5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRootVC.swift; sourceTree = "<group>"; };
 		5BFB1269261F054F00FB655E /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		5BFB126C261F056C00FB655E /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
@@ -176,6 +188,27 @@
 				F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B167CBF26E8C86600C916B1 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				5B167CC426E8C92700C916B1 /* Cells */,
+				5B167CC026E8C87F00C916B1 /* CartVC.swift */,
+				5B167CC126E8C87F00C916B1 /* CartVC.xib */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		5B167CC426E8C92700C916B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B167CC526E8C94D00C916B1 /* CartCell.swift */,
+				5B167CC626E8C94D00C916B1 /* CartCell.xib */,
+				5BDEB8C826E8FF3F00086520 /* ExploreCell.swift */,
+				5BDEB8C926E8FF3F00086520 /* ExploreCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5B25506C26E4C7CC0075C433 /* MyAccount */ = {
@@ -308,6 +341,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B167CBF26E8C86600C916B1 /* Cart */,
 				5B481A4026E779500042C1EE /* ProductDetails */,
 				5B481A3B26E759770042C1EE /* Settings */,
 				5BB7310026E67D3100F24AFA /* RateUs */,
@@ -557,9 +591,11 @@
 			files = (
 				5BB7310426E67D4800F24AFA /* RateUsVC.xib in Resources */,
 				5BB730FD26E66DE700F24AFA /* AboutUsVC.xib in Resources */,
+				5B167CC326E8C87F00C916B1 /* CartVC.xib in Resources */,
 				5B7683FE26E0F6B40029E2D0 /* SearchVC.xib in Resources */,
 				5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */,
 				5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */,
+				5BDEB8CB26E8FF3F00086520 /* ExploreCell.xib in Resources */,
 				5B45DD9326E631EB005069B1 /* MyAddressesVC.xib in Resources */,
 				5B25507026E4C7EC0075C433 /* MyAccountVC.xib in Resources */,
 				5B481A3F26E7599F0042C1EE /* SettingsCV.xib in Resources */,
@@ -573,6 +609,7 @@
 				5B3BC12C26DFC14300D210BF /* MainScreenVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				5B4A33B526DE756F00CA9659 /* MainCVCell.xib in Resources */,
+				5B167CC826E8C94D00C916B1 /* CartCell.xib in Resources */,
 				5B70790826DE3D13002F9C3B /* HomeScreenVC.xib in Resources */,
 				5B76840D26E117B30029E2D0 /* CategoriesCell.xib in Resources */,
 				5B45DD8926E60E62005069B1 /* MyOrdersVC.xib in Resources */,
@@ -648,6 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B167CC226E8C87F00C916B1 /* CartVC.swift in Sources */,
 				5B7BD92A261B201800AF1253 /* Constants.swift in Sources */,
 				5BFB12C6261F14F200FB655E /* SideMenuDelegate.swift in Sources */,
 				5B80968C2630275300C71A24 /* CurrentUser.swift in Sources */,
@@ -662,6 +700,7 @@
 				5B83D657261C941B00A50228 /* ReusableView.swift in Sources */,
 				5B3BC12B26DFC14300D210BF /* MainScreenVC.swift in Sources */,
 				5B785B0F262D9A3700C6CA58 /* UIViewController+Extension.swift in Sources */,
+				5B167CC726E8C94D00C916B1 /* CartCell.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5B3BC12E26DFCC5700D210BF /* UIView+Extension.swift in Sources */,
 				5B45DD9226E631EB005069B1 /* MyAddressesVC.swift in Sources */,
@@ -681,6 +720,7 @@
 				5B25506F26E4C7EC0075C433 /* MyAccountVC.swift in Sources */,
 				5B6D66D226E4F8BE00C326D1 /* Services.swift in Sources */,
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
+				5BDEB8CA26E8FF3F00086520 /* ExploreCell.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
 				5B16D1CA26B8120300576A60 /* CategoryModel.swift in Sources */,
 				5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */,

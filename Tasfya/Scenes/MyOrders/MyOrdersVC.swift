@@ -15,6 +15,7 @@ class MyOrdersVC: BaseVC {
         super.viewDidLoad()
         OrderTableView.delegate = self
         OrderTableView.dataSource = self
+        self.navigationItem.setLeftBarButton(nil, animated: false)
         register()
     }
     

@@ -12,6 +12,7 @@ class RateUsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setLeftBarButton(nil, animated: false)
     }
     
     func rateApp() {

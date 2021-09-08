@@ -29,6 +29,7 @@ class MyAddressesVC: BaseVC {
         picker?.dataSource = self
         picker?.delegate = self
         countryTF.inputView = picker
+        self.navigationItem.setLeftBarButton(nil, animated: false)
         setToolbar()
     }
     
