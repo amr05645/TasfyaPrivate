@@ -9,8 +9,6 @@ import UIKit
 
 class MainScreenVC: UIViewController {
     
-    //    var scroll: (() -> ())?
-    
     var allProducts: AllProducts? {
         didSet {
             DispatchQueue.main.async {
@@ -82,7 +80,7 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did selected")
+        self.navigationController?.pushViewController(ProductDetailsVC(), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -103,7 +101,4 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: collectionViewSize/2, height: (collectionViewSize/2) + 80)
     }
     
-    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    //        self.scroll?()
-    //    }
 }
