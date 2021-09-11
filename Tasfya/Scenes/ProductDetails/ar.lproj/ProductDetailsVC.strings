@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "product status"; ObjectID = "7hB-V6-yu9"; */
+"7hB-V6-yu9.text" = "product status";
+
+/* Class = "UILabel"; text = "jgndfjbndfjkbndfjbndfjkbndfjbnkjvbndfkjbndfjbndfkjbndfjbncjkvn bkjdfndjkbthjnejhnfjgndfkjbndfkbndfjbnfdjbnfddjb ndfjgjnergmnfdfkbmfkjb"; ObjectID = "Bod-gy-GfZ"; */
+"Bod-gy-GfZ.text" = "jgndfjbndfjkbndfjbndfjkbndfjbnkjvbndfkjbndfjbndfkjbndfjbncjkvn bkjdfndjkbthjnejhnfjgndfkjbndfkbndfjbnfdjbnfddjb ndfjgjnergmnfdfkbmfkjb";
+
+/* Class = "UIButton"; normalTitle = "Add To Cart"; ObjectID = "Kph-mZ-hpC"; */
+"Kph-mZ-hpC.normalTitle" = "اضف الي العربه";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "WZR-q8-JDi"; */
+"WZR-q8-JDi.text" = "123";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "bpv-bD-f22"; */
+"bpv-bD-f22.text" = "الوصف";
+
+/* Class = "UILabel"; text = "Liked (5)"; ObjectID = "dmJ-bG-2RY"; */
+"dmJ-bG-2RY.text" = "Liked (5)";
+
+/* Class = "UILabel"; text = "Category Name"; ObjectID = "pe5-go-kIV"; */
+"pe5-go-kIV.text" = "Category Name";
+
+/* Class = "UILabel"; text = "Product Name"; ObjectID = "qEq-Pg-Lph"; */
+"qEq-Pg-Lph.text" = "Product Name";

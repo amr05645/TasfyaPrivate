@@ -1,14 +1,14 @@
 //
-//  MyAddressesVC.swift
+//  FirstCheckOutVC.swift
 //  Tasfya
 //
-//  Created by Amr on 06/09/2021.
+//  Created by Amr on 09/09/2021.
 //
 
 import UIKit
 import PKHUD
 
-class MyAddressesVC: BaseVC {
+class FirstCheckOutVC: BaseVC {
     
     private var picker: UIPickerView?
     private var pickerData = ["Egypt", "Kwait"]
@@ -21,6 +21,7 @@ class MyAddressesVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setLeftBarButton(nil, animated: false)
         setInputPicker()
     }
     
@@ -29,7 +30,7 @@ class MyAddressesVC: BaseVC {
         picker?.dataSource = self
         picker?.delegate = self
         countryTF.inputView = picker
-//        self.navigationItem.setLeftBarButton(nil, animated: false)
+        self.navigationItem.setLeftBarButton(nil, animated: false)
         setToolbar()
     }
     
@@ -56,28 +57,15 @@ class MyAddressesVC: BaseVC {
     func sendReport() {
         self.showProgress()
         self.hideProgress()
-        
-        DispatchQueue.main.async {
-            HUD.flash(.success)
-            self.firstNameTF.text = nil
-            self.lastNameTF.text = nil
-            self.addressTF.text = nil
-            self.countryTF.text = nil
-            self.cityTF.text = nil
-        }
     }
     
-    @IBAction func saveBtnTapped(_ sender: Any) {
-        guard dataExist(in: [firstNameTF, lastNameTF, addressTF, countryTF, cityTF]) else {
-            showAlert(with: Constants.messages.emptyTF)
-            return
-        }
-        sendReport()
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        self.navigationController?.pushViewController(SecondCheckOutVC(), animated: true)
     }
     
 }
 
-extension MyAddressesVC: UIPickerViewDataSource, UIPickerViewDelegate {
+extension FirstCheckOutVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }

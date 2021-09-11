@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "User E-mail"; ObjectID = "7bL-M7-VRE"; */
+"7bL-M7-VRE.text" = "User E-mail";
+
+/* Class = "UILabel"; text = "Select Language"; ObjectID = "8em-fD-Zmh"; */
+"8em-fD-Zmh.text" = "اختار اللغه";
+
+/* Class = "UILabel"; text = "Rate App"; ObjectID = "8hc-F7-cPU"; */
+"8hc-F7-cPU.text" = "معدل التطبيق";
+
+/* Class = "UILabel"; text = "Local Notifications"; ObjectID = "IRe-ps-jES"; */
+"IRe-ps-jES.text" = "الاخطارات المحليه";
+
+/* Class = "UILabel"; text = "Official Website"; ObjectID = "LYB-2h-EFZ"; */
+"LYB-2h-EFZ.text" = "الموقع الرسمي";
+
+/* Class = "UILabel"; text = "Push Notifications"; ObjectID = "O5b-JH-8le"; */
+"O5b-JH-8le.text" = "دفع الاخطارات";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "OZh-z2-NcZ"; */
+"OZh-z2-NcZ.text" = "سياسه الخصوصيه";
+
+/* Class = "UILabel"; text = "Share App"; ObjectID = "Su0-ZT-nXn"; */
+"Su0-ZT-nXn.text" = "شارك التطبيق";
+
+/* Class = "UILabel"; text = "User Name"; ObjectID = "Zg6-1g-CMS"; */
+"Zg6-1g-CMS.text" = "User Name";
+
+/* Class = "UILabel"; text = "Terms of Service"; ObjectID = "fmh-N9-PXo"; */
+"fmh-N9-PXo.text" = "شروط الخدمه";
+
+/* Class = "UILabel"; text = "Refund Policy"; ObjectID = "hvr-0J-UsT"; */
+"hvr-0J-UsT.text" = "سياسه الاسترجاع";
+
+/* Class = "UIButton"; normalTitle = "Edit Profile"; ObjectID = "rzu-5y-gFI"; */
+"rzu-5y-gFI.normalTitle" = "تعديل الملف الشخصي";

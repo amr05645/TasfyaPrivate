@@ -40,16 +40,16 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzN-mC-F4m">
-                    <rect key="frame" x="238" y="134" width="50" height="50"/>
+                    <rect key="frame" x="238" y="144" width="40" height="40"/>
                     <color key="backgroundColor" name="blue #3EDEFF"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="SZ8-4O-bAa"/>
-                        <constraint firstAttribute="width" constant="50" id="fhK-PC-xpc"/>
+                        <constraint firstAttribute="height" constant="40" id="SZ8-4O-bAa"/>
+                        <constraint firstAttribute="width" constant="40" id="fhK-PC-xpc"/>
                     </constraints>
-                    <state key="normal" image="editIcon"/>
+                    <state key="normal" image="editGroup"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="25"/>
+                            <real key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -277,7 +277,7 @@
     </objects>
     <resources>
         <image name="calendarIcon" width="49" height="56"/>
-        <image name="editIcon" width="39" height="39"/>
+        <image name="editGroup" width="20" height="20"/>
         <image name="lockIcon" width="50" height="65"/>
         <image name="phoneandroidIcon" width="49" height="77"/>
         <image name="userImage" width="299" height="298"/>

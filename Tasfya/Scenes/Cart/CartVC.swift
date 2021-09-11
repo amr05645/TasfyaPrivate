@@ -29,7 +29,7 @@ class CartVC: BaseVC {
     }
     
     @IBAction func checkoutBtnTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(MyAddressesVC(), animated: true)
+        self.navigationController?.pushViewController(FirstCheckOutVC(), animated: true)
     }
     
 }

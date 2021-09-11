@@ -27,7 +27,7 @@ class MyAccountVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-        self.navigationItem.setLeftBarButton(nil, animated: false)
+//        self.navigationItem.setLeftBarButton(nil, animated: false)
         setDatePicker()
     }
     

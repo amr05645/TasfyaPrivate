@@ -15,7 +15,7 @@ class MyFavoritesVC: BaseVC {
         super.viewDidLoad()
         MyFavoritesCollectionView.delegate = self
         MyFavoritesCollectionView.dataSource = self
-        self.navigationItem.setLeftBarButton(nil, animated: false)
+//        self.navigationItem.setLeftBarButton(nil, animated: false)
         register()
     }
     

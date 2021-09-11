@@ -16,7 +16,7 @@ class ContactUsVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setLeftBarButton(nil, animated: false)
+//        self.navigationItem.setLeftBarButton(nil, animated: false)
     }
     
     @IBAction func sendBtnTapped(_ sender: Any) {
