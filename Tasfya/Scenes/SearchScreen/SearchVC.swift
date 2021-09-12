@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class SearchVC: BaseVC {
     
     var categories: Categories? {
         didSet {
@@ -24,6 +24,7 @@ class SearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setLeftBarButton(nil, animated: true)
         callPostApi()
         SearchTableView.delegate = self
         SearchTableView.dataSource = self
@@ -36,7 +37,8 @@ class SearchVC: UIViewController {
     }
     
     func callPostApi() {
-        let parameter = ["language_id": 1]
+        let languagehandler = LanguageHandler()
+        let parameter = ["language_id": languagehandler.languageId]
         
         let service = Service.init(baseUrl: baseUrl)
         service.getCategories(endPoint: "allCategories",parameter: parameter,  model: "allCategories")

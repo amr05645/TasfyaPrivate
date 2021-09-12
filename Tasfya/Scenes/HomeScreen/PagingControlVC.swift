@@ -41,7 +41,9 @@ class PagingControlVC: UIViewController {
     }
     
     func callPostApi() {
-        let parameter = ["language_id": 1]
+        let languagehandler = LanguageHandler()
+        
+        let parameter = ["language_id": languagehandler.languageId]
         
         let service = Service.init(baseUrl: baseUrl)
         service.getCategories(endPoint: "allCategories",parameter: parameter,  model: "allCategories")

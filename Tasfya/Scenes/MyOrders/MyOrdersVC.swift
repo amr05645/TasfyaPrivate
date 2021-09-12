@@ -33,6 +33,9 @@ extension MyOrdersVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrdersCell", for: indexPath) as! OrdersCell
+        cell.callBack = {
+            self.navigationController?.pushViewController(OrderDetailsVC(), animated: true)
+        }
         return cell
     }
     

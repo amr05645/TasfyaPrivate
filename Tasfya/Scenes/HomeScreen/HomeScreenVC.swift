@@ -34,7 +34,8 @@ class HomeScreenVC: BaseVC {
     }
     
     func callPostApi() {
-        let parameter = [ "language_id" : 1]
+        let languagehandler = LanguageHandler()
+        let parameter = [ "language_id" : languagehandler.languageId]
         
         let service = Service.init(baseUrl: baseUrl)
         service.getBanners(endPoint: "getBanners",parameter: parameter,  model: "GetBanners")

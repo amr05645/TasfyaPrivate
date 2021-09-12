@@ -9,6 +9,8 @@ import UIKit
 
 class OrdersCell: UITableViewCell {
     
+    var callBack: (() -> ())?
+    
     @IBOutlet weak var orderIDLbl: UILabel!
     @IBOutlet weak var numOfProductLbl: UILabel!
     @IBOutlet weak var checkoutPriceLbl: UILabel!
@@ -27,7 +29,7 @@ class OrdersCell: UITableViewCell {
     }
     
     @IBAction func viewBtnTapped(_ sender: Any) {
-        
+        callBack?()
     }
     
 }

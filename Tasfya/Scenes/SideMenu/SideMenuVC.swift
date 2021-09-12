@@ -185,6 +185,7 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.settings:
             navVC.pushViewController(SettingsCV(), animated: true)
         case Constants.sideMenuTitles.login:
+            CurrentUser.login()
 //            let vc = LoginVC()
 //            vc.delegate = self
 //            navVC.pushViewController(vc, animated: true)

@@ -46,8 +46,9 @@ class MainScreenVC: UIViewController {
     }
     
     func callPostApi() {
+        let languagehandler = LanguageHandler()
         
-        let parameter = ["language_id": 1, "page_number": 0]
+        let parameter = ["language_id": languagehandler.languageId, "page_number": 0]
         
         let service = Service.init(baseUrl: baseUrl)
         service.getProducts(endPoint: "getAllProducts",parameter: parameter,  model: "getAllProducts")

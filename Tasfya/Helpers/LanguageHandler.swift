@@ -11,6 +11,17 @@ import MOLH
 
 struct LanguageHandler {
     
+    var languageId: Int {
+        get {
+            if MOLHLanguage.currentAppleLanguage() == "en" {
+                return 1
+            } else if MOLHLanguage.currentAppleLanguage() == "ar" {
+                return 4
+            }
+            return 1
+        }
+    }
+    
     static func changeLanguage(to language: String) {
         
         MOLH.setLanguageTo(language)
