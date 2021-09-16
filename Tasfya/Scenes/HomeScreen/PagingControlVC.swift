@@ -66,8 +66,8 @@ extension PagingControlVC: PagingViewControllerDataSource {
     
     func pagingViewController(_ pagingViewController: PagingViewController, viewControllerAt index: Int) -> UIViewController {
         let viewController = MainScreenVC()
-        let cat = categories?.data?[index]
-        viewController.category = cat
+//        let cat = categories?.data?[index]
+//        viewController.category = cat
         return viewController
     }
     

@@ -30,7 +30,7 @@ class HomeScreenVC: BaseVC {
         containerView.addSubview(vc.view)
         vc.didMove(toParent: self)
         containerView.constrainToEdges(vc.view)
-        addSwipeGesture()
+//        addSwipeGesture()
     }
     
     func callPostApi() {
@@ -116,16 +116,16 @@ class HomeScreenVC: BaseVC {
         })
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.lastContentOffset > scrollView.contentOffset.y && self.lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
-            // move down
-            self.showHeader()
-        } else if self.lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
-            // move up
-            self.hideHeader()
-        }
-        self.lastContentOffset = scrollView.contentOffset.y
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if self.lastContentOffset > scrollView.contentOffset.y && self.lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
+//            // move down
+//            self.showHeader()
+//        } else if self.lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
+//            // move up
+//            self.hideHeader()
+//        }
+//        self.lastContentOffset = scrollView.contentOffset.y
+//    }
     
 }
 

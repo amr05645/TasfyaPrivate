@@ -90,6 +90,8 @@
 		5BDEB8CA26E8FF3F00086520 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEB8C826E8FF3F00086520 /* ExploreCell.swift */; };
 		5BDEB8CB26E8FF3F00086520 /* ExploreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDEB8C926E8FF3F00086520 /* ExploreCell.xib */; };
 		5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */; };
+		5BE4689F26EF466B0070CF19 /* EndOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4689D26EF466B0070CF19 /* EndOrderVC.swift */; };
+		5BE468A026EF466B0070CF19 /* EndOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE4689E26EF466B0070CF19 /* EndOrderVC.xib */; };
 		5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB1269261F054F00FB655E /* BaseVC.swift */; };
 		5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB126C261F056C00FB655E /* SideMenuVC.swift */; };
 		5BFB1272261F056C00FB655E /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB126E261F056C00FB655E /* SideMenuCell.xib */; };
@@ -198,6 +200,8 @@
 		5BDEB8C826E8FF3F00086520 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
 		5BDEB8C926E8FF3F00086520 /* ExploreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCell.xib; sourceTree = "<group>"; };
 		5BE0FAB226231EA5002F22F2 /* SetRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRootVC.swift; sourceTree = "<group>"; };
+		5BE4689D26EF466B0070CF19 /* EndOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOrderVC.swift; sourceTree = "<group>"; };
+		5BE4689E26EF466B0070CF19 /* EndOrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndOrderVC.xib; sourceTree = "<group>"; };
 		5BFB1269261F054F00FB655E /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		5BFB126C261F056C00FB655E /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		5BFB126E261F056C00FB655E /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5BE4689C26EF46400070CF19 /* EndOrder */,
 				5BAB953D26EDE4D500AC3982 /* OrderDetails */,
 				5B12BEF126ECC7C200E7BB6F /* ThirdCheckOut */,
 				5B60589726EB840700388415 /* SecondCheckOut */,
@@ -585,6 +590,15 @@
 			path = Shop;
 			sourceTree = "<group>";
 		};
+		5BE4689C26EF46400070CF19 /* EndOrder */ = {
+			isa = PBXGroup;
+			children = (
+				5BE4689D26EF466B0070CF19 /* EndOrderVC.swift */,
+				5BE4689E26EF466B0070CF19 /* EndOrderVC.xib */,
+			);
+			path = EndOrder;
+			sourceTree = "<group>";
+		};
 		5BFB1267261F046300FB655E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +721,7 @@
 				5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */,
 				5B76840826E1164A0029E2D0 /* CategoriesVC.xib in Resources */,
 				5B45DD8E26E6156D005069B1 /* OrdersCell.xib in Resources */,
+				5BE468A026EF466B0070CF19 /* EndOrderVC.xib in Resources */,
 				5B45DD9D26E6540C005069B1 /* ContactUsVC.xib in Resources */,
 				5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */,
 				5B45DD9826E64F71005069B1 /* MyFavoritesVC.xib in Resources */,
@@ -800,6 +815,7 @@
 				5BFB12C6261F14F200FB655E /* SideMenuDelegate.swift in Sources */,
 				5B80968C2630275300C71A24 /* CurrentUser.swift in Sources */,
 				5B7683FD26E0F6B40029E2D0 /* SearchVC.swift in Sources */,
+				5BE4689F26EF466B0070CF19 /* EndOrderVC.swift in Sources */,
 				5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */,
 				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,
 				5B481A3E26E7599F0042C1EE /* SettingsCV.swift in Sources */,

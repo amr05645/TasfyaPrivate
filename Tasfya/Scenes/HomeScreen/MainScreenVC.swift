@@ -9,18 +9,17 @@ import UIKit
 
 class MainScreenVC: UIViewController {
     
+    var currentIndex: Int?
+    
     var allProducts: AllProducts? {
         didSet {
             DispatchQueue.main.async {
-                self.filterProducts()
+                self.mainCollectionView.reloadData()
             }
         }
     }
     
-    var products: [ProductData]?
     var baseUrl = "https://yousry.drayman.co/"
-    
-    var category: Datum?
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
@@ -30,15 +29,6 @@ class MainScreenVC: UIViewController {
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         register()
-    }
-    
-    func filterProducts() {
-        if let id = category?.id {
-            products = allProducts?.productData?.filter {$0.categoriesID == id}
-        } else {
-            products = allProducts?.productData
-        }
-        mainCollectionView.reloadData()
     }
     
     func register() {
@@ -66,12 +56,12 @@ class MainScreenVC: UIViewController {
 extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products?.count ?? 0
+        return allProducts?.productData?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCVCell", for: indexPath) as! MainCVCell
-        let products = products?[indexPath.row]
+        let products = allProducts?.productData?[indexPath.row]
         cell.brandNameLbl.text = products?.productsName
         cell.priceLbl.text = products?.productsPrice
         let url = "http://yousry.drayman.co/"
@@ -82,7 +72,10 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ProductDetailsVC(), animated: true)
+        let vc = ProductDetailsVC()
+        currentIndex = indexPath.row
+        vc.currentIndex = currentIndex
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

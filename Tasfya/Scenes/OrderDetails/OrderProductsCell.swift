@@ -32,7 +32,7 @@ class OrderDetailsVC: BaseVC {
     }
     
     @IBAction func orderNowTapped(_ sender: Any) {
-        
+        self.navigationController?.pushViewController(EndOrderVC(), animated: true)
     }
     
 }

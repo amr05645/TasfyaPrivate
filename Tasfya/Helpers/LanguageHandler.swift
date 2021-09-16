@@ -30,7 +30,7 @@ struct LanguageHandler {
         
         UITextField.appearance().textAlignment = language == "ar" ? .right : .left
         UITextView.appearance().textAlignment = language == "ar" ? .right : .left
-        UILabel.appearance().textAlignment = language == "ar" ? .right : .left
+        UILabel.appearance().textAlignment = language == "ar" ? .center : .center
         UISearchBar.appearance().semanticContentAttribute = language == "en" ? .forceLeftToRight : .forceRightToLeft
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = Constants.titles.done
     }
