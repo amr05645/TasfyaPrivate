@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="emailTF" destination="06S-6t-aaa" id="J7c-ck-1Vc"/>
                 <outlet property="fulNameTF" destination="r3a-bH-63B" id="xGK-KX-2dQ"/>
+                <outlet property="mapView" destination="gG1-Th-Did" id="8Em-1R-KUl"/>
                 <outlet property="textMessageTV" destination="5dy-nt-sVa" id="bpn-Dk-x2y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-Th-Did">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-Th-Did" customClass="GMSMapView">
                     <rect key="frame" x="20" y="64" width="374" height="210.5"/>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <constraints>

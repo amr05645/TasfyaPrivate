@@ -9,6 +9,9 @@ import UIKit
 
 class SearchVC: BaseVC {
     
+    var isSearching = false
+    var searchData: [Datum]?
+    
     var categories: Categories? {
         didSet {
             DispatchQueue.main.async {
@@ -47,6 +50,7 @@ class SearchVC: BaseVC {
             if status {
                 guard let  dataModel = category else {return}
                 self.categories = dataModel as? Categories
+                self.searchData = self.categories?.data
             }
         }
     }
@@ -56,12 +60,12 @@ class SearchVC: BaseVC {
 extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories?.data?.count ?? 0
+        return searchData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
-        let category = categories?.data?[indexPath.row]
+        let category = searchData?[indexPath.row]
         cell.categoryNameLbl.text = category?.name
         let url = "http://yousry.drayman.co/"
         let imageURL = category?.icon ?? ""
@@ -85,4 +89,18 @@ extension SearchVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         searchBar.resignFirstResponder()
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        let filteredData = searchData?.filter{($0.name?.lowercased().contains(searchText.lowercased()))!}
+        
+        if self.searchBar.text?.isEmpty == true {
+            self.searchData = self.categories?.data
+            self.SearchTableView.reloadData()
+        } else {
+            searchData = filteredData
+            self.SearchTableView.reloadData()
+        }
+    }
+    
 }

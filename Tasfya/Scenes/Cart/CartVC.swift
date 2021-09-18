@@ -56,12 +56,12 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartCell
             cell.delegate = self
-            cell.remove = {
-                self.CartTableView.performBatchUpdates({
+            cell.remove = { [weak self] in
+                self?.CartTableView.performBatchUpdates({
                     tableView.deleteRows(at: [indexPath], with: .automatic)
-                    self.orders.remove(at: indexPath.row)
+                    self?.orders.remove(at: indexPath.row)
                 }) { (finished) in
-                    self.CartTableView.reloadData()
+                    self?.CartTableView.reloadData()
                 }
             }
             return cell

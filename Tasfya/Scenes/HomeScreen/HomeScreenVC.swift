@@ -72,7 +72,12 @@ class HomeScreenVC: BaseVC {
         advertiseImgSlider.contentScaleMode = UIViewContentMode.scaleToFill
         advertiseImgSlider.delegate = self
         advertiseImgSlider.setImageInputs(imagesSources)
-        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        advertiseImgSlider.addGestureRecognizer(recognizer)
+    }
+    
+    @objc func didTap() {
+        self.navigationController?.pushViewController(ShopVC(), animated: true)
     }
     
     func addSwipeGesture() {
