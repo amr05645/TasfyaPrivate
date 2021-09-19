@@ -30,7 +30,8 @@ class HomeScreenVC: BaseVC {
         containerView.addSubview(vc.view)
         vc.didMove(toParent: self)
         containerView.constrainToEdges(vc.view)
-//        addSwipeGesture()
+        vc.delegate = self
+        //        addSwipeGesture()
     }
     
     func callPostApi() {
@@ -39,14 +40,14 @@ class HomeScreenVC: BaseVC {
         
         let service = Service.init(baseUrl: baseUrl)
         service.getBanners(endPoint: "getBanners",parameter: parameter,  model: "GetBanners")
-        service.completionHandler{ (banners, status, message) in
+        service.completionHandler{ [weak self](banners, status, message) in
             
             if status {
                 guard let  dataModel = banners else {return}
-                self.getBanners = dataModel as? GetBanners
+                self?.getBanners = dataModel as? GetBanners
             }
             DispatchQueue.main.async {
-                self.setupImageSlider()
+                self?.setupImageSlider()
             }
         }
     }
@@ -70,14 +71,16 @@ class HomeScreenVC: BaseVC {
         advertiseImgSlider.activityIndicator = DefaultActivityIndicator()
         advertiseImgSlider.pageIndicator?.numberOfPages = imagesSources.count
         advertiseImgSlider.contentScaleMode = UIViewContentMode.scaleToFill
-        advertiseImgSlider.delegate = self
         advertiseImgSlider.setImageInputs(imagesSources)
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
         advertiseImgSlider.addGestureRecognizer(recognizer)
     }
     
     @objc func didTap() {
-        self.navigationController?.pushViewController(ShopVC(), animated: true)
+        let vc = ShopVC()        
+        guard let id = getBanners?.data?[advertiseImgSlider.currentPage].id else {return}
+        vc.catId = id
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func addSwipeGesture() {
@@ -102,7 +105,6 @@ class HomeScreenVC: BaseVC {
     
     func showHeader() {
         guard !headerShown else {return}
-        //        guard MainScreenVC().mainCollectionView.contentOffset.y <= 0 else {return}
         headerShown = true
         header.isHidden = false
         headerTop.constant = 0
@@ -121,21 +123,15 @@ class HomeScreenVC: BaseVC {
         })
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if self.lastContentOffset > scrollView.contentOffset.y && self.lastContentOffset < scrollView.contentSize.height - scrollView.frame.height {
-//            // move down
-//            self.showHeader()
-//        } else if self.lastContentOffset < scrollView.contentOffset.y && scrollView.contentOffset.y > 0 {
-//            // move up
-//            self.hideHeader()
-//        }
-//        self.lastContentOffset = scrollView.contentOffset.y
-//    }
-    
 }
 
-extension HomeScreenVC: ImageSlideshowDelegate {
-    func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
-        print("current page:", page)
+extension HomeScreenVC: MainScreenVCDelegate {
+    func didScroll(to direction: ScrollDirection) {
+        switch direction {
+        case .up:
+            self.hideHeader()
+        case .down:
+            self.showHeader()
+        }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 class MainCVCell: UICollectionViewCell {
     
     var likesModel: LikesModel?
+    var id: String?
     
     var baseUrl = "https://yousry.drayman.co/"
     
@@ -24,23 +25,36 @@ class MainCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(product: ProductData?){
+        brandNameLbl.text = product?.productsName
+        priceLbl.text = product?.productsPrice
+        id = product?.productsID
+        let url = "http://yousry.drayman.co/"
+        let imageURL = product?.productsImage ?? ""
+        let finalUrl = url + imageURL
+        productImage.showImage(url: finalUrl, cornerRadius: 0)
         
-        // Initialization code
+        if product?.isLiked == "0" {
+            likeBtn.setImage(unlikeImg, for: .normal)
+        } else {
+            likeBtn.setImage(likedImg, for: .normal)
+        }
     }
     
     func callPostApi() {
         
-//        guard let likesData = likesModel?.productData else { return }
-        
-        let parameter = ["liked_products_id": 1, "liked_customers_id": 1]
+        guard let id = self.id else {return}
+        let parameter = ["liked_product_id": id, "liked_customers_id": "1"]
         
         let service = Service.init(baseUrl: baseUrl)
         service.getLikes(endPoint: "likeProduct",parameter: parameter,  model: "LikesModel")
-        service.completionHandler{ (products, status, message) in
+        service.completionHandler{ [weak self](product, status, message) in
             
             if status {
-                guard let  dataModel = products else {return}
-                self.likesModel = dataModel as? LikesModel
+                guard let  dataModel = product else {return}
+                self?.likesModel = dataModel as? LikesModel
             }
         }
     }

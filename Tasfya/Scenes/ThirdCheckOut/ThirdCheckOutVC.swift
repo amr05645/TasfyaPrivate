@@ -54,7 +54,9 @@ class ThirdCheckOutVC: BaseVC {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(OrderDetailsVC(), animated: true)
+        let vc = OrderDetailsVC()
+        vc.showCoupon = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

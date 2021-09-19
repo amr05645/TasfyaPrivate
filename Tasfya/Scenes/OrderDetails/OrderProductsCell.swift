@@ -9,6 +9,8 @@ import UIKit
 
 class OrderDetailsVC: BaseVC {
     
+    var showCoupon = false
+    
     @IBOutlet weak var TableView: UITableView!
     
     override func viewDidLoad() {
@@ -40,7 +42,7 @@ class OrderDetailsVC: BaseVC {
 extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 8
+        return showCoupon ? 8 : 6
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,10 +74,17 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubtotalCell", for: indexPath) as! SubtotalCell
             return cell
         case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CoponeCell", for: indexPath) as! CoponeCell
-            cell.applyBtn.isHidden = false
-            cell.coponeTF.placeholder = "Copone Code"
-            return cell
+            switch showCoupon {
+            case true:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CoponeCell", for: indexPath) as! CoponeCell
+                cell.applyBtn.isHidden = false
+                cell.coponeTF.placeholder = "Copone Code"
+                return cell
+            case false:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentMethodCell", for: indexPath) as! PaymentMethodCell
+                return cell
+            }
+            
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CoponeCell", for: indexPath) as! CoponeCell
             cell.applyBtn.isHidden = true

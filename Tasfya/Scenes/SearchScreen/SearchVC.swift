@@ -45,12 +45,12 @@ class SearchVC: BaseVC {
         
         let service = Service.init(baseUrl: baseUrl)
         service.getCategories(endPoint: "allCategories",parameter: parameter,  model: "allCategories")
-        service.completionHandler{ (category, status, message) in
+        service.completionHandler{ [weak self](category, status, message) in
             
             if status {
                 guard let  dataModel = category else {return}
-                self.categories = dataModel as? Categories
-                self.searchData = self.categories?.data
+                self?.categories = dataModel as? Categories
+                self?.searchData = self?.categories?.data
             }
         }
     }

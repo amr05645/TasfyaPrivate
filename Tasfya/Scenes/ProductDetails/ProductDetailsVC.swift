@@ -10,22 +10,13 @@ import ImageSlideshow
 
 class ProductDetailsVC: BaseVC {
     
-    var allProducts: AllProducts? {
-        didSet {
-            DispatchQueue.main.async {
-                self.updateView()
-                self.setupImageSlider()
-            }
-        }
-    }
-    
-    var currentIndex: Int?
-    
     var productslug: String?
     
     let likedImg = #imageLiteral(resourceName: "likedPhoto")
     let unlikeImg = #imageLiteral(resourceName: "unlikePhoto")
     var notSelected = true
+    
+    var product: ProductData?
     
     var baseUrl = "https://yousry.drayman.co/"
     
@@ -41,39 +32,23 @@ class ProductDetailsVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setLeftBarButton(nil, animated: true)
-        callPostApi()
+        updateView()
+        self.setupImageSlider()
     }
     
     func updateView() {
-        productNameLbl.text = allProducts?.productData?[currentIndex ?? 0].productsName
-        categoryNameLbl.text = allProducts?.productData?[currentIndex ?? 0].categoriesName
-        productDescriptionLbl.text = allProducts?.productData?[currentIndex ?? 0].productsDescription
-        productPriceLbl.text = allProducts?.productData?[currentIndex ?? 0].productsPrice
-        productStatusLbl.text = "\((allProducts?.productData?[currentIndex ?? 0].productsStatus) ?? "") in stock"
-        likedLbl.text = "\((allProducts?.productData?[currentIndex ?? 0].isLiked) ?? "") likes"
-    }
-    
-    func callPostApi() {
-        let languagehandler = LanguageHandler()
-        
-        let parameter = ["language_id": languagehandler.languageId, "page_number": 0]
-        
-        let service = Service.init(baseUrl: baseUrl)
-        service.getProducts(endPoint: "getAllProducts",parameter: parameter,  model: "getAllProducts")
-        service.completionHandler{ (products, status, message) in
-            
-            if status {
-                guard let  dataModel = products else {return}
-                self.allProducts = dataModel as? AllProducts
-            }
-        }
+        productNameLbl.text = product?.productsName
+        categoryNameLbl.text = product?.categoriesName
+        productDescriptionLbl.attributedText = product?.productsDescription?.htmlAttributedString()
+        productPriceLbl.text = product?.productsPrice
+        productStatusLbl.text = "\((product?.productsStatus) ?? "") in stock"
+        likedLbl.text = "\((product?.isLiked) ?? "") likes"
     }
     
     func setupImageSlider() {
         let url = baseUrl
         var imagesSources: [KingfisherSource] = []
-        guard let data = allProducts?.productData else {return}
-        guard let images = data[currentIndex ?? 0].images else {return}
+        guard let images = product?.images else {return}
         for image in images {
             let imageUrl = image.image ?? ""
             let finalUrl = url + imageUrl
@@ -89,7 +64,6 @@ class ProductDetailsVC: BaseVC {
         productImagesSlider.activityIndicator = DefaultActivityIndicator()
         productImagesSlider.pageIndicator?.numberOfPages = imagesSources.count
         productImagesSlider.contentScaleMode = UIViewContentMode.scaleToFill
-        productImagesSlider.delegate = self
         productImagesSlider.setImageInputs(imagesSources)
         
     }
@@ -123,10 +97,4 @@ class ProductDetailsVC: BaseVC {
     @IBAction func addToCartBtnTapped(_ sender: Any) {
     }
     
-}
-
-extension ProductDetailsVC: ImageSlideshowDelegate {
-    func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
-        print("current page:", page)
-    }
 }
