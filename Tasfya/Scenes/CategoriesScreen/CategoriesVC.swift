@@ -41,11 +41,11 @@ class CategoriesVC: BaseVC {
         
         let service = Service.init(baseUrl: baseUrl)
         service.getCategories(endPoint: "allCategories",parameter: parameter,  model: "allCategories")
-        service.completionHandler{ (category, status, message) in
+        service.completionHandler{[weak self] (category, status, message) in
             
             if status {
                 guard let  dataModel = category else {return}
-                self.categories = dataModel as? Categories
+                self?.categories = dataModel as? Categories
             }
         }
     }
@@ -61,12 +61,7 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
         let category = categories?.data?[indexPath.row]
-        cell.categoryNameLbl.text = category?.name
-        cell.productCountLbl.text = "\(String(describing: category!.totalProducts!)) products"
-        let url = "http://yousry.drayman.co/"
-        let imageURL = category?.image ?? ""
-        let finalUrl = url + imageURL
-        cell.categoryImg.showImage(url: finalUrl, cornerRadius: 0)
+        cell.configure(category: category)
         return cell
     }
     
@@ -86,5 +81,12 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let padding: CGFloat =  20
         let collectionViewSize = collectionView.frame.size.width - padding
         return CGSize(width: (collectionViewSize/2), height: (collectionViewSize/2))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ShopVC()
+        guard let id = categories?.data?[indexPath.row].id else {return}
+        vc.catId = id
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

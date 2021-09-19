@@ -18,4 +18,13 @@ class CategoriesCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func configure(category: Datum?){
+        categoryNameLbl.text = category?.name
+        productCountLbl.text = "\(String(describing: category!.totalProducts!)) products"
+        let url = "http://yousry.drayman.co/"
+        let imageURL = category?.image ?? ""
+        let finalUrl = url + imageURL
+        categoryImg.showImage(url: finalUrl, cornerRadius: 0)
+    }
+    
 }

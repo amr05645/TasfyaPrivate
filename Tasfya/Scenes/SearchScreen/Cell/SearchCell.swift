@@ -23,4 +23,12 @@ class SearchCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(category: Datum?){
+        categoryNameLbl.text = category?.name
+        let url = "http://yousry.drayman.co/"
+        let imageURL = category?.icon ?? ""
+        let finalUrl = url + imageURL
+        categoryIconImage.showImage(url: finalUrl, cornerRadius: 0)
+    }
+    
 }

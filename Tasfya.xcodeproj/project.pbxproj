@@ -46,6 +46,10 @@
 		5B4F10342619FD610031C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F10322619FD610031C7F9 /* LaunchScreen.storyboard */; };
 		5B60589A26EB842C00388415 /* SecondCheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60589826EB842C00388415 /* SecondCheckOutVC.swift */; };
 		5B60589B26EB842C00388415 /* SecondCheckOutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B60589926EB842C00388415 /* SecondCheckOutVC.xib */; };
+		5B6C639E26F7332300152392 /* LoginSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C639C26F7332300152392 /* LoginSceneVC.swift */; };
+		5B6C639F26F7332300152392 /* LoginSceneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C639D26F7332300152392 /* LoginSceneVC.xib */; };
+		5B6C63A326F73FFA00152392 /* SignUpSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C63A126F73FFA00152392 /* SignUpSceneVC.swift */; };
+		5B6C63A426F73FFA00152392 /* SignUpSceneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C63A226F73FFA00152392 /* SignUpSceneVC.xib */; };
 		5B6D66D226E4F8BE00C326D1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D66D126E4F8BE00C326D1 /* Services.swift */; };
 		5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */; };
 		5B6F3F3C26F2F5DC00CDEEF8 /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F3F3B26F2F5DC00CDEEF8 /* LikesModel.swift */; };
@@ -150,6 +154,10 @@
 		5B60589826EB842C00388415 /* SecondCheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCheckOutVC.swift; sourceTree = "<group>"; };
 		5B60589926EB842C00388415 /* SecondCheckOutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCheckOutVC.xib; sourceTree = "<group>"; };
 		5B64FF3A261DE1C2007D350A /* FillInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInfoVC.swift; sourceTree = "<group>"; };
+		5B6C639C26F7332300152392 /* LoginSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneVC.swift; sourceTree = "<group>"; };
+		5B6C639D26F7332300152392 /* LoginSceneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginSceneVC.xib; sourceTree = "<group>"; };
+		5B6C63A126F73FFA00152392 /* SignUpSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSceneVC.swift; sourceTree = "<group>"; };
+		5B6C63A226F73FFA00152392 /* SignUpSceneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpSceneVC.xib; sourceTree = "<group>"; };
 		5B6D66D126E4F8BE00C326D1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		5B6DE76826B14DF3008BDEF9 /* Tasfya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tasfya.entitlements; sourceTree = "<group>"; };
 		5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -405,6 +413,8 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5B6C63A026F73FD100152392 /* SignUpScene */,
+				5B6C639B26F732E400152392 /* LoginScene */,
 				5BE4689C26EF46400070CF19 /* EndOrder */,
 				5BAB953D26EDE4D500AC3982 /* OrderDetails */,
 				5B12BEF126ECC7C200E7BB6F /* ThirdCheckOut */,
@@ -450,6 +460,24 @@
 				5B60589926EB842C00388415 /* SecondCheckOutVC.xib */,
 			);
 			path = SecondCheckOut;
+			sourceTree = "<group>";
+		};
+		5B6C639B26F732E400152392 /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				5B6C639C26F7332300152392 /* LoginSceneVC.swift */,
+				5B6C639D26F7332300152392 /* LoginSceneVC.xib */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		5B6C63A026F73FD100152392 /* SignUpScene */ = {
+			isa = PBXGroup;
+			children = (
+				5B6C63A126F73FFA00152392 /* SignUpSceneVC.swift */,
+				5B6C63A226F73FFA00152392 /* SignUpSceneVC.xib */,
+			);
+			path = SignUpScene;
 			sourceTree = "<group>";
 		};
 		5B70790426DE3CEB002F9C3B /* HomeScreen */ = {
@@ -719,6 +747,7 @@
 				5B45DD9326E631EB005069B1 /* MyAddressesVC.xib in Resources */,
 				5BAB954126EDE4F700AC3982 /* OrderDetailsVC.xib in Resources */,
 				5B25507026E4C7EC0075C433 /* MyAccountVC.xib in Resources */,
+				5B6C63A426F73FFA00152392 /* SignUpSceneVC.xib in Resources */,
 				5B3FDF5826EA5770000A1B97 /* SettingsCV.xib in Resources */,
 				5B785B14262D9D3C00C6CA58 /* Localizable.strings in Resources */,
 				5B25506B26E4C3BC0075C433 /* ShopVC.xib in Resources */,
@@ -740,6 +769,7 @@
 				5B45DD8926E60E62005069B1 /* MyOrdersVC.xib in Resources */,
 				5B12BEF526ECC7F500E7BB6F /* ThirdCheckOutVC.xib in Resources */,
 				5B3FDF5326EA53F1000A1B97 /* ProductDetailsVC.xib in Resources */,
+				5B6C639F26F7332300152392 /* LoginSceneVC.xib in Resources */,
 				5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */,
 				5B76840326E0FA590029E2D0 /* SearchCell.xib in Resources */,
 			);
@@ -834,6 +864,7 @@
 				5B167CC726E8C94D00C916B1 /* CartCell.swift in Sources */,
 				5BAB954826EDF92A00AC3982 /* TableViewHeader.swift in Sources */,
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
+				5B6C639E26F7332300152392 /* LoginSceneVC.swift in Sources */,
 				5B3BC12E26DFCC5700D210BF /* UIView+Extension.swift in Sources */,
 				5B45DD9226E631EB005069B1 /* MyAddressesVC.swift in Sources */,
 				5B76840C26E117B30029E2D0 /* CategoriesCell.swift in Sources */,
@@ -853,6 +884,7 @@
 				5B25506F26E4C7EC0075C433 /* MyAccountVC.swift in Sources */,
 				5B6D66D226E4F8BE00C326D1 /* Services.swift in Sources */,
 				5BAB955126EE23B400AC3982 /* SubtotalCell.swift in Sources */,
+				5B6C63A326F73FFA00152392 /* SignUpSceneVC.swift in Sources */,
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
 				5BDEB8CA26E8FF3F00086520 /* ExploreCell.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,

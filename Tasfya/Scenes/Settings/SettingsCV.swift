@@ -62,17 +62,7 @@ class SettingsCV: BaseVC {
     }
     
     @IBAction func rateBtnTapped(_ sender: Any) {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-            
-        } else if let url = URL(string: "https://apps.apple.com/eg/app/endo/id1568290410") {
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
+        SKStoreReviewController.requestReview()
     }
     
     @IBAction func privacyBtnTapped(_ sender: Any) {

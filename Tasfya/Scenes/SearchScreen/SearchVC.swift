@@ -66,11 +66,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
         let category = searchData?[indexPath.row]
-        cell.categoryNameLbl.text = category?.name
-        let url = "http://yousry.drayman.co/"
-        let imageURL = category?.icon ?? ""
-        let finalUrl = url + imageURL
-        cell.categoryIconImage.showImage(url: finalUrl, cornerRadius: 0)
+        cell.configure(category: category)
         return cell
     }
     
@@ -79,6 +75,10 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ShopVC()
+        guard let id = searchData?[indexPath.row].id else {return}
+        vc.catId = id
+        self.navigationController?.pushViewController(vc, animated: true)
         SearchTableView.deselectRow(at: indexPath, animated: true)
     }
     
