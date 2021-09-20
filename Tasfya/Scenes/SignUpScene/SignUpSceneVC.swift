@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Alamofire
+import PKHUD
 
 class SignUpSceneVC: BaseVC {
+    
+    var imagePicker: ImagePicker!
+    var registerModel: Register?
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var firstNameTF: UITextField!
@@ -20,9 +25,41 @@ class SignUpSceneVC: BaseVC {
         super.viewDidLoad()
         self.navigationItem.setLeftBarButton(nil, animated: true)
         self.navigationItem.rightBarButtonItems?.removeAll()
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
-    @IBAction func editImageTapped(_ sender: Any) {
+    func sendUserData(){
+        let firstName = self.firstNameTF.text
+        let lastName = self.lastNameTF.text
+        let email = self.emailTF.text
+        let password = self.passwordTF.text
+        let phoneNumber = self.phoneNumberTF.text
+        
+        let parameter = ["customers_firstname": firstName ?? "", "customers_lastname": lastName ?? "", "customers_email_address": email ?? "", "customers_password": password ?? "", "customers_telephone": phoneNumber ?? ""]
+        var image = UIImage()
+        image = self.userImage.image ?? UIImage()
+        let imageData =  image.jpegData(compressionQuality: 0.50)
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData!, withName: "customers_picture", fileName: "images.jpeg", mimeType: "images.jpeg")
+            for (key, value) in parameter {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
+            }
+        },  to: "https://yousry.drayman.co/safqaya/processRegistration").response
+        { [weak self] response in
+            guard let data = response.data else {return}
+            do {
+                let model =  try JSONDecoder().decode(Register.self, from: data)
+                self?.registerModel = model
+//                print(self?.registerModel as? Register)
+            } catch {
+                print("\(error)")
+            }
+        }
+    }
+    
+    @IBAction func editImageTapped(_ sender: UIButton) {
+        self.imagePicker.present(from: sender)
     }
     
     @IBAction func termsBtnTapped(_ sender: Any) {
@@ -35,9 +72,17 @@ class SignUpSceneVC: BaseVC {
     }
     
     @IBAction func registerBtnTapped(_ sender: Any) {
+        sendUserData()
     }
     
     @IBAction func loginBtnTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension SignUpSceneVC: ImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        userImage.image = image
+    }
 }

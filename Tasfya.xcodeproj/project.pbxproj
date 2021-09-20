@@ -50,6 +50,7 @@
 		5B6C639F26F7332300152392 /* LoginSceneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C639D26F7332300152392 /* LoginSceneVC.xib */; };
 		5B6C63A326F73FFA00152392 /* SignUpSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C63A126F73FFA00152392 /* SignUpSceneVC.swift */; };
 		5B6C63A426F73FFA00152392 /* SignUpSceneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C63A226F73FFA00152392 /* SignUpSceneVC.xib */; };
+		5B6C63A726F75CB900152392 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C63A626F75CB900152392 /* RegisterModel.swift */; };
 		5B6D66D226E4F8BE00C326D1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D66D126E4F8BE00C326D1 /* Services.swift */; };
 		5B6DE76C26B153D2008BDEF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */; };
 		5B6F3F3C26F2F5DC00CDEEF8 /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F3F3B26F2F5DC00CDEEF8 /* LikesModel.swift */; };
@@ -158,6 +159,7 @@
 		5B6C639D26F7332300152392 /* LoginSceneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginSceneVC.xib; sourceTree = "<group>"; };
 		5B6C63A126F73FFA00152392 /* SignUpSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSceneVC.swift; sourceTree = "<group>"; };
 		5B6C63A226F73FFA00152392 /* SignUpSceneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpSceneVC.xib; sourceTree = "<group>"; };
+		5B6C63A626F75CB900152392 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		5B6D66D126E4F8BE00C326D1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		5B6DE76826B14DF3008BDEF9 /* Tasfya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tasfya.entitlements; sourceTree = "<group>"; };
 		5B6DE76B26B153D2008BDEF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -474,10 +476,19 @@
 		5B6C63A026F73FD100152392 /* SignUpScene */ = {
 			isa = PBXGroup;
 			children = (
+				5B6C63A526F75CA100152392 /* Model */,
 				5B6C63A126F73FFA00152392 /* SignUpSceneVC.swift */,
 				5B6C63A226F73FFA00152392 /* SignUpSceneVC.xib */,
 			);
 			path = SignUpScene;
+			sourceTree = "<group>";
+		};
+		5B6C63A526F75CA100152392 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B6C63A626F75CB900152392 /* RegisterModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5B70790426DE3CEB002F9C3B /* HomeScreen */ = {
@@ -897,6 +908,7 @@
 				5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */,
 				5BB730FF26E67AFF00F24AFA /* AboutUsVC.swift in Sources */,
 				5BA4CFA426EE37E800C1F491 /* PaymentMethodCell.swift in Sources */,
+				5B6C63A726F75CB900152392 /* RegisterModel.swift in Sources */,
 				5BB7310326E67D4800F24AFA /* RateUsVC.swift in Sources */,
 				5B7683F926E0CD3C0029E2D0 /* MainScreenModel.swift in Sources */,
 				5B481A4326E779770042C1EE /* ProductDetailsVC.swift in Sources */,

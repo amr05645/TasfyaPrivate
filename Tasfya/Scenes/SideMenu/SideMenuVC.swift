@@ -61,7 +61,7 @@ class SideMenuVC: UIViewController {
         // Sets the translucent background color
         navVC.navigationBar.tintColor = #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
         navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1) ]
-
+        
         self.addChild(navVC)
         navVC.view.frame = containerView.bounds
         self.containerView.addSubview(navVC.view)
@@ -109,17 +109,7 @@ class SideMenuVC: UIViewController {
     }
     
     func rateApp() {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-
-        } else if let url = URL(string: "https://apps.apple.com/eg/app/endo/id1568290410") {
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
+        SKStoreReviewController.requestReview()
     }
     
     func shareApp(_ sender: UIButton) {
@@ -130,11 +120,7 @@ class SideMenuVC: UIViewController {
         if let myWebsite = URL(string: "https://apps.apple.com/eg/app/endo/id1568290410") {//Enter link to your app here
             let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "logoTasfya")] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-            //Excluded Activities
             activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
-            //
-            
             activityVC.popoverPresentationController?.sourceView = sender
             self.present(activityVC, animated: true, completion: nil)
         }
@@ -167,13 +153,29 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.shop:
             navVC.pushViewController(ShopVC(), animated: true)
         case Constants.sideMenuTitles.myAccount:
-            navVC.pushViewController(MyAccountVC(), animated: true)
+            if CurrentUser.logged {
+                navVC.pushViewController(MyAccountVC(), animated: true)
+            } else {
+                navVC.pushViewController(LoginSceneVC(), animated: true)
+            }
         case Constants.sideMenuTitles.myOrders:
-            navVC.pushViewController(MyOrdersVC(), animated: true)
+            if CurrentUser.logged {
+                navVC.pushViewController(MyOrdersVC(), animated: true)
+            } else {
+                navVC.pushViewController(LoginSceneVC(), animated: true)
+            }
         case Constants.sideMenuTitles.myAddresses:
-            navVC.pushViewController(MyAddressesVC(), animated: true)
+            if CurrentUser.logged {
+                navVC.pushViewController(MyAddressesVC(), animated: true)
+            } else {
+                navVC.pushViewController(LoginSceneVC(), animated: true)
+            }
         case Constants.sideMenuTitles.myFavorites:
-            navVC.pushViewController(MyFavoritesVC(), animated: true)
+            if CurrentUser.logged {
+                navVC.pushViewController(MyFavoritesVC(), animated: true)
+            } else {
+                navVC.pushViewController(LoginSceneVC(), animated: true)
+            }
         case Constants.sideMenuTitles.contactUs:
             navVC.pushViewController(ContactUsVC(), animated: true)
         case Constants.sideMenuTitles.about:
@@ -186,10 +188,9 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
             navVC.pushViewController(SettingsCV(), animated: true)
         case Constants.sideMenuTitles.login:
             CurrentUser.login()
-//            let vc = LoginVC()
-//            vc.delegate = self
-//            navVC.pushViewController(vc, animated: true)
-            print(Constants.sideMenuTitles.login)
+            let vc = LoginSceneVC()
+            LoginSceneVC.delegate = self
+            navVC.pushViewController(vc, animated: true)
         case Constants.sideMenuTitles.logout:
             CurrentUser.logout()
         default:

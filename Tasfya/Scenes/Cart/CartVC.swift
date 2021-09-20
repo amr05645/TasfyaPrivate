@@ -29,7 +29,11 @@ class CartVC: BaseVC {
     }
     
     @IBAction func checkoutBtnTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(FirstCheckOutVC(), animated: true)
+        if CurrentUser.logged {
+            self.navigationController?.pushViewController(FirstCheckOutVC(), animated: true)
+        } else {
+            self.navigationController?.pushViewController(LoginSceneVC(), animated: true)
+        }
     }
     
 }

@@ -87,6 +87,23 @@ class Service {
         }
     }
     
+//    func postRegisteration(endPoint : String , parameter: [String : Any], model: String) {
+//        AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {
+//            response in
+//            guard let data = response.data else {
+//                self.callBack?(nil, false, "")
+//                return}
+//            do{
+//                if (model == "RegisterModel") {
+//                    let model =  try JSONDecoder().decode(RegisterModel.self, from: data)
+//                    self.callBack?(model , true, "")
+//                }
+//            } catch {
+//                self.callBack?(nil, false, error.localizedDescription)
+//            }
+//        }
+//    }
+    
     func completionHandler(callBack: @escaping DataCallBack){
         self.callBack = callBack
     }
