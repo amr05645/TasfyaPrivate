@@ -12,7 +12,6 @@ import PKHUD
 class SignUpSceneVC: BaseVC {
     
     var imagePicker: ImagePicker!
-    var registerModel: Register?
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var firstNameTF: UITextField!
@@ -29,6 +28,8 @@ class SignUpSceneVC: BaseVC {
     }
     
     func sendUserData(){
+        
+        self.showProgress()
         let firstName = self.firstNameTF.text
         let lastName = self.lastNameTF.text
         let email = self.emailTF.text
@@ -37,7 +38,7 @@ class SignUpSceneVC: BaseVC {
         
         let parameter = ["customers_firstname": firstName ?? "", "customers_lastname": lastName ?? "", "customers_email_address": email ?? "", "customers_password": password ?? "", "customers_telephone": phoneNumber ?? ""]
         var image = UIImage()
-        image = self.userImage.image ?? UIImage()
+        image = self.userImage.image ?? #imageLiteral(resourceName: "userImage")
         let imageData =  image.jpegData(compressionQuality: 0.50)
         
         AF.upload(multipartFormData: { (multipartFormData) in
@@ -45,15 +46,18 @@ class SignUpSceneVC: BaseVC {
             for (key, value) in parameter {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
             }
-        },  to: "https://yousry.drayman.co/safqaya/processRegistration").response
+        },  to: "https://yousry.drayman.co/processRegistration").response
         { [weak self] response in
             guard let data = response.data else {return}
             do {
                 let model =  try JSONDecoder().decode(Register.self, from: data)
-                self?.registerModel = model
-//                print(self?.registerModel as? Register)
+                self?.hideProgress()
+                DispatchQueue.main.async {
+                    UserProfileCache.save(model)
+                    self?.view.window?.rootViewController = setRootVC(to: HomeScreenVC())
+                }
             } catch {
-                print("\(error)")
+                self?.showAlert(with: error.localizedDescription)
             }
         }
     }
@@ -72,6 +76,10 @@ class SignUpSceneVC: BaseVC {
     }
     
     @IBAction func registerBtnTapped(_ sender: Any) {
+        guard dataExist(in: [firstNameTF, lastNameTF, emailTF, passwordTF, phoneNumberTF]) else {
+            self.showAlert(with: Constants.details.emptyTF)
+            return
+        }
         sendUserData()
     }
     

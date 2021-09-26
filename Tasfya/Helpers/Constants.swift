@@ -15,6 +15,7 @@ struct Constants {
     static let colors = Colors()
     static let sideMenuTitles = SideMenuTitles()
     static let messages = Messages()
+    static let details = Details()
 }
 
 struct Images {
@@ -59,4 +60,8 @@ struct SideMenuTitles {
     var settings: String {"Settings".localized}
     var login: String {"Login / Sign Up".localized}
     var logout: String {"Logout".localized}
+}
+
+struct Details {
+    var emptyTF: String {"Please fill required fields!".localized}
 }

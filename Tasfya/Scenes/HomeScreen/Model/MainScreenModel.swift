@@ -46,17 +46,17 @@ struct ProductData: Codable {
     var productsID, productsQuantity, productsModel, productsImage: String?
     var productsPrice, productsDateAdded: String?
     var productsLastModified: String?
-    var productsDateAvailable: JSONNull?
+    var productsDateAvailable: String?
     var productsWeight: String?
     var productsWeightUnit: ProductsWeightUnit?
     var productsStatus, productsTaxClassID: String?
     var manufacturersID: String?
     var productsOrdered, productsLiked, lowLimit, languageID: String?
     var productsName, productsDescription: String?
-    var productsURL: JSONNull?
+    var productsURL: String?
     var productsViewed: String?
     var manufacturersName, manufacturersImage, dateAdded: String?
-    var lastModified: JSONNull?
+    var lastModified: String?
     var manufacturersURL, discountPrice: String?
     var categoriesID, categoriesDescriptionID: String?
     var categoriesName: String?
@@ -130,34 +130,4 @@ enum ProductsWeightUnit: String, Codable {
     case kg = "kg"
 }
 
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        // No-op
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
 
