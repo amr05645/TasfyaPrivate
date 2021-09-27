@@ -17,4 +17,5 @@ target 'Tasfya' do
   pod "ImageSlideshow/Kingfisher"
   pod 'Parchment', '~> 3.0'
   pod 'Alamofire'
+   pod "RealmSwift" 
 end

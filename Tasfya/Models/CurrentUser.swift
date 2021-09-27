@@ -9,6 +9,9 @@ import Foundation
 
 struct CurrentUser {
     static var logged: Bool {UserDefaults.standard.bool(forKey: "logged")}
+  
+    
+    
     
     static func login() {
         UserDefaults.standard.setValue(true, forKey: "logged")

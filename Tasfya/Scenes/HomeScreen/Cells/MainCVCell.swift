@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainCVCell: UICollectionViewCell {
-    
+    let realmServices = RealmServices.shared
+    let realm = try! Realm()
     var likesModel: LikesModel?
     var id: String?
     
@@ -17,7 +19,7 @@ class MainCVCell: UICollectionViewCell {
     let likedImg = #imageLiteral(resourceName: "likedPhoto")
     let unlikeImg = #imageLiteral(resourceName: "unlikePhoto")
     var notSelected = true
-    
+    var productData : ProductData?
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var brandNameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
@@ -28,6 +30,8 @@ class MainCVCell: UICollectionViewCell {
     }
     
     func configure(product: ProductData?){
+        productData = product
+           
         brandNameLbl.text = product?.productsName
         priceLbl.text = product?.productsPrice
         id = product?.productsID
@@ -71,6 +75,35 @@ class MainCVCell: UICollectionViewCell {
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {
+        
+        
+        if realmServices.checkCurrentCustomer(customerId: "rania") {
+            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+            else{return}
+            let customerProduct = Product()
+            customerProduct.ProductName = productData?.productsName ?? ""
+            customerProduct.ProductIV = productData?.productsImage ?? ""
+            customerProduct.categoryName = productData?.categoriesName ?? ""
+            customerProduct.ProductPrice = productData?.productsPrice ?? ""
+            customerProduct.ProductColor = ""
+            customerProduct.ProductSize = ""
+           realmServices.addProduct(customer: currentCustomer, product: customerProduct)
+            
+        }
+        else{
+            
+            let customerProduct = Product()
+            customerProduct.ProductName = productData?.productsName ?? ""
+            customerProduct.ProductIV = productData?.productsImage ?? ""
+            customerProduct.categoryName = productData?.categoriesName ?? ""
+            customerProduct.ProductPrice = productData?.productsPrice ?? ""
+            customerProduct.ProductColor = ""
+            customerProduct.ProductSize = ""
+            realmServices.addNewCustomer(customerId: "rania")
+            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+            else{return}
+          realmServices.addProduct(customer: currentCustomer, product: customerProduct)
+        }
         
     }
     
