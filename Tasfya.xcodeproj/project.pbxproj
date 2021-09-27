@@ -107,6 +107,9 @@
 		5BFB12C6261F14F200FB655E /* SideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B6678B261C8AAF000997D8 /* Assets.xcassets */; };
+		C8978B9F26F8AE5E00F36E95 /* RealmServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8978B9E26F8AE5E00F36E95 /* RealmServices.swift */; };
+		C898D47726F8AC7300C30F66 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C898D47626F8AC7300C30F66 /* RealmModel.swift */; };
+		C8BA9BB42701BFF0005F7C69 /* AddAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BA9BB32701BFF0005F7C69 /* AddAddresses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +226,9 @@
 		5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelegate.swift; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B6678B261C8AAF000997D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8978B9E26F8AE5E00F36E95 /* RealmServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServices.swift; sourceTree = "<group>"; };
+		C898D47626F8AC7300C30F66 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		C8BA9BB32701BFF0005F7C69 /* AddAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddresses.swift; sourceTree = "<group>"; };
 		F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasfya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -316,6 +322,9 @@
 		5B45DD8F26E631A8005069B1 /* MyAddresses */ = {
 			isa = PBXGroup;
 			children = (
+				C814E3E126FC7AE100010324 /* Model */,
+				5B25506C26E4C7CC0075C433 /* MyAccount */,
+				5B45DD8526E60E49005069B1 /* MyOrders */,
 				5B45DD9026E631EB005069B1 /* MyAddressesVC.swift */,
 				5B45DD9126E631EB005069B1 /* MyAddressesVC.xib */,
 			);
@@ -430,8 +439,6 @@
 				5B45DD9926E653CC005069B1 /* Contact-Us */,
 				5B45DD9426E64F56005069B1 /* MyFavorites */,
 				5B45DD8F26E631A8005069B1 /* MyAddresses */,
-				5B45DD8526E60E49005069B1 /* MyOrders */,
-				5B25506C26E4C7CC0075C433 /* MyAccount */,
 				5BDB6BFD26E4BD3200112C97 /* Shop */,
 				5B76840426E1161A0029E2D0 /* CategoriesScreen */,
 				5B7683FA26E0F6950029E2D0 /* SearchScreen */,
@@ -573,6 +580,8 @@
 				5B785B08262D8A7600C6CA58 /* LanguageHandler.swift */,
 				5B785B16262D9D3C00C6CA58 /* Localizable.strings */,
 				5B6D66D126E4F8BE00C326D1 /* Services.swift */,
+				C898D47626F8AC7300C30F66 /* RealmModel.swift */,
+				C8978B9E26F8AE5E00F36E95 /* RealmServices.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -681,6 +690,14 @@
 				5ABE929916A47450FD4B1CE3 /* Pods-Tasfya.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C814E3E126FC7AE100010324 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8BA9BB32701BFF0005F7C69 /* AddAddresses.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -882,6 +899,7 @@
 				5B3BC12826DF892000D210BF /* PagingControlVC.swift in Sources */,
 				5B45DD8826E60E62005069B1 /* MyOrdersVC.swift in Sources */,
 				5B25506A26E4C3BC0075C433 /* ShopVC.swift in Sources */,
+				C898D47726F8AC7300C30F66 /* RealmModel.swift in Sources */,
 				5B70790726DE3D13002F9C3B /* HomeScreenVC.swift in Sources */,
 				5B45DD9C26E6540C005069B1 /* ContactUsVC.swift in Sources */,
 				5B76840226E0FA590029E2D0 /* SearchCell.swift in Sources */,
@@ -902,8 +920,10 @@
 				5B6F3F3C26F2F5DC00CDEEF8 /* LikesModel.swift in Sources */,
 				5B16D1CA26B8120300576A60 /* CategoryModel.swift in Sources */,
 				5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */,
+				C8978B9F26F8AE5E00F36E95 /* RealmServices.swift in Sources */,
 				5B3FDF5126EA07F3000A1B97 /* FirstCheckOutVC.swift in Sources */,
 				5B80968F2630416D00C71A24 /* NavigationDelegate.swift in Sources */,
+				C8BA9BB42701BFF0005F7C69 /* AddAddresses.swift in Sources */,
 				5B12BEF426ECC7F500E7BB6F /* ThirdCheckOutVC.swift in Sources */,
 				5BFB126A261F054F00FB655E /* BaseVC.swift in Sources */,
 				5BB730FF26E67AFF00F24AFA /* AboutUsVC.swift in Sources */,

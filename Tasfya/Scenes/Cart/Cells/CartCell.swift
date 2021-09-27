@@ -14,7 +14,6 @@ class CartCell: UITableViewCell {
     var priceChanged: ((Float) -> ())?
     
     var total: Float = 0.0
-    
     var count: Int? {
         didSet {
             countLbl.text = "\(count ?? 0)"
@@ -33,6 +32,7 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var productColorLbl: UILabel!
     @IBOutlet weak var countLbl: UILabel!
     @IBOutlet weak var totalPriceLbl: UILabel!
+    var price : String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +43,19 @@ class CartCell: UITableViewCell {
         }
     }
     
+    func setupCellData(order : Product){
+        let baseUrl = "https://yousry.drayman.co/"
+        let finalUrl = baseUrl + order.ProductIV!
+        productImage.showImage(url: finalUrl, cornerRadius: 0)
+        productNameLbl.text = order.ProductName
+        categoryNameLbl.text = order.categoryName
+        productPriceLbl.text = order.ProductPrice
+        price = order.ProductPrice
+        productSizeLbl.text = order.ProductSize
+        productColorLbl.text = order.ProductColor
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -50,13 +63,16 @@ class CartCell: UITableViewCell {
     @IBAction func minusBtnTapped(_ sender: Any) {
         guard count! > 1 else {return}
         count! -= 1
-        priceChanged?(Float(-count! * 123))
+        guard let itemPrice = Int(self.price ?? "") else { return}
+        priceChanged?(Float(-count! * itemPrice))
     }
     
     @IBAction func plusBtnTapped(_ sender: Any) {
         guard count! < max else {return}
         count! += 1
-        priceChanged?(Float(count! * 123))
+        guard let itemPrice = Int(self.price ?? "") else { return}
+
+        priceChanged?(Float(count! * itemPrice))
     }
     
     @IBAction func viewBtnTapped(_ sender: Any) {

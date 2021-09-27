@@ -9,7 +9,7 @@ import UIKit
 import PKHUD
 
 class MyAddressesVC: BaseVC {
-    
+    let baseUrl = "http://yousry.drayman.co/"
     private var picker: UIPickerView?
     private var pickerData = ["Egypt", "Kwait"]
     
@@ -18,6 +18,8 @@ class MyAddressesVC: BaseVC {
     @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var countryTF: PickerTF!
     @IBOutlet weak var cityTF: UITextField!
+    private var AddAddressModel : AddAddresses?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +58,10 @@ class MyAddressesVC: BaseVC {
     func sendReport() {
         self.showProgress()
         self.hideProgress()
-        
         DispatchQueue.main.async {
+            //functin to send user address to API
+        
+            self.sendUserAddress()
             HUD.flash(.success)
             self.firstNameTF.text = nil
             self.lastNameTF.text = nil
@@ -67,6 +71,25 @@ class MyAddressesVC: BaseVC {
         }
     }
     
+    // method send user address to backend
+    
+    func sendUserAddress(){
+        let parameter = ["customers_id": 1 , "entry_firstname" :self.firstNameTF.text! ,"entry_lastname" : self.lastNameTF.text! , "entry_street_address" : self.addressTF.text!,"entry_postcode" : 5, "entry_city" :self.cityTF.text!, "entry_country_id" :  self.countryTF.text!,"entry_zone_id" : 2] as [String : Any]
+        
+        let service = Service.init(baseUrl: baseUrl)
+        service.addAddresses(endPoint: "addShippingAddress",parameter: parameter,  model: "AddAddresses")
+        service.completionHandler{[weak self] (category, status, message) in
+            
+            if status {
+                guard let  dataModel = category else {return}
+                self?.AddAddressModel = dataModel as? AddAddresses
+                print(self?.AddAddressModel ?? 0)
+            }
+            else{
+               print(message)
+            }
+        }
+    }
     @IBAction func saveBtnTapped(_ sender: Any) {
         guard dataExist(in: [firstNameTF, lastNameTF, addressTF, countryTF, cityTF]) else {
             showAlert(with: Constants.messages.emptyTF)
@@ -74,8 +97,7 @@ class MyAddressesVC: BaseVC {
         }
         sendReport()
     }
-    
-}
+    }
 
 extension MyAddressesVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

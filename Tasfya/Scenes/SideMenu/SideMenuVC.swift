@@ -165,17 +165,18 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
                 navVC.pushViewController(LoginSceneVC(), animated: true)
             }
         case Constants.sideMenuTitles.myAddresses:
-            if CurrentUser.logged {
+         //  if CurrentUser.logged {
                 navVC.pushViewController(MyAddressesVC(), animated: true)
-            } else {
-                navVC.pushViewController(LoginSceneVC(), animated: true)
-            }
+         //  } else {
+                
+         //     navVC.pushViewController(LoginSceneVC(), animated: true)
+        //   }
         case Constants.sideMenuTitles.myFavorites:
-            if CurrentUser.logged {
+          //  if CurrentUser.logged {
                 navVC.pushViewController(MyFavoritesVC(), animated: true)
-            } else {
-                navVC.pushViewController(LoginSceneVC(), animated: true)
-            }
+         //   } else {
+         //       navVC.pushViewController(LoginSceneVC(), animated: true)
+         //   }
         case Constants.sideMenuTitles.contactUs:
             navVC.pushViewController(ContactUsVC(), animated: true)
         case Constants.sideMenuTitles.about:

@@ -62,6 +62,11 @@ PODS:
   - Parchment (3.0.1)
   - PKHUD (5.3.0)
   - PromisesObjC (1.2.12)
+  - Realm (10.15.1):
+    - Realm/Headers (= 10.15.1)
+  - Realm/Headers (10.15.1)
+  - RealmSwift (10.15.1):
+    - Realm (= 10.15.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -75,6 +80,7 @@ DEPENDENCIES:
   - MOLH
   - Parchment (~> 3.0)
   - PKHUD
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
@@ -96,6 +102,8 @@ SPEC REPOS:
     - Parchment
     - PKHUD
     - PromisesObjC
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
@@ -116,7 +124,9 @@ SPEC CHECKSUMS:
   Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Realm: fbcbde2620d51623cc5b18e28f5b165c39abef52
+  RealmSwift: e4bea8e42efad3d543aea23b56504069c6faaea2
 
-PODFILE CHECKSUM: d9a015d6c8ea61d492fcdf6a509dbff150dda62a
+PODFILE CHECKSUM: c0a21b11dab40ec90b6fa74c697efcccd77a1121
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

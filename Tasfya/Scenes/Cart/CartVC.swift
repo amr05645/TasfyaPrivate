@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CartVC: BaseVC {
     
-    var orders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    
+    var orders = [Product]()
+    let realm = try! Realm()
+    let realmServices = RealmServices.shared
     @IBOutlet weak var CartTableView: UITableView!
     @IBOutlet weak var totalPriceLbl: UILabel!
     
@@ -22,7 +24,18 @@ class CartVC: BaseVC {
         self.navigationItem.setLeftBarButton(nil, animated: false)
         register()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        getCustomerOrder()
+    }
+    func getCustomerOrder(){
+        guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+        else{return}
+       orders = realmServices.getAllProduct(currentCustomer)
+        print(orders)
+        CartTableView.reloadData()
+        
+        
+    }
     func register() {
         CartTableView.register(UINib(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
         CartTableView.register(UINib(nibName: "ExploreCell", bundle: nil), forCellReuseIdentifier: "ExploreCell")
@@ -60,10 +73,13 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartCell
             cell.delegate = self
+            let data = orders[indexPath.row]
+            cell.setupCellData(order: data)
             cell.remove = { [weak self] in
                 self?.CartTableView.performBatchUpdates({
                     tableView.deleteRows(at: [indexPath], with: .automatic)
                     self?.orders.remove(at: indexPath.row)
+                    self?.realmServices.daleteProduct(data)
                 }) { (finished) in
                     self?.CartTableView.reloadData()
                 }
