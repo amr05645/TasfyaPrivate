@@ -31,15 +31,22 @@ class RealmServices {
         }
         }
     }
-    func addProduct( customer : Customer, product: Product){
     
+    func addProduct( customer : Customer, product: Product){
        let realm = try! Realm()
         try! realm.write{
             customer.customerData.append(product)
-
         }
     }
     
+    //method to update product
+    
+    func updateProduct( customer : Customer , index : Int, count: String){
+        let realm = try! Realm()
+      try! realm.write{
+        customer.customerData[index].ProductCount = count
+        }
+    }
     
     func checkCurrentCustomer(customerId : String) -> Bool {
         let realm = try! Realm()
@@ -62,8 +69,8 @@ class RealmServices {
     }
     
     func clearCustomerData(_ customer : Customer){
+        
         let realm = try! Realm()
-
         let data = customer.customerData
         for item in data {
             try! realm.write{

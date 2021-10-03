@@ -18,7 +18,7 @@ class Product : Object {
     @objc  dynamic var ProductPrice : String?
     @objc  dynamic var ProductSize : String?
     @objc  dynamic var ProductColor : String?
-//    @objc  dynamic var ProductCount : String?
+    @objc  dynamic var ProductCount : String?
 //    
 //    override class func primaryKey() -> String? {
 //        return "ProductId"

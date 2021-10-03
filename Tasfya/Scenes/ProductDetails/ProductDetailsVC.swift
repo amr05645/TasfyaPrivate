@@ -140,13 +140,13 @@ class ProductDetailsVC: BaseVC {
             customerProduct.ProductIV = product?.productsImage ?? ""
             customerProduct.categoryName = product?.categoriesName ?? ""
             customerProduct.ProductPrice = product?.productsPrice ?? ""
+            customerProduct.ProductCount = ("\(1)")
             customerProduct.ProductColor = self.color
             customerProduct.ProductSize = self.size
            realmServices.addProduct(customer: currentCustomer, product: customerProduct)
             
         }
         else{
-            
             let customerProduct = Product()
             customerProduct.ProductName = product?.productsName ?? ""
             customerProduct.ProductIV = product?.productsImage ?? ""

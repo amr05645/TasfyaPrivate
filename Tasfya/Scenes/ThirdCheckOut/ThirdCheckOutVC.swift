@@ -14,7 +14,7 @@ class ThirdCheckOutVC: BaseVC {
         case localPickup
         case flatRate
     }
-    
+    var shipingMethod : String?
     var shippingOptions: ShippingOptions?
     
     @IBOutlet weak var freeShippingImage: UIImageView!
@@ -43,19 +43,23 @@ class ThirdCheckOutVC: BaseVC {
     
     @IBAction func freeShippingTapped(_ sender: Any) {
         setShippingStatus(to: .freeShipping)
+        shipingMethod = "freeShipping"
     }
     
     @IBAction func localPickupTapped(_ sender: Any) {
         setShippingStatus(to: .localPickup)
+        shipingMethod = "localPickup"
     }
     
     @IBAction func flatRateTapped(_ sender: Any) {
         setShippingStatus(to: .flatRate)
+        shipingMethod = "flatRate"
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         let vc = OrderDetailsVC()
         vc.showCoupon = true
+        vc.shipingMethod = shipingMethod
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

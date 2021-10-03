@@ -12,6 +12,7 @@ class CartCell: UITableViewCell {
     var remove: (() -> ())?
     
     var priceChanged: ((Float) -> ())?
+    var countClicked: ((Int) -> ())?
     
     var total: Float = 0.0
     var count: Int? {
@@ -63,6 +64,7 @@ class CartCell: UITableViewCell {
     @IBAction func minusBtnTapped(_ sender: Any) {
         guard count! > 1 else {return}
         count! -= 1
+        countClicked?(count ?? 1)
         guard let itemPrice = Int(self.price ?? "") else { return}
         priceChanged?(Float(-count! * itemPrice))
     }
@@ -70,8 +72,8 @@ class CartCell: UITableViewCell {
     @IBAction func plusBtnTapped(_ sender: Any) {
         guard count! < max else {return}
         count! += 1
+        countClicked?(count ?? 1)
         guard let itemPrice = Int(self.price ?? "") else { return}
-
         priceChanged?(Float(count! * itemPrice))
     }
     

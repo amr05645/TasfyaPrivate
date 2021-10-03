@@ -20,7 +20,15 @@ class ProductsCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func setupCellData(order : Product){
+        let baseUrl = "https://yousry.drayman.co/"
+        let finalUrl = baseUrl + order.ProductIV!
+        productImage.showImage(url: finalUrl, cornerRadius: 0)
+        productNameLbl.text = order.ProductName
+        categoryNameLbl.text = order.categoryName
+        productPricetLbl.text = order.ProductPrice
+        quantityLbl.text = order.ProductCount
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

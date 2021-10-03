@@ -18,6 +18,8 @@ class MyAddressesVC: BaseVC {
     @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var countryTF: PickerTF!
     @IBOutlet weak var cityTF: UITextField!
+    @IBOutlet weak var zoneTF: UITextField!
+    @IBOutlet weak var postCodeTF: UITextField!
     private var AddAddressModel : AddAddresses?
     
     

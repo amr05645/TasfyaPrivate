@@ -12,6 +12,7 @@ import PKHUD
 class SignUpSceneVC: BaseVC {
     
     var imagePicker: ImagePicker!
+    var registerModel: Register?
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var firstNameTF: UITextField!
@@ -53,7 +54,8 @@ class SignUpSceneVC: BaseVC {
                 let model =  try JSONDecoder().decode(Register.self, from: data)
                 self?.hideProgress()
                 DispatchQueue.main.async {
-                    UserProfileCache.save(model)
+                    self?.registerModel = model
+                    UserProfileCache.save(self?.registerModel)
                     self?.view.window?.rootViewController = setRootVC(to: HomeScreenVC())
                 }
             } catch {

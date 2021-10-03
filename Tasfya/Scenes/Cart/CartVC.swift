@@ -42,11 +42,11 @@ class CartVC: BaseVC {
     }
     
     @IBAction func checkoutBtnTapped(_ sender: Any) {
-        if CurrentUser.logged {
+      //  if CurrentUser.logged {
             self.navigationController?.pushViewController(FirstCheckOutVC(), animated: true)
-        } else {
-            self.navigationController?.pushViewController(LoginSceneVC(), animated: true)
-        }
+       // } else {
+       //     self.navigationController?.pushViewController(LoginSceneVC(), animated: true)
+       // }
     }
     
 }
@@ -61,10 +61,13 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case 0:
             return orders.count
+            
         case 1:
             return 1
+            
         default:
             return 0
+            
         }
     }
     
@@ -73,8 +76,14 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartCell
             cell.delegate = self
+            let index = indexPath.row
             let data = orders[indexPath.row]
             cell.setupCellData(order: data)
+            cell.countClicked = { [weak self] value in
+                let currentCustomer = self?.realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+                self?.realmServices.updateProduct(customer: currentCustomer!, index: index, count: ("\(value)"))
+            }
+            
             cell.remove = { [weak self] in
                 self?.CartTableView.performBatchUpdates({
                     tableView.deleteRows(at: [indexPath], with: .automatic)

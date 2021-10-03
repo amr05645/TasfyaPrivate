@@ -86,15 +86,33 @@ class Service {
             }
         }
     }
-    func userLogin(endPoint : String , parameter: [String : Any], model: String) {
+//    func userLogin(endPoint : String , parameter: [String : Any], model: String) {
+//        AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter , encoder: URLEncodedFormParameterEncoder.default,  headers:nil , interceptor: nil).response{
+//            response in
+//            guard let data = response.data else{self.callBack?(nil, false, "")
+//                return}
+//            do {
+//                let model = try JSONDecoder().decode(Login.self, from: data)
+//                if (model == "processLogin") {
+//                    let model =  try JSONDecoder().decode(Login.self, from: data)
+//                    self.callBack?(model , true, "")
+//                }
+//            } catch {
+//                self.callBack?(nil, false, error.localizedDescription)
+//            }
+//        }
+//    }
+    
+    func getPassword(endPoint : String , parameter: [String : Any], model: String) {
+
         AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {
             response in
             guard let data = response.data else {
                 self.callBack?(nil, false, "")
                 return}
             do{
-                if (model == "processLogin") {
-                    let model =  try JSONDecoder().decode(Login.self, from: data)
+                if (model == "forgetPassword") {
+                    let model =  try JSONDecoder().decode(ForgetPassword.self, from: data)
                     self.callBack?(model , true, "")
                 }
             } catch {

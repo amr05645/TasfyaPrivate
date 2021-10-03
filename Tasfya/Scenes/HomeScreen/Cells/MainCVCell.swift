@@ -87,6 +87,7 @@ class MainCVCell: UICollectionViewCell {
             customerProduct.ProductPrice = productData?.productsPrice ?? ""
             customerProduct.ProductColor = ""
             customerProduct.ProductSize = ""
+            customerProduct.ProductCount = ("\(1)")
            realmServices.addProduct(customer: currentCustomer, product: customerProduct)
             
         }

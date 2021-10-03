@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OrderDetailsVC: BaseVC {
     
     var showCoupon = false
+    var product = [Product]()
+    let realm = try! Realm()
+    let realmServices = RealmServices.shared
+    var shipingMethod : String?
     
     @IBOutlet weak var TableView: UITableView!
     
@@ -20,7 +25,15 @@ class OrderDetailsVC: BaseVC {
         self.navigationItem.setLeftBarButton(nil, animated: true)
         register()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        getCustomerOrder()
+    }
+    func getCustomerOrder(){
+        guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+        else{return}
+       product = realmServices.getAllProduct(currentCustomer)
+        self.TableView.reloadData()
+    }
     func register() {
         TableView.register(UINib(nibName: "BillingCell", bundle: nil), forCellReuseIdentifier: "BillingCell")
         TableView.register(UINib(nibName: "ProductsCell", bundle: nil), forCellReuseIdentifier: "ProductsCell")
@@ -48,7 +61,7 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 3:
-            return 5
+            return product.count
         default:
             return 1
         }
@@ -59,20 +72,28 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillingCell", for: indexPath) as! BillingCell
             return cell
+            
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillingCell", for: indexPath) as! BillingCell
             return cell
+            
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillingCell", for: indexPath) as! BillingCell
+            cell.cityLbl.text = shipingMethod
             cell.zoneLbl.isHidden = true
             cell.addressLbl.isHidden = true
             return cell
+            
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsCell", for: indexPath) as! ProductsCell
+            let data = product[indexPath.row]
+            cell.setupCellData(order: data)
             return cell
+            
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubtotalCell", for: indexPath) as! SubtotalCell
             return cell
+            
         case 5:
             switch showCoupon {
             case true:
@@ -90,6 +111,7 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
             cell.applyBtn.isHidden = true
             cell.coponeTF.placeholder = "order notes"
             return cell
+            
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentMethodCell", for: indexPath) as! PaymentMethodCell
             return cell
