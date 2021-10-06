@@ -111,6 +111,11 @@
 		C8057BE82701F777003DA9A1 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8057BE62701F777003DA9A1 /* ForgetPasswordVC.swift */; };
 		C8057BE92701F777003DA9A1 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8057BE72701F777003DA9A1 /* ForgetPasswordVC.xib */; };
 		C8057BEC27020EBF003DA9A1 /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8057BEB27020EBF003DA9A1 /* ForgetPassword.swift */; };
+		C8839C122709D192003E86A1 /* AllAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8839C102709D192003E86A1 /* AllAddressesVC.swift */; };
+		C8839C132709D192003E86A1 /* AllAddressesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8839C112709D192003E86A1 /* AllAddressesVC.xib */; };
+		C8839C172709D950003E86A1 /* AddressesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8839C152709D950003E86A1 /* AddressesCell.swift */; };
+		C8839C182709D950003E86A1 /* AddressesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8839C162709D950003E86A1 /* AddressesCell.xib */; };
+		C8839C1A2709E5CC003E86A1 /* AllAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8839C192709E5CC003E86A1 /* AllAddresses.swift */; };
 		C8978B9F26F8AE5E00F36E95 /* RealmServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8978B9E26F8AE5E00F36E95 /* RealmServices.swift */; };
 		C898D47726F8AC7300C30F66 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C898D47626F8AC7300C30F66 /* RealmModel.swift */; };
 		C8BA9BB42701BFF0005F7C69 /* AddAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BA9BB32701BFF0005F7C69 /* AddAddresses.swift */; };
@@ -234,6 +239,11 @@
 		C8057BE62701F777003DA9A1 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		C8057BE72701F777003DA9A1 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
 		C8057BEB27020EBF003DA9A1 /* ForgetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
+		C8839C102709D192003E86A1 /* AllAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAddressesVC.swift; sourceTree = "<group>"; };
+		C8839C112709D192003E86A1 /* AllAddressesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllAddressesVC.xib; sourceTree = "<group>"; };
+		C8839C152709D950003E86A1 /* AddressesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesCell.swift; sourceTree = "<group>"; };
+		C8839C162709D950003E86A1 /* AddressesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesCell.xib; sourceTree = "<group>"; };
+		C8839C192709E5CC003E86A1 /* AllAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAddresses.swift; sourceTree = "<group>"; };
 		C8978B9E26F8AE5E00F36E95 /* RealmServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServices.swift; sourceTree = "<group>"; };
 		C898D47626F8AC7300C30F66 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		C8BA9BB32701BFF0005F7C69 /* AddAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddresses.swift; sourceTree = "<group>"; };
@@ -330,6 +340,7 @@
 		5B45DD8F26E631A8005069B1 /* MyAddresses */ = {
 			isa = PBXGroup;
 			children = (
+				C8839C0F2709D144003E86A1 /* Addresses */,
 				C814E3E126FC7AE100010324 /* Model */,
 				5B25506C26E4C7CC0075C433 /* MyAccount */,
 				5B45DD8526E60E49005069B1 /* MyOrders */,
@@ -732,8 +743,28 @@
 			isa = PBXGroup;
 			children = (
 				C8BA9BB32701BFF0005F7C69 /* AddAddresses.swift */,
+				C8839C192709E5CC003E86A1 /* AllAddresses.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C8839C0F2709D144003E86A1 /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				C8839C142709D657003E86A1 /* AddressCell */,
+				C8839C102709D192003E86A1 /* AllAddressesVC.swift */,
+				C8839C112709D192003E86A1 /* AllAddressesVC.xib */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		C8839C142709D657003E86A1 /* AddressCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8839C152709D950003E86A1 /* AddressesCell.swift */,
+				C8839C162709D950003E86A1 /* AddressesCell.xib */,
+			);
+			path = AddressCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -823,6 +854,8 @@
 				5B45DD9826E64F71005069B1 /* MyFavoritesVC.xib in Resources */,
 				C8057BE92701F777003DA9A1 /* ForgetPasswordVC.xib in Resources */,
 				5B3BC12C26DFC14300D210BF /* MainScreenVC.xib in Resources */,
+				C8839C182709D950003E86A1 /* AddressesCell.xib in Resources */,
+				C8839C132709D192003E86A1 /* AllAddressesVC.xib in Resources */,
 				C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */,
 				5B3FDF5226EA07F3000A1B97 /* FirstCheckOutVC.xib in Resources */,
 				5BAB954E26EE112700AC3982 /* ProductsCell.xib in Resources */,
@@ -917,6 +950,7 @@
 				C8057BE82701F777003DA9A1 /* ForgetPasswordVC.swift in Sources */,
 				5BFB1271261F056C00FB655E /* SideMenuVC.swift in Sources */,
 				5BFB1279261F065200FB655E /* UIImageView+Extension.swift in Sources */,
+				C8839C1A2709E5CC003E86A1 /* AllAddresses.swift in Sources */,
 				5B481A3E26E7599F0042C1EE /* SettingsCV.swift in Sources */,
 				5B83D628261C503F00A50228 /* PickerTF.swift in Sources */,
 				5BAB954D26EE112700AC3982 /* ProductsCell.swift in Sources */,
@@ -932,6 +966,7 @@
 				5B4F10282619FD600031C7F9 /* AppDelegate.swift in Sources */,
 				5B6C639E26F7332300152392 /* LoginSceneVC.swift in Sources */,
 				5B3BC12E26DFCC5700D210BF /* UIView+Extension.swift in Sources */,
+				C8839C122709D192003E86A1 /* AllAddressesVC.swift in Sources */,
 				5B45DD9226E631EB005069B1 /* MyAddressesVC.swift in Sources */,
 				5B76840C26E117B30029E2D0 /* CategoriesCell.swift in Sources */,
 				5B3BC12826DF892000D210BF /* PagingControlVC.swift in Sources */,
@@ -969,6 +1004,7 @@
 				5BB730FF26E67AFF00F24AFA /* AboutUsVC.swift in Sources */,
 				5BA4CFA426EE37E800C1F491 /* PaymentMethodCell.swift in Sources */,
 				5B6C63A726F75CB900152392 /* RegisterModel.swift in Sources */,
+				C8839C172709D950003E86A1 /* AddressesCell.swift in Sources */,
 				5BB7310326E67D4800F24AFA /* RateUsVC.swift in Sources */,
 				5B7683F926E0CD3C0029E2D0 /* MainScreenModel.swift in Sources */,
 				5B481A4326E779770042C1EE /* ProductDetailsVC.swift in Sources */,

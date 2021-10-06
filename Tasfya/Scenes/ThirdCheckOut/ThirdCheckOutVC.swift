@@ -7,13 +7,16 @@
 
 import UIKit
 
+
+enum ShippingOptions: String {
+    case freeShipping
+    case localPickup
+    case flatRate
+}
+
 class ThirdCheckOutVC: BaseVC {
     
-    enum ShippingOptions: String {
-        case freeShipping
-        case localPickup
-        case flatRate
-    }
+    
     var shipingMethod : String?
     var shippingOptions: ShippingOptions?
     

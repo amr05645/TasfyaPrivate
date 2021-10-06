@@ -166,7 +166,8 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
             }
         case Constants.sideMenuTitles.myAddresses:
          //  if CurrentUser.logged {
-                navVC.pushViewController(MyAddressesVC(), animated: true)
+            navVC.pushViewController(AllAddressesVC(), animated: true)
+             //   navVC.pushViewController(MyAddressesVC(), animated: true)
          //  } else {
                 
          //     navVC.pushViewController(LoginSceneVC(), animated: true)
