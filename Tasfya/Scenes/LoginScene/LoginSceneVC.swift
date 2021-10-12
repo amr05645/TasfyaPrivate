@@ -31,6 +31,8 @@ class LoginSceneVC: BaseVC {
                 let model = try JSONDecoder().decode(Login.self, from: data)
                 if model.success == "1" {
                     self.view.window?.rootViewController = setRootVC(to: HomeScreenVC())
+                    CurrentUser.login()
+                    UserLoginCache.save(model)
                                }
                             else{
                                 self.showAlert(with: model.message )

@@ -35,6 +35,8 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var totalPriceLbl: UILabel!
     var price : String?
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         count = 1

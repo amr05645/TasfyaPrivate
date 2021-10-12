@@ -27,6 +27,7 @@ class ProductsCell: UITableViewCell {
         categoryNameLbl.text = order.categoryName
         productPricetLbl.text = order.ProductPrice
         quantityLbl.text = order.ProductCount
+       
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

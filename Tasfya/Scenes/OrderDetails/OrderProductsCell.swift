@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 
 class OrderDetailsVC: BaseVC {
+    var total : Float = 0.0
     var addressData : AddressesData?
      var AllAddressModel : AllAddresses?
     let baseUrl = "http://yousry.drayman.co/"
@@ -37,15 +38,26 @@ class OrderDetailsVC: BaseVC {
         guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: String("\(customerId)"))
         else{return}
        product = realmServices.getAllProduct(currentCustomer)
+        calTotalPrice()
         self.TableView.reloadData()
     }
-   
+    
+    
+    
+    
     func getCustomerId(){
         guard let data = UserLoginCache.get()?.data else { return }
         for userdata in data {
             customerId = Int(userdata.customersID)
         }
         callPostApi()
+    }
+    func calTotalPrice(){
+        for item in product{
+            total = total + Float("\(item.ProductPrice!)")!
+        }
+        print(total)
+        
     }
     
     
@@ -125,10 +137,14 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsCell", for: indexPath) as! ProductsCell
             let data = product[indexPath.row]
             cell.setupCellData(order: data)
+           
+            
             return cell
             
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubtotalCell", for: indexPath) as! SubtotalCell
+            
+            cell.totalLbl.text = String("\(total)")
             return cell
             
         case 5:

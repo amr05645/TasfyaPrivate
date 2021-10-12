@@ -52,12 +52,14 @@ class SideMenuVC: UIViewController {
     
     
     func showUserData(user: Login?) {
+    
         guard let data = UserLoginCache.get()?.data else { return }
         for userdata in data {
             userNameLabel.text = userdata.customersFirstname + userdata.customersLastname
             UserMailLabel.text = userdata.customersEmailAddress
-            
         }
+        
+        
     }
     
     private func setTableView() {
@@ -220,11 +222,15 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.logout:
             CurrentUser.logout()
             UserLoginCache.remove()
+            hideUserData()
         default:
             return
         }
     }
-    
+    func hideUserData(){
+        userNameLabel.text = "User Name"
+        UserMailLabel.text = "User Mail"
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height / CGFloat(sideMenuTitles.count)
     }
