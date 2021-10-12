@@ -10,7 +10,7 @@ import ImageSlideshow
 import RealmSwift
 
 class ProductDetailsVC: BaseVC {
-    
+    var customerId : Int?
     var productslug: String?
     let realmServices = RealmServices.shared
     let likedImg = #imageLiteral(resourceName: "likedPhoto")
@@ -40,7 +40,7 @@ class ProductDetailsVC: BaseVC {
       initializeRealm()
         self.setupImageSlider()
         getColorSize()
-
+        getCustomerId()
     }
     
     // func to get color and size of product
@@ -61,6 +61,14 @@ class ProductDetailsVC: BaseVC {
         }
         
     }
+    
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
+    }
+    
     
     func initializeRealm(){
         var config = realm.configuration
@@ -127,13 +135,10 @@ class ProductDetailsVC: BaseVC {
     }
     
     @IBAction func addToCartBtnTapped(_ sender: Any) {
-        
-        
-        
         // check user already exist on data base or new user
         
-        if realmServices.checkCurrentCustomer(customerId: "rania") {
-            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+        if realmServices.checkCurrentCustomer(customerId: String("\(customerId)") ) {
+            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: ("\(customerId)"))
             else{return}
             let customerProduct = Product()
             customerProduct.ProductName = product?.productsName ?? ""
@@ -144,7 +149,6 @@ class ProductDetailsVC: BaseVC {
             customerProduct.ProductColor = self.color
             customerProduct.ProductSize = self.size
            realmServices.addProduct(customer: currentCustomer, product: customerProduct)
-            
         }
         else{
             let customerProduct = Product()
@@ -154,8 +158,8 @@ class ProductDetailsVC: BaseVC {
             customerProduct.ProductPrice = product?.productsPrice ?? ""
             customerProduct.ProductColor = self.color
             customerProduct.ProductSize = self.size
-            realmServices.addNewCustomer(customerId: "rania")
-            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+            realmServices.addNewCustomer(customerId: String("\(customerId)"))
+            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: customerId)
             else{return}
              try! realm.write{
              currentCustomer.customerData.append(customerProduct)

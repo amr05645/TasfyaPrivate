@@ -8,6 +8,14 @@
 import UIKit
 
 class AllAddressesVC: UIViewController {
+    
+    var customerId :Int?
+    var notSelected = true
+    var selectedIndex = 0
+
+    let radioOn = #imageLiteral(resourceName: "radioOn")
+    let radioOff = #imageLiteral(resourceName: "radioOff")
+    
     var AllAddressModel : AllAddresses? {
         didSet {
             DispatchQueue.main.async {
@@ -23,7 +31,20 @@ class AllAddressesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        getCustomerId()
+
+    }
+    
+    
+
+    
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
         callPostApi()
+
     }
     
     func registerTableView(){
@@ -31,18 +52,20 @@ class AllAddressesVC: UIViewController {
         addressesTableView.register(nib, forCellReuseIdentifier: "AddressesCell")
         addressesTableView.delegate = self
         addressesTableView.dataSource = self
+        addressesTableView.allowsMultipleSelection = false
     }
     
     // call API to get All Addresses.....
     
     func callPostApi(){
-        let parameter = ["customers_id": 3]
+        let parameter = ["customers_id": self.customerId]
         let service = Service.init(baseUrl: baseUrl)
-        service.getAllAddresses(endPoint: "getAllAddress",parameter: parameter,  model: "AllAddresses")
+        service.getAllAddresses(endPoint: "getAllAddress",parameter: parameter as [String : Any],  model: "AllAddresses")
         service.completionHandler{[weak self] (category, status, message) in
             if status {
                 guard let  dataModel = category else {return}
                 self?.AllAddressModel = dataModel as? AllAddresses
+                print(self?.customerId)
                 print(self?.AllAddressModel ?? 0)
             }
         }
@@ -57,20 +80,49 @@ extension AllAddressesVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressesCell", for: indexPath) as! AddressesCell
+        let data = AllAddressModel?.data?[indexPath.row]
+  
+        cell.selectAddress = { [weak self]  value in
+            if value == true {
+                self?.selectedIndex = indexPath.row
+                self?.updateUserAddress(data: self!.AllAddressModel!.data![self!.selectedIndex])
+             //   UserAddress.save(self!.AllAddressModel!.data![self!.selectedIndex])
+                tableView.reloadData()
+            }
+        }
+      
+     if selectedIndex == indexPath.row{
+        cell.radioButton.setImage(radioOn, for: .normal)
+      
+      }
+        else{
+            cell.radioButton.setImage(radioOff, for: .normal)
+        }
         
-     let data = AllAddressModel?.data?[indexPath.row] 
-        
-
           cell.configure(data: data)
-  //      cell.customerFullName.text = "\((data?.firstname ?? "") + (data?.lastname ?? ""))"
-  //      cell.customerAddresses.text = data?.defaultAddress
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.00
+        return 100.00
     }
+
+    func updateUserAddress(data : AddressesData){
+        let addressId = data.addressID
+        let parameter = ["customers_id": customerId ?? "", "address_book_id" : addressId ?? ""] as [String : Any]
+        let service = Service.init(baseUrl: baseUrl)
+        service.updateDefaultAddress(endPoint: "updateDefaultAddress",parameter: parameter,  model: "UpdateAddress")
+        service.completionHandler{[weak self] (category, status, message) in
+            if status {
+                guard let  dataModel = category else {return}
+                print(dataModel ?? 0)
+            }
+        }
+    }
+    
+    
+    
+    
     
     
 }

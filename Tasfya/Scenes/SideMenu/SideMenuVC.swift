@@ -28,6 +28,11 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var sideMenueLeading: NSLayoutConstraint!
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var UserMailLabel: UILabel!
+    var loginModel : Login?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addRoot()
@@ -39,6 +44,20 @@ class SideMenuVC: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         configureSidemenu()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showUserData(user: loginModel)
+    }
+    
+    
+    func showUserData(user: Login?) {
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            userNameLabel.text = userdata.customersFirstname + userdata.customersLastname
+            UserMailLabel.text = userdata.customersEmailAddress
+            
+        }
     }
     
     private func setTableView() {
@@ -165,19 +184,25 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
                 navVC.pushViewController(LoginSceneVC(), animated: true)
             }
         case Constants.sideMenuTitles.myAddresses:
-         //  if CurrentUser.logged {
+     if CurrentUser.logged {
+        if DefaultAddress.defaultAddress == true {
             navVC.pushViewController(AllAddressesVC(), animated: true)
-             //   navVC.pushViewController(MyAddressesVC(), animated: true)
-         //  } else {
+
+        }
+        else{
+            navVC.pushViewController(MyAddressesVC(), animated: true)
+             }
+          }
+     else {
                 
-         //     navVC.pushViewController(LoginSceneVC(), animated: true)
-        //   }
+           navVC.pushViewController(LoginSceneVC(), animated: true)
+         }
         case Constants.sideMenuTitles.myFavorites:
-          //  if CurrentUser.logged {
+           if CurrentUser.logged {
                 navVC.pushViewController(MyFavoritesVC(), animated: true)
-         //   } else {
-         //       navVC.pushViewController(LoginSceneVC(), animated: true)
-         //   }
+           } else {
+              navVC.pushViewController(LoginSceneVC(), animated: true)
+           }
         case Constants.sideMenuTitles.contactUs:
             navVC.pushViewController(ContactUsVC(), animated: true)
         case Constants.sideMenuTitles.about:
@@ -189,12 +214,12 @@ extension SideMenuVC: UITableViewDataSource, UITableViewDelegate {
         case Constants.sideMenuTitles.settings:
             navVC.pushViewController(SettingsCV(), animated: true)
         case Constants.sideMenuTitles.login:
-            CurrentUser.login()
             let vc = LoginSceneVC()
             LoginSceneVC.delegate = self
             navVC.pushViewController(vc, animated: true)
         case Constants.sideMenuTitles.logout:
             CurrentUser.logout()
+            UserLoginCache.remove()
         default:
             return
         }

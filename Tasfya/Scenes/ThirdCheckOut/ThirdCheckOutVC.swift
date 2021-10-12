@@ -17,7 +17,7 @@ enum ShippingOptions: String {
 class ThirdCheckOutVC: BaseVC {
     
     
-    var shipingMethod : String?
+    var shipingMethod = "freeShipping"
     var shippingOptions: ShippingOptions?
     
     @IBOutlet weak var freeShippingImage: UIImageView!
@@ -43,7 +43,7 @@ class ThirdCheckOutVC: BaseVC {
         localPickupImage.image = option == .localPickup ? radioOn : radioOff
         flatRateImage.image = option == .flatRate ? radioOn : radioOff
     }
-    
+         
     @IBAction func freeShippingTapped(_ sender: Any) {
         setShippingStatus(to: .freeShipping)
         shipingMethod = "freeShipping"

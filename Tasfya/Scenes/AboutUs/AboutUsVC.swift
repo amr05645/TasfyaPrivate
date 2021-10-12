@@ -19,15 +19,22 @@ class AboutUsVC: BaseVC {
     }
     
     @IBAction func privacyBtnTapped(_ sender: Any) {
+        let vc = AllPagesVC()
+        vc.pageNo = 1
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
     @IBAction func refundBtnTapped(_ sender: Any) {
-        
+        let vc = AllPagesVC()
+        vc.pageNo = 3
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func termsBtnTapped(_ sender: Any) {
-        
+        let vc = AllPagesVC()
+        vc.pageNo = 2
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

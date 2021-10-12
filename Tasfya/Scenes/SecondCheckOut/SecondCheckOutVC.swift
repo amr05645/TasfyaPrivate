@@ -8,10 +8,12 @@
 import UIKit
 
 class SecondCheckOutVC: BaseVC {
-    
+    var addressData : AddressesData?
+    var customerId : Int?
     let checkdImg = #imageLiteral(resourceName: "checkboxicon")
     var selected = true
-    
+    let baseUrl = "http://yousry.drayman.co/"
+    var AllAddressModel : AllAddresses?
     private var picker: UIPickerView?
     private var pickerData = ["Egypt", "Kwait"]
     
@@ -24,9 +26,48 @@ class SecondCheckOutVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         getCustomerId()
         self.navigationItem.setLeftBarButton(nil, animated: false)
         setInputPicker()
     }
+    
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
+        callPostApi()
+    }
+    
+    
+    
+    func callPostApi(){
+        let parameter = ["customers_id": 40]
+        let service = Service.init(baseUrl: baseUrl)
+        service.getAllAddresses(endPoint: "getAllAddress",parameter: parameter,  model: "AllAddresses")
+        service.completionHandler{[weak self] (category, status, message) in
+            if status {
+                guard let  dataModel = category else {return}
+                self?.AllAddressModel = dataModel as? AllAddresses
+                print(self?.AllAddressModel ?? 0)
+                self?.getUserAddress()
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    func getUserAddress() {
+        addressData = AllAddressModel?.data?[0]
+        firstNameTF.text = addressData?.firstname ?? ""
+        lastNameTF.text = addressData?.lastname ?? ""
+        addressTF.text = addressData?.street ?? ""
+        countryTF.text = addressData?.countryName ?? ""
+        cityTF.text = addressData?.city ?? ""
+    }
+    
     
     func setInputPicker() {
         picker = UIPickerView()
@@ -77,11 +118,15 @@ class SecondCheckOutVC: BaseVC {
         print("tapped")
     }
     
-    @IBAction func nextBtnTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(ThirdCheckOutVC(), animated: true)
-    }
+ 
     
-}
+    
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        
+        self.navigationController?.pushViewController(ThirdCheckOutVC(), animated: true)
+        
+             }
+           }
 
 extension SecondCheckOutVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

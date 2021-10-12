@@ -119,6 +119,61 @@ class Service {
             }
         }
     }
+    
+    func getAllPages(endPoint : String , parameter: [String : Any], model: String) {
+        
+        AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {
+            response in
+            guard let data = response.data else {
+                self.callBack?(nil, false, "")
+                return}
+            do{
+                if (model == "AllPages") {
+                    let model =  try JSONDecoder().decode(Pages.self, from: data)
+                    self.callBack?(model , true, "")
+                }
+            } catch {
+                self.callBack?(nil, false,("\(error)"))
+            }
+        }
+    }
+    
+    func updateDefaultAddress(endPoint : String , parameter: [String : Any], model: String) {
+        
+        AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {
+            response in
+            guard let data = response.data else {
+                self.callBack?(nil, false, "")
+                return}
+            do{
+                if (model == "UpdateAddress") {
+                    let model =  try JSONDecoder().decode(UpdateAddress.self, from: data)
+                    self.callBack?(model , true, "")
+                }
+            } catch {
+                self.callBack?(nil, false, error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAllOrder(endPoint : String , parameter: [String : Any], model: String) {
+        
+        AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {
+            response in
+            guard let data = response.data else {
+                self.callBack?(nil, false, "")
+                return}
+            do{
+                if (model == "AllOrder") {
+                    let model =  try JSONDecoder().decode(AllOrder.self, from: data)
+                    self.callBack?(model , true, "")
+                }
+            } catch {
+                self.callBack?(nil, false,String("\(error)"))
+            }
+        }
+    }
+    
     func getPassword(endPoint : String , parameter: [String : Any], model: String) {
 
         AF.request(self.baseUrl + endPoint, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil, interceptor: nil).response {

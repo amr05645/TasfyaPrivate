@@ -62,6 +62,7 @@ class HomeScreenVC: BaseVC {
             guard let completeLink = URL(string: finalUrl ) else {return}
             imagesSources.append(KingfisherSource(url: completeLink))
         }
+        
         let pageIndicator = UIPageControl()
         pageIndicator.currentPageIndicatorTintColor = #colorLiteral(red: 0.07058823529, green: 0.1019607843, blue: 0.3137254902, alpha: 1)
         pageIndicator.pageIndicatorTintColor = UIColor.lightGray

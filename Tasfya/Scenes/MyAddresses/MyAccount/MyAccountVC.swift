@@ -11,7 +11,7 @@ import PKHUD
 class MyAccountVC: BaseVC {
     
     var registerModel: Register?
-    
+    var loginModel : Login?
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
@@ -29,12 +29,25 @@ class MyAccountVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-        showUserData(user: registerModel)
+        showUserData(user: loginModel)
         setDatePicker()
     }
     
-    func showUserData(user: Register?) {
-        guard let data = UserProfileCache.get()?.data else { return }
+//    func showUserData(user: Register?) {
+//        guard let data = UserProfileCache.get()?.data else { return }
+//        for userdata in data {
+//            let url = "http://yousry.drayman.co/"
+//            let imageURL = userdata.customersPicture ?? ""
+//            let finalUrl = url + imageURL
+//            self.userImage.showImage(url: finalUrl, cornerRadius: 0)
+//            self.userNameTF.text = userdata.customersFirstname
+//            self.lastNameTF.text = userdata.customersLastname
+//            self.phoneNumberTF.text = userdata.customersTelephone
+//            self.currentPasswordTF.text = userdata.customersPassword
+//        }
+//    }
+    func showUserData(user: Login?) {
+        guard let data = UserLoginCache.get()?.data else { return }
         for userdata in data {
             let url = "http://yousry.drayman.co/"
             let imageURL = userdata.customersPicture ?? ""

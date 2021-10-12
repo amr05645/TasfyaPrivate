@@ -12,11 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuVC" customModule="Tasfya" customModuleProvider="target">
             <connections>
+                <outlet property="UserMailLabel" destination="ebL-lF-FgE" id="sdQ-US-Wjr"/>
                 <outlet property="containerView" destination="s6g-Ok-u4w" id="Oxh-CE-Fih"/>
                 <outlet property="dimeView" destination="RJz-85-UK6" id="veb-0s-qUv"/>
                 <outlet property="sideMenuView" destination="8ZZ-KN-n8h" id="X5k-dp-kas"/>
                 <outlet property="sideMenueLeading" destination="9at-yP-c9d" id="2Ce-R6-JKf"/>
                 <outlet property="tableView" destination="0jZ-sA-9fI" id="te8-QH-h47"/>
+                <outlet property="userNameLabel" destination="r80-83-qOf" id="gRl-Tw-0dI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

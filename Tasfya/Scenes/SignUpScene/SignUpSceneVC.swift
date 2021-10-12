@@ -55,8 +55,9 @@ class SignUpSceneVC: BaseVC {
                 self?.hideProgress()
                 DispatchQueue.main.async {
                     self?.registerModel = model
-                    UserProfileCache.save(self?.registerModel)
-                    self?.view.window?.rootViewController = setRootVC(to: HomeScreenVC())
+                //    UserProfileCache.save(self?.registerModel)
+                //    self?.view.window?.rootViewController = setRootVC(to: HomeScreenVC())
+                    self?.view.window?.rootViewController = setRootVC(to: LoginSceneVC())
                 }
             } catch {
                 self?.showAlert(with: error.localizedDescription)

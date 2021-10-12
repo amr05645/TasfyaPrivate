@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 
 class MainCVCell: UICollectionViewCell {
+    var customerId : Int?
     let realmServices = RealmServices.shared
     let realm = try! Realm()
     var likesModel: LikesModel?
@@ -48,9 +49,13 @@ class MainCVCell: UICollectionViewCell {
     }
     
     func callPostApi() {
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
         
         guard let id = self.id else {return}
-        let parameter = ["liked_product_id": id, "liked_customers_id": "1"]
+        let parameter = ["liked_product_id": id, "liked_customers_id": String("\(customerId)")]
         
         let service = Service.init(baseUrl: baseUrl)
         service.getLikes(endPoint: "likeProduct",parameter: parameter,  model: "LikesModel")
@@ -76,9 +81,13 @@ class MainCVCell: UICollectionViewCell {
     
     @IBAction func addBtnTapped(_ sender: Any) {
         
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
         
-        if realmServices.checkCurrentCustomer(customerId: "rania") {
-            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+        if realmServices.checkCurrentCustomer(customerId: String("\(customerId)")) {
+            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: String("\(customerId)"))
             else{return}
             let customerProduct = Product()
             customerProduct.ProductName = productData?.productsName ?? ""
@@ -100,8 +109,8 @@ class MainCVCell: UICollectionViewCell {
             customerProduct.ProductPrice = productData?.productsPrice ?? ""
             customerProduct.ProductColor = ""
             customerProduct.ProductSize = ""
-            realmServices.addNewCustomer(customerId: "rania")
-            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+            realmServices.addNewCustomer(customerId: String("\(customerId)"))
+            guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: String("\(customerId)"))
             else{return}
           realmServices.addProduct(customer: currentCustomer, product: customerProduct)
         }

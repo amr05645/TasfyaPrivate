@@ -17,6 +17,15 @@ class OrdersCell: UITableViewCell {
     @IBOutlet weak var orderStatusLbl: UILabel!
     @IBOutlet weak var orderDateLbl: UILabel!
     
+//    func Configure(data : OrderData , orderData : DatumDatum){
+//        orderIDLbl.text = data.ordersID
+//        numOfProductLbl.text = orderData.productsQuantity
+//        checkoutPriceLbl.text = orderData.finalPrice
+//        orderStatusLbl.text = data.ordersStatus
+//        orderDateLbl.text = data.ordersDateFinished
+//        
+//    }
+//    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

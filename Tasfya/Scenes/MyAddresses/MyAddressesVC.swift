@@ -9,6 +9,7 @@ import UIKit
 import PKHUD
 
 class MyAddressesVC: BaseVC {
+    var customerId : String?
     let baseUrl = "http://yousry.drayman.co/"
     private var picker: UIPickerView?
     private var pickerData = ["Egypt", "Kwait"]
@@ -26,6 +27,17 @@ class MyAddressesVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setInputPicker()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getCustomerId()
+
+    }
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = userdata.customersID
+        }
     }
     
     func setInputPicker() {
@@ -64,6 +76,7 @@ class MyAddressesVC: BaseVC {
             //functin to send user address to API
         
             self.sendUserAddress()
+            DefaultAddress.login()
             HUD.flash(.success)
             self.firstNameTF.text = nil
             self.lastNameTF.text = nil
@@ -76,7 +89,7 @@ class MyAddressesVC: BaseVC {
     // method send user address to backend
     
     func sendUserAddress(){
-        let parameter = ["customers_id": 1 , "entry_firstname" :self.firstNameTF.text! ,"entry_lastname" : self.lastNameTF.text! , "entry_street_address" : self.addressTF.text!,"entry_postcode" : 5, "entry_city" :self.cityTF.text!, "entry_country_id" :  self.countryTF.text!,"entry_zone_id" : 2] as [String : Any]
+        let parameter = ["customers_id": self.customerId ?? "" , "entry_firstname" :self.firstNameTF.text! ,"entry_lastname" : self.lastNameTF.text! , "entry_street_address" : self.addressTF.text!,"entry_postcode" : 5, "entry_city" :self.cityTF.text!, "entry_country_id" :  self.countryTF.text!,"entry_zone_id" : 2] as [String : Any]
         
         let service = Service.init(baseUrl: baseUrl)
         service.addAddresses(endPoint: "addShippingAddress",parameter: parameter,  model: "AddAddresses")

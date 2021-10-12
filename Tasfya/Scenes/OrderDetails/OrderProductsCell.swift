@@ -9,17 +9,21 @@ import UIKit
 import RealmSwift
 
 class OrderDetailsVC: BaseVC {
-    
+    var addressData : AddressesData?
+     var AllAddressModel : AllAddresses?
+    let baseUrl = "http://yousry.drayman.co/"
     var showCoupon = false
     var product = [Product]()
     let realm = try! Realm()
     let realmServices = RealmServices.shared
     var shipingMethod : String?
+    var customerId : Int?
     
     @IBOutlet weak var TableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCustomerId()
         TableView.delegate = self
         TableView.dataSource = self
         self.navigationItem.setLeftBarButton(nil, animated: true)
@@ -27,13 +31,38 @@ class OrderDetailsVC: BaseVC {
     }
     override func viewWillAppear(_ animated: Bool) {
         getCustomerOrder()
+
     }
     func getCustomerOrder(){
-        guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+        guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: String("\(customerId)"))
         else{return}
        product = realmServices.getAllProduct(currentCustomer)
         self.TableView.reloadData()
     }
+   
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
+        callPostApi()
+    }
+    
+    
+    func callPostApi(){
+        let parameter = ["customers_id": customerId]
+        let service = Service.init(baseUrl: baseUrl)
+        service.getAllAddresses(endPoint: "getAllAddress",parameter: parameter as [String : Any],  model: "AllAddresses")
+        service.completionHandler{[weak self] (category, status, message) in
+            if status {
+                guard let  dataModel = category else {return}
+                self?.AllAddressModel = dataModel as? AllAddresses
+                print(self?.AllAddressModel ?? 0)
+                self?.TableView.reloadData()
+            }
+        }
+    }
+    
     func register() {
         TableView.register(UINib(nibName: "BillingCell", bundle: nil), forCellReuseIdentifier: "BillingCell")
         TableView.register(UINib(nibName: "ProductsCell", bundle: nil), forCellReuseIdentifier: "ProductsCell")
@@ -71,10 +100,18 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillingCell", for: indexPath) as! BillingCell
+            addressData = AllAddressModel?.data?[0]
+            cell.addressLbl.text = addressData?.street ?? ""
+            cell.cityLbl.text = addressData?.city
+            cell.zoneLbl.text = addressData?.zoneCode
             return cell
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillingCell", for: indexPath) as! BillingCell
+            addressData = AllAddressModel?.data?[0]
+            cell.addressLbl.text = addressData?.street ?? ""
+            cell.cityLbl.text = addressData?.city
+            cell.zoneLbl.text = addressData?.zoneCode
             return cell
             
         case 2:

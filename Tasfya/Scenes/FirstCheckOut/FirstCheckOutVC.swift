@@ -9,9 +9,12 @@ import UIKit
 import PKHUD
 
 class FirstCheckOutVC: BaseVC {
-    
+   var addressData : AddressesData?
+    var AllAddressModel : AllAddresses?
+    var customerId : Int?
     private var picker: UIPickerView?
     private var pickerData = ["Egypt", "Kwait"]
+    let baseUrl = "http://yousry.drayman.co/"
     
     @IBOutlet weak var firstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
@@ -21,8 +24,44 @@ class FirstCheckOutVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         getCustomerId()
         self.navigationItem.setLeftBarButton(nil, animated: false)
         setInputPicker()
+    }
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
+        callPostApi()
+    }
+    
+    func callPostApi(){
+        let parameter = ["customers_id": customerId]
+        let service = Service.init(baseUrl: baseUrl)
+        service.getAllAddresses(endPoint: "getAllAddress",parameter: parameter as [String : Any],  model: "AllAddresses")
+        service.completionHandler{[weak self] (category, status, message) in
+            if status {
+                guard let  dataModel = category else {return}
+                self?.AllAddressModel = dataModel as? AllAddresses
+                print(self?.AllAddressModel ?? 0)
+                self?.getUserAddress()
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    func getUserAddress() {
+        addressData = AllAddressModel?.data?[0]
+        firstNameTF.text = addressData?.firstname ?? ""
+        lastNameTF.text = addressData?.lastname ?? ""
+        addressTF.text = addressData?.street ?? ""
+        countryTF.text = addressData?.countryName ?? ""
+        cityTF.text = addressData?.city ?? ""
     }
     
     func setInputPicker() {

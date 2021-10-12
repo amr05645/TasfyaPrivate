@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 class CartVC: BaseVC {
-    
+    var customerId : Int?
     var orders = [Product]()
     let realm = try! Realm()
     let realmServices = RealmServices.shared
@@ -19,16 +19,16 @@ class CartVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCustomerId()
         CartTableView.delegate = self
         CartTableView.dataSource = self
         self.navigationItem.setLeftBarButton(nil, animated: false)
         register()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        getCustomerOrder()
-    }
+    
+    
     func getCustomerOrder(){
-        guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+        guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: String("\(customerId)"))
         else{return}
        orders = realmServices.getAllProduct(currentCustomer)
         print(orders)
@@ -36,17 +36,28 @@ class CartVC: BaseVC {
         
         
     }
+    
+    
+    func getCustomerId(){
+        guard let data = UserLoginCache.get()?.data else { return }
+        for userdata in data {
+            customerId = Int(userdata.customersID)
+        }
+        getCustomerOrder()
+    }
+    
+    
     func register() {
         CartTableView.register(UINib(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
         CartTableView.register(UINib(nibName: "ExploreCell", bundle: nil), forCellReuseIdentifier: "ExploreCell")
     }
     
     @IBAction func checkoutBtnTapped(_ sender: Any) {
-      //  if CurrentUser.logged {
+       if CurrentUser.logged {
             self.navigationController?.pushViewController(FirstCheckOutVC(), animated: true)
-       // } else {
-       //     self.navigationController?.pushViewController(LoginSceneVC(), animated: true)
-       // }
+        } else {
+            self.navigationController?.pushViewController(LoginSceneVC(), animated: true)
+       }
     }
     
 }
@@ -80,7 +91,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
             let data = orders[indexPath.row]
             cell.setupCellData(order: data)
             cell.countClicked = { [weak self] value in
-                let currentCustomer = self?.realm.object(ofType: Customer.self, forPrimaryKey: "rania")
+                let currentCustomer = self?.realm.object(ofType: Customer.self, forPrimaryKey: String("\(self?.customerId)"))
                 self?.realmServices.updateProduct(customer: currentCustomer!, index: index, count: ("\(value)"))
             }
             
