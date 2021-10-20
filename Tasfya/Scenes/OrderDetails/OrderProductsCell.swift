@@ -10,6 +10,7 @@ import RealmSwift
 
 class OrderDetailsVC: BaseVC {
     var total : Float = 0.0
+    var totalPrice = [Float]()
     var addressData : AddressesData?
      var AllAddressModel : AllAddresses?
     let baseUrl = "http://yousry.drayman.co/"
@@ -54,7 +55,9 @@ class OrderDetailsVC: BaseVC {
     }
     func calTotalPrice(){
         for item in product{
-            total = total + Float("\(item.ProductPrice!)")!
+            let itemPrice = Float("\(item.ProductPrice!)")! * Float("\(item.ProductCount!)")!
+            total += itemPrice
+            totalPrice.append(itemPrice)
         }
         print(total)
         
@@ -115,7 +118,7 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
             addressData = AllAddressModel?.data?[0]
             cell.addressLbl.text = addressData?.street ?? ""
             cell.cityLbl.text = addressData?.city
-            cell.zoneLbl.text = addressData?.zoneCode
+            cell.zoneLbl.text = addressData?.countryName
             return cell
             
         case 1:
@@ -123,7 +126,7 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
             addressData = AllAddressModel?.data?[0]
             cell.addressLbl.text = addressData?.street ?? ""
             cell.cityLbl.text = addressData?.city
-            cell.zoneLbl.text = addressData?.zoneCode
+            cell.zoneLbl.text = addressData?.countryName
             return cell
             
         case 2:
@@ -137,13 +140,12 @@ extension OrderDetailsVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsCell", for: indexPath) as! ProductsCell
             let data = product[indexPath.row]
             cell.setupCellData(order: data)
-           
+            cell.totalPriceLbl.text = String("\(totalPrice[indexPath.row])")
             
             return cell
             
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubtotalCell", for: indexPath) as! SubtotalCell
-            
             cell.totalLbl.text = String("\(total)")
             return cell
             

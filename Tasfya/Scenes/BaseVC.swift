@@ -123,7 +123,13 @@ class BaseVC: UIViewController {
     }
     
     @objc private func cartTapped() {
-        self.navigationController?.pushViewController(CartVC(), animated: true)
+        if CurrentUser.logged == true {
+            self.navigationController?.pushViewController(CartVC(), animated: true)
+        }
+        else{
+            self.navigationController?.pushViewController(LoginSceneVC(), animated: true)
+
+        }
     }
     
     @objc private func langBtnTapped() {

@@ -56,6 +56,7 @@ class CartCell: UITableViewCell {
         price = order.ProductPrice
         productSizeLbl.text = order.ProductSize
         productColorLbl.text = order.ProductColor
+        countLbl.text = order.ProductCount
         
     }
     

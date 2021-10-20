@@ -10,6 +10,9 @@ import RealmSwift
 
 class CartVC: BaseVC {
     var customerId : Int?
+    var total : Float = 0.0
+    var count : Int?
+    var totalPrice = [Float]()
     var orders = [Product]()
     let realm = try! Realm()
     let realmServices = RealmServices.shared
@@ -31,12 +34,21 @@ class CartVC: BaseVC {
         guard let currentCustomer = realm.object(ofType: Customer.self, forPrimaryKey: String("\(customerId)"))
         else{return}
        orders = realmServices.getAllProduct(currentCustomer)
+       calTotalPrice()
         print(orders)
+    
         CartTableView.reloadData()
-        
-        
+    
     }
     
+    func calTotalPrice(){
+        for item in orders{
+            let itemPrice = Float("\(item.ProductPrice!)")! * Float("\(item.ProductCount!)")!
+            total += itemPrice
+            totalPrice.append(itemPrice)
+        }
+        print(total)
+    }
     
     func getCustomerId(){
         guard let data = UserLoginCache.get()?.data else { return }
@@ -91,9 +103,15 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
             let data = orders[indexPath.row]
             cell.setupCellData(order: data)
             cell.countClicked = { [weak self] value in
+                self?.count = value
+                guard let price = Float("\(data.ProductPrice)") else{return}
+             self?.totalPrice[indexPath.row] = price * Float(value)
+                self?.CartTableView.reloadData()
                 let currentCustomer = self?.realm.object(ofType: Customer.self, forPrimaryKey: String("\(self?.customerId)"))
                 self?.realmServices.updateProduct(customer: currentCustomer!, index: index, count: ("\(value)"))
             }
+            
+           cell.totalPriceLbl.text = String("\(totalPrice[indexPath.row])")
             
             cell.remove = { [weak self] in
                 self?.CartTableView.performBatchUpdates({
@@ -105,6 +123,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             return cell
+            
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreCell", for: indexPath) as! ExploreCell
             return cell

@@ -1,41 +1,42 @@
 //
-//  CategoriesVC.swift
+//  SubCategoryVC.swift
 //  Tasfya
 //
-//  Created by Amr on 02/09/2021.
+//  Created by BMS on 13/10/2021.
 //
 
 import UIKit
 
-class CategoriesVC: BaseVC {
-    
+class SubCategoryVC: UIViewController {
+
+    @IBOutlet weak var subCategoryCollectionView: UICollectionView!
+    var catId: String?
     var categories: Categories?
-    
-    
+    var subCategory = [Datum](){
+    didSet {
+    DispatchQueue.main.async {
+        self.subCategoryCollectionView.reloadData()
+    }
+}
+    }
     var baseUrl = "https://yousry.drayman.co/"
     
     @IBOutlet weak var CategoriesCollectionView: UICollectionView!
-        var mainCategory = [Datum]() {
-        didSet {
-        DispatchQueue.main.async {
-            self.CategoriesCollectionView.reloadData()
-        }
-    }
-        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         callPostApi()
         self.title = Constants.titles.categoris
-        CategoriesCollectionView.delegate = self
-        CategoriesCollectionView.dataSource = self
+        subCategoryCollectionView.delegate = self
+        subCategoryCollectionView.dataSource = self
 //        self.navigationItem.setLeftBarButton(nil, animated: false)
         register()
     }
     
     func register() {
-        CategoriesCollectionView.register(UINib(nibName: "CategoriesCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCell")
+        subCategoryCollectionView.register(UINib(nibName: "CategoriesCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCell")
     }
-    
+    // filtr to get 
     func callPostApi() {
         let languagehandler = LanguageHandler()
         let parameter = ["language_id": languagehandler.languageId]
@@ -47,32 +48,32 @@ class CategoriesVC: BaseVC {
             if status {
                 guard let  dataModel = category else {return}
                 self?.categories = dataModel as? Categories
-                self?.filterMainCategory()
+                self?.filterSubCategory()
             }
         }
     }
-    func filterMainCategory(){
+    
+    
+    func filterSubCategory(){
         guard let data = categories?.data else {return}
         for item in data {
-            if  item.parentID == "0"
+            if  catId == item.parentID
             {
-                mainCategory.append(item)
+                subCategory.append(item)
             }
         }
-        
     }
-    
 }
 
-extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mainCategory.count
+        return subCategory.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
-        let category = mainCategory[indexPath.row]
+        let category = subCategory[indexPath.row]
         cell.configure(category: category)
         return cell
     }
@@ -96,9 +97,10 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = SubCategoryVC()
-        guard let id = categories?.data?[indexPath.row].id else {return}
+      let vc = ShopVC()
+       guard let id = categories?.data?[indexPath.row].id else {return}
         vc.catId = id
-        self.navigationController?.pushViewController(vc, animated: true)
+       self.navigationController?.pushViewController(vc, animated: true)
+        print("hello")
     }
 }

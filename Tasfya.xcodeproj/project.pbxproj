@@ -107,6 +107,8 @@
 		5BFB12C6261F14F200FB655E /* SideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */; };
 		69F9E52927DBB5B552BCAFB0 /* Pods_Tasfya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1078CAC60197FBC368C71 /* Pods_Tasfya.framework */; };
 		C5B6678C261C8AAF000997D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B6678B261C8AAF000997D8 /* Assets.xcassets */; };
+		C802CA5D271700010034154F /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802CA5B271700010034154F /* SubCategoryVC.swift */; };
+		C802CA5E271700010034154F /* SubCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C802CA5C271700010034154F /* SubCategoryVC.xib */; };
 		C8057BE42701E8B5003DA9A1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8057BE32701E8B5003DA9A1 /* Login.swift */; };
 		C8057BE82701F777003DA9A1 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8057BE62701F777003DA9A1 /* ForgetPasswordVC.swift */; };
 		C8057BE92701F777003DA9A1 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8057BE72701F777003DA9A1 /* ForgetPasswordVC.xib */; };
@@ -240,6 +242,8 @@
 		5BFB12C5261F14F200FB655E /* SideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelegate.swift; sourceTree = "<group>"; };
 		C200C44EC326BE2CEFB943C9 /* Pods-Tasfya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasfya.debug.xcconfig"; path = "Target Support Files/Pods-Tasfya/Pods-Tasfya.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B6678B261C8AAF000997D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C802CA5B271700010034154F /* SubCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryVC.swift; sourceTree = "<group>"; };
+		C802CA5C271700010034154F /* SubCategoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategoryVC.xib; sourceTree = "<group>"; };
 		C8057BE32701E8B5003DA9A1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C8057BE62701F777003DA9A1 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		C8057BE72701F777003DA9A1 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
@@ -453,6 +457,8 @@
 		5B4F10412619FDC80031C7F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C802CA5A2716FFC40034154F /* SubSubCategoryScreen */,
+				C802CA592716FF9D0034154F /* SubCategoryScreen */,
 				C833C6E62715B147000FCE17 /* Pages */,
 				C8057BE52701F532003DA9A1 /* ForgetPassword */,
 				5B6C63A026F73FD100152392 /* SignUpScene */,
@@ -724,6 +730,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C802CA592716FF9D0034154F /* SubCategoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C802CA5B271700010034154F /* SubCategoryVC.swift */,
+				C802CA5C271700010034154F /* SubCategoryVC.xib */,
+			);
+			path = SubCategoryScreen;
+			sourceTree = "<group>";
+		};
+		C802CA5A2716FFC40034154F /* SubSubCategoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubSubCategoryScreen;
+			sourceTree = "<group>";
+		};
 		C8057BE22701E898003DA9A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +924,7 @@
 				5B6C639F26F7332300152392 /* LoginSceneVC.xib in Resources */,
 				5BFB1274261F056C00FB655E /* SideMenuVC.xib in Resources */,
 				5B76840326E0FA590029E2D0 /* SearchCell.xib in Resources */,
+				C802CA5E271700010034154F /* SubCategoryVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1051,7 @@
 				5BE0FAB326231EA5002F22F2 /* SetRootVC.swift in Sources */,
 				5BDEB8CA26E8FF3F00086520 /* ExploreCell.swift in Sources */,
 				5B4F102A2619FD600031C7F9 /* SceneDelegate.swift in Sources */,
+				C802CA5D271700010034154F /* SubCategoryVC.swift in Sources */,
 				5B6F3F3C26F2F5DC00CDEEF8 /* LikesModel.swift in Sources */,
 				5B16D1CA26B8120300576A60 /* CategoryModel.swift in Sources */,
 				5B785B0C262D91DD00C6CA58 /* UICollectionView+Extension.swift in Sources */,
